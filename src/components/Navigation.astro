@@ -1,0 +1,20 @@
+---
+// import the global site data
+import siteData from '../data/site.json';
+---
+
+<nav class="nav-container">
+  <ul class="nav-links">
+    {Object.entries(siteData.nav_links).map(([name, url]) => (
+      <li class="nav-item">
+        <a
+          href={url}
+          rel="noopener noreferrer"
+          aria-label={`Link to ${name} profile`}
+        >
+          {name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { getBlogPostNavigation, isPublicBlogPost, toBlogDate } from '../utils/blogPosts';
+
+import TableOfContent from '../components/TableOfContents.astro';
+import CategoryList from '../components/CategoryList.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Social from '../components/Social.astro';
+
+type BlogPostEntry = CollectionEntry<'blog'>;
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const publicPosts = import.meta.env.DEV ? posts : posts.filter((post) => isPublicBlogPost(post));
+
+  return publicPosts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: BlogPostEntry;
+}
+
+const { post } = Astro.props;
+const renderedPost = await render(post);
+const { Content, remarkPluginFrontmatter } = renderedPost || {};
+const postDate = post.data.date.toString();
+const { newerPost, olderPost } = await getBlogPostNavigation(post, import.meta.env.DEV);
+---
+<Layout frontmatter={{ title: post.data.title }}>
+  <Header />
+  <main>
+    <article class="detail-card">
+        <header class="detail-header">
+          <h2>{post.data.title}</h2>
+            <div class="post-metadata">
+              <p><span>By {post.data.author}</span>
+              <span class="separator" aria-hidden="true"> • </span>
+              <time datetime={postDate} class="published iconfont">
+                {toBlogDate(post.data.date).toLocaleString('en-US', { dateStyle: 'long' })}
+              </time>
+              <span class="separator" aria-hidden="true"> • </span>
+              {remarkPluginFrontmatter?.minutesRead && (
+                <span class="readingtime iconfont" style="margin-left: 0.5rem;">
+                  {remarkPluginFrontmatter.minutesRead}
+                </span>
+              )}
+               </p>
+            </div>
+            <div class="categories-wrapper">
+              { (post.data.categories?.length ? post.data.categories : post.data.tags)?.length > 0 && (
+                <CategoryList rawCategories={post.data.categories?.length ? post.data.categories : post.data.tags} />
+              )}
+            </div>
+        </header>
+
+          <TableOfContent headings={renderedPost?.headings ?? []} />
+          {Content && <Content />}
+
+        <nav class="post-navigation" aria-label="Post navigation">
+          {newerPost ? (
+            <div class="nav-previous">
+              <a href={newerPost.href} rel="prev">
+                <span class="meta-nav">Newer post</span>
+                <span class="post-title">{newerPost.title}</span>
+              </a>
+            </div>
+          ) : null}
+
+          {olderPost ? (
+            <div class="nav-next">
+              <a href={olderPost.href} rel="next">
+                <span class="meta-nav">Older post</span>
+                <span class="post-title">{olderPost.title}</span>
+              </a>
+            </div>
+          ) : null}
+        </nav>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .back-link {
+    margin-bottom: 1.5rem;
+  }
+
+  .back-link a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .detail-card {
+    /* border: 2px solid var(--color-black);
+    border-radius: 2rem; */
+    padding-inline-start: 2rem;
+  }
+
+  .detail-header h1 {
+    margin: 0 0 0.75rem 0;
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .detail-meta {
+    color: var(--color-gray-50);
+    margin-bottom: 2rem;
+  }
+
+  .detail-meta-core {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin: 0;
+  }
+
+  .detail-content {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .detail-content :not(pre) > code {
+    font-size: 0.85em;
+    padding: 0.1em 0.35em;
+    border-radius: 0.25rem;
+    background-color: color-mix(in oklab, var(--color-gray-20) 35%, white);
+  }
+
+  .post-navigation {
+    margin-top: 2rem;
+  }
+
+  .post-navigation .meta-nav {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  @media (max-width: 640px) {
+    .detail-card {
+      padding: 1.25rem;
+    }
+  }
+</style>

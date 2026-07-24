@@ -1,0 +1,16 @@
+---
+// Import icons libraries
+import { Icon } from 'astro-icon/components';
+
+// import the global site data
+import siteData from '../data/site.json';
+---
+
+<div class="social-contacts">
+  { Object.entries(siteData.social_links).map(([platform, url]) => (
+    <a href={url} target="_blank" rel="noopener noreferrer" id={platform} aria-label={`Link to ${platform} profile`}>
+      <Icon name={`tabler:brand-${platform}`} />
+    </a>
+    ))
+  }
+</div>

@@ -1,0 +1,132 @@
+---
+// src/components/TableOfContents.astro
+import type { MarkdownHeading } from 'astro';
+
+export interface Props {
+  headings: MarkdownHeading[];
+  className?: string;
+}
+
+const { headings, className = '' } = Astro.props;
+
+// Filter to include only h2 and h3 elements.
+const filteredHeadings = headings.filter(
+  (heading) => heading.depth === 2 || heading.depth === 3
+);
+
+interface TocItem extends MarkdownHeading {
+  children: TocItem[];
+}
+
+// Build a nested structure for the headings.
+const toc: TocItem[] = [];
+const parentMap = new Map<number, TocItem>();
+
+filteredHeadings.forEach((heading) => {
+  const item: TocItem = { ...heading, children: [] };
+
+  if (item.depth === 2) {
+    toc.push(item);
+    parentMap.set(2, item);
+  } else if (item.depth === 3) {
+    const parent = parentMap.get(2);
+    if (parent) {
+      parent.children.push(item);
+    } else {
+      // If an h3 appears before any h2, add it to the root level.
+      toc.push(item);
+    }
+  }
+});
+---
+
+<details class={`toc-container ${className}`} open>
+  <summary class="toc-summary">In this post</summary>
+  <ul class="toc-list">
+    {toc.map((heading) => (
+      <li class="toc-item">
+        <a href={`#${heading.slug}`} class="toc-link">
+          {heading.text}
+        </a>
+        {heading.children.length > 0 && (
+          <ul class="toc-sublist">
+            {heading.children.map((child) => (
+              <li class="toc-item">
+                <a href={`#${child.slug}`} class="toc-link toc-link-sub">
+                  {child.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ul>
+</details>
+
+<style>
+  /* Base customizable styles */
+  .toc-container {
+    background-color: var(--toc-bg, #f8f9fa);
+    border: 1px solid var(--toc-border, #e9ecef);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-block-end: 2rem;
+
+    grid-column: -1;
+    grid-row: 2;
+  }
+
+  .toc-summary {
+    font-weight: 600;
+    cursor: pointer;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Custom toggle arrow */
+  .toc-summary::before {
+    content: '▶';
+    font-size: 0.75rem;
+    margin-right: 0.75rem;
+    transition: transform 0.2s ease;
+  }
+
+  details[open] .toc-summary::before {
+    transform: rotate(90deg);
+  }
+
+  /* List layout */
+  .toc-list,
+  .toc-sublist {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+  }
+
+  .toc-sublist {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--toc-border, #e9ecef);
+    margin-left: 0.5rem;
+  }
+
+  .toc-item {
+    margin-bottom: 0.5rem;
+  }
+
+  .toc-link {
+    text-decoration: none;
+    color: var(--toc-link-color, #0056b3);
+  }
+
+  .toc-link:hover {
+    text-decoration: underline;
+  }
+
+  .toc-link-sub {
+    color: var(--toc-sublink-color, #495057);
+    font-size: 0.95em;
+  }
+</style>

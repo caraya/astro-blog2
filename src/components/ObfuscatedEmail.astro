@@ -1,0 +1,50 @@
+---
+// src/components/ObfuscatedEmail.astro
+interface Props {
+  email: string;
+  className?: string;
+}
+
+const { email, className } = Astro.props;
+
+// Compile-time Base64 encryption on the build server
+const encodedMailto = Buffer.from(`mailto:${email}`).toString("base64");
+---
+
+<a
+  href="#"
+  data-mailto={encodedMailto}
+  class={`obfuscated-link ${className ?? ""}`}
+  aria-label="Send email"
+>
+  <slot />
+</a>
+
+<script>
+  // Progressive enhancement logic executed in the browser
+  const obfuscatedLinks = document.querySelectorAll<HTMLAnchorElement>("a[data-mailto]");
+
+  obfuscatedLinks.forEach((link) => {
+    const base64Data = link.getAttribute("data-mailto");
+    if (!base64Data) return;
+
+    const handleDecryption = (): void => {
+      link.href = atob(base64Data);
+    };
+
+    const handleObfuscation = (): void => {
+      link.href = "#";
+    };
+
+    // Decode on user interaction
+    link.addEventListener("mouseenter", handleDecryption);
+    link.addEventListener("focus", handleDecryption);
+
+    // Revert when user interaction ends (mouse exit / loss of focus)
+    link.addEventListener("mouseleave", handleObfuscation);
+    link.addEventListener("blur", handleObfuscation);
+
+    // Safeguard click trigger
+    link.addEventListener("click", handleDecryption);
+  });
+</script>

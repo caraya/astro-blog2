@@ -1,0 +1,33 @@
+---
+import { getBlogPosts } from '../utils/blogPosts';
+
+interface Props {
+  count?: number;
+}
+
+const { count = 10 } = Astro.props;
+
+const allPosts = await getBlogPosts(import.meta.env.DEV);
+const latestPosts = allPosts.slice(0, count);
+---
+
+<!--
+   ---
+    // Import the component
+    import LatestPosts from '../components/LatestPosts.astro';
+    ---
+
+    Defaults to showing the 10 most recent posts
+    <LatestPosts />
+
+    Or you can configure it to show any number of posts!
+    <LatestPosts count={5} />
+ -->
+
+<ul class="latest-posts">
+  {latestPosts.map((post) => (
+    <li>
+      <a href={`/${post.id}`}>{post.data.title}</a>
+    </li>
+  ))}
+</ul>

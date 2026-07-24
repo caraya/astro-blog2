@@ -1,0 +1,20 @@
+{
+  "url": "https:/publishing-project.rivendellweb.net",
+  "site_name": "Carlos Araya's Portfolio",
+  "language": "en_US",
+  "social_links": {
+    "github": "https://github.com/caraya",
+    "linkedin": "https://www.linkedin.com/in/carlosaraya",
+    "twitter": "https://twitter.com/elrond25",
+    "bluesky": "https://bsky.app/profile/elrond25.bsky.social",
+    "mastodon": "https://mastodon.social/@elrond25"
+  },
+  "nav_links": {
+    "Home": "/",
+    "GitHub": "https://github.com/caraya",
+    "Guides & Tutorials": "https://guides-tutorials.rivendellweb.net/",
+    "projects": "https://projects.rivendellweb.net"
+  },
+  "email": "mailto:carlos.araya@gmail.com"
+
+}

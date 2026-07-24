@@ -1,0 +1,27 @@
+---
+// src/components/Excerpt.astro
+
+interface Props {
+  content?: string;
+  wordLimit?: number;
+}
+
+const { content, wordLimit = 100 } = Astro.props;
+
+if (!content) {
+  return null;
+}
+
+// 1. Clean the text: Strip HTML tags and Markdown syntax
+const cleanText = content
+  .replace(/<\/?[^>]+(>|$)/g, "") // Strips HTML tags
+  .replace(/[#*`_~\[\]()]/g, "") // Strips basic Markdown formatting
+  .trim();
+
+// 2. Split into words and truncate
+const words = cleanText.split(/\s+/);
+const isTruncated = words.length > wordLimit;
+const excerpt = words.slice(0, wordLimit).join(" ") + (isTruncated ? "..." : "");
+---
+
+<p class="excerpt">{excerpt}</p>

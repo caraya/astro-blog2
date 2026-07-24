@@ -1,0 +1,43 @@
+---
+// import the global site data
+import siteData from '../data/site.json';
+
+// Astro Components
+import Social from './Social.astro';
+import Nav from './Navigation.astro';
+import LatestPosts from '../components/LatestPosts.astro';
+
+---
+
+<!-- <footer>
+  <h2>Footer Placeholder</h2>
+</footer> -->
+
+
+      <footer>
+        <div class="left-footer">
+          <section class="social">
+            <h4>Social Me</h4>
+
+            <Social />
+          </section>
+
+          <section class="latest">
+            <h4>Latest Posts</h4>
+            <LatestPosts count={5}/>
+          </section>
+        </div>
+
+        <div class="right-footer">
+          <h4>Search</h4>
+          <form action="/search" method="GET" class="footer-search">
+            <input type="search" name="q" placeholder="Search..." required />
+            <button type="submit">Search</button>
+          </form>
+
+          <nav id="nav">
+            <h4>Links</h4>
+              <Nav />
+          </nav>
+        </div>
+      </footer>

@@ -1,0 +1,40 @@
+---
+// src/components/CategoryList.astro
+interface Props {
+  rawCategories: string | string[] | undefined;
+}
+
+const { rawCategories } = Astro.props;
+
+// ----------------------------------------------------------------------
+// Normalise `rawCategories` – it may be a CSV string **or** a YAML array.
+// ----------------------------------------------------------------------
+/***
+ * 1️⃣ If the prop is already an array (the case when front‑matter uses
+ *    the YAML block‑sequence syntax), keep it as‑is.
+ * 2️⃣ If it’s a string, split on commas.
+ * 3️⃣ Anything falsy (null/undefined) becomes an empty array.
+ */
+const categoryArray: string[] = Array.isArray(rawCategories)
+  ? rawCategories
+  : typeof rawCategories === "string"
+    ? rawCategories.split(",")
+    : [];
+
+// Trim, lower‑case, filter out empty items, then de‑duplicate.
+const categories = [
+  ...new Set(
+    categoryArray
+      .map((cat) => cat.trim().toLowerCase())
+      .filter(Boolean)
+  ),
+];
+---
+
+{categories.length > 0 && (
+  <ul class="post-tags iconfont">
+    {categories.map((category) => (
+      <li>{category}</li>
+    ))}
+  </ul>
+)}

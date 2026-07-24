@@ -1,0 +1,92 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getBlogPosts, paginateBlogPosts, POSTS_PER_PAGE, toBlogDate } from '../../utils/blogPosts';
+
+// import astro components
+import Header from '../../components/Header.astro';
+// import Footer from '../../components/Footer.astro';
+import Excerpt from '../../components/Excerpt.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await getBlogPosts(import.meta.env.DEV);
+  const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
+
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {
+    const currentPage = index + 2;
+    const { posts } = paginateBlogPosts(allPosts, currentPage, POSTS_PER_PAGE);
+
+    return {
+      params: { page: String(currentPage) },
+      props: { currentPage, totalPages, posts },
+    };
+  });
+}
+
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  posts: Awaited<ReturnType<typeof getBlogPosts>>;
+}
+
+const { currentPage, totalPages, posts } = Astro.props;
+---
+<Layout frontmatter={{ title: `Blog - Page ${currentPage}` }}>
+  <Header />
+
+  <main>
+    {posts.length === 0 ? (
+      <div class="no-posts">
+        <p>No posts have been published yet.</p>
+      </div>
+    ) : (
+      <>
+        <section class="posts-grid" aria-label="Blog posts">
+          {posts.map((post) => {
+            const postDate = post.data.date.toString();
+
+            return (
+              <article class="post-card">
+                <h2>
+                  <a href={`/${post.id}`}>{post.data.title}</a>
+                </h2>
+                <div class="post-meta">
+                  <div class="post-meta-core">
+                    <span>By {post.data.author}</span>
+                    <span aria-hidden="true">•</span>
+                    <time datetime={postDate}>
+                        {toBlogDate(post.data.date).toLocaleString('en-US', { dateStyle: 'long' })}
+                    </time>
+                  </div>
+                </div>
+
+                <Excerpt content={post.body} />
+
+                <div class="continue-reading">
+								  <a href={`/${post.id}`}>Continue reading &rarr;</a>
+								</div>
+              </article>
+            );
+          })}
+        </section>
+
+        <nav class="pagination" aria-label="Blog pagination">
+          <a class="pagination-link" href="/">
+            Newer posts
+          </a>
+          <span class="pagination-status">Page {currentPage} of {totalPages}</span>
+          {currentPage < totalPages ? (
+            <a class="pagination-link" href={`/page/${currentPage + 1}`}>
+              Older posts
+            </a>
+          ) : (
+            <span class="pagination-link is-disabled" aria-disabled="true">
+              Older posts
+            </span>
+          )}
+        </nav>
+      </>
+    )}
+  </main>
+  <Footer />
+</Layout>

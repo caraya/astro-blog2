@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+import headerImage from '../assets/cropped-Long_Room_Interior_Trinity_College_Dublin_Ireland.webp';
+---
+
+<Image
+	class="full-bleed-header"
+	loading="eager"
+	fetchpriority="high"
+	src={headerImage}
+	alt="Dublin Library" />
+
+<header>
+		<h1 class="blog-title"><a href="/">The Publishing project</a></h1>
+</header>

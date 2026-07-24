@@ -1,0 +1,1748 @@
+npm notice run npx
+npm notice run 'astro' build
+21:59:33 [astro-mermaid] Setting up Mermaid integration
+21:59:33 [astro-mermaid] Existing rehype plugins:
+21:59:33 [astro-mermaid] Skipping ELK support
+21:59:33 [content] Syncing content
+21:59:34 [content] Synced content
+21:59:34 [types] Generated 840ms
+21:59:34 [build] output: "static"
+21:59:34 [build] mode: "static"
+21:59:34 [build] directory: /Users/carlos/code/projects-2025/astro-blog2/dist/
+21:59:34 [build] Collecting build info...
+21:59:34 [build] ✓ Completed in 860ms.
+21:59:34 [build] Building static entrypoints...
+21:59:35 [vite] ✓ built in 1.65s
+21:59:37 [WARN] [vite] [plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+21:59:37 [vite] ✓ built in 1.27s
+21:59:37 [build] Rearranging server assets...
+
+ generating static routes 
+21:59:37   ├─ /page/2/index.html (+20ms) 
+21:59:37   ├─ /page/3/index.html (+4ms) 
+21:59:37   ├─ /page/4/index.html (+5ms) 
+21:59:37   ├─ /page/5/index.html (+4ms) 
+21:59:37   ├─ /page/6/index.html (+3ms) 
+21:59:37   ├─ /page/7/index.html (+3ms) 
+21:59:37   ├─ /page/8/index.html (+3ms) 
+21:59:37   ├─ /page/9/index.html (+10ms) 
+21:59:37   ├─ /page/10/index.html (+3ms) 
+21:59:37   ├─ /page/11/index.html (+2ms) 
+21:59:37   ├─ /page/12/index.html (+2ms) 
+21:59:37   ├─ /page/13/index.html (+2ms) 
+21:59:37   ├─ /page/14/index.html (+2ms) 
+21:59:37   ├─ /page/15/index.html (+2ms) 
+21:59:37   ├─ /page/16/index.html (+2ms) 
+21:59:37   ├─ /page/17/index.html (+2ms) 
+21:59:37   ├─ /page/18/index.html (+2ms) 
+21:59:37   ├─ /page/19/index.html (+2ms) 
+21:59:37   ├─ /page/20/index.html (+2ms) 
+21:59:37   ├─ /page/21/index.html (+2ms) 
+21:59:37   ├─ /page/22/index.html (+2ms) 
+21:59:37   ├─ /page/23/index.html (+2ms) 
+21:59:37   ├─ /page/24/index.html (+2ms) 
+21:59:37   ├─ /page/25/index.html (+2ms) 
+21:59:37   ├─ /page/26/index.html (+2ms) 
+21:59:37   ├─ /page/27/index.html (+2ms) 
+21:59:37   ├─ /page/28/index.html (+2ms) 
+21:59:37   ├─ /page/29/index.html (+3ms) 
+21:59:37   ├─ /page/30/index.html (+2ms) 
+21:59:37   ├─ /page/31/index.html (+2ms) 
+21:59:37   ├─ /page/32/index.html (+2ms) 
+21:59:37   ├─ /page/33/index.html (+2ms) 
+21:59:37   ├─ /page/34/index.html (+2ms) 
+21:59:37   ├─ /page/35/index.html (+2ms) 
+21:59:37   ├─ /page/36/index.html (+2ms) 
+21:59:37   ├─ /page/37/index.html (+2ms) 
+21:59:37   ├─ /page/38/index.html (+2ms) 
+21:59:37   ├─ /page/39/index.html (+2ms) 
+21:59:37   ├─ /page/40/index.html (+2ms) 
+21:59:37   ├─ /page/41/index.html (+2ms) 
+21:59:37   ├─ /page/42/index.html (+2ms) 
+21:59:37   ├─ /page/43/index.html (+2ms) 
+21:59:37   ├─ /page/44/index.html (+3ms) 
+21:59:37   ├─ /page/45/index.html (+2ms) 
+21:59:37   ├─ /page/46/index.html (+5ms) 
+21:59:37   ├─ /page/47/index.html (+3ms) 
+21:59:37   ├─ /page/48/index.html (+5ms) 
+21:59:37   ├─ /page/49/index.html (+4ms) 
+21:59:37   ├─ /page/50/index.html (+2ms) 
+21:59:37   ├─ /page/51/index.html (+4ms) 
+21:59:37   ├─ /page/52/index.html (+2ms) 
+21:59:37   ├─ /page/53/index.html (+2ms) 
+21:59:37   ├─ /page/54/index.html (+2ms) 
+21:59:37   ├─ /page/55/index.html (+2ms) 
+21:59:37   ├─ /page/56/index.html (+2ms) 
+21:59:37   ├─ /page/57/index.html (+2ms) 
+21:59:37   ├─ /page/58/index.html (+2ms) 
+21:59:37   ├─ /page/59/index.html (+2ms) 
+21:59:37   ├─ /page/60/index.html (+2ms) 
+21:59:37   ├─ /page/61/index.html (+2ms) 
+21:59:37   ├─ /page/62/index.html (+2ms) 
+21:59:37   ├─ /page/63/index.html (+2ms) 
+21:59:37   ├─ /page/64/index.html (+2ms) 
+21:59:37   ├─ /page/65/index.html (+1ms) 
+21:59:37   ├─ /page/66/index.html (+2ms) 
+21:59:37   ├─ /page/67/index.html (+1ms) 
+21:59:37   ├─ /page/68/index.html (+2ms) 
+21:59:37   ├─ /page/69/index.html (+2ms) 
+21:59:37   ├─ /page/70/index.html (+2ms) 
+21:59:37   ├─ /page/71/index.html (+2ms) 
+21:59:37   ├─ /page/72/index.html (+2ms) 
+21:59:37   ├─ /page/73/index.html (+2ms) 
+21:59:37   ├─ /page/74/index.html (+2ms) 
+21:59:37   ├─ /page/75/index.html (+2ms) 
+21:59:37   ├─ /page/76/index.html (+2ms) 
+21:59:37   ├─ /page/77/index.html (+2ms) 
+21:59:37   ├─ /page/78/index.html (+2ms) 
+21:59:37   ├─ /page/79/index.html (+2ms) 
+21:59:37   ├─ /page/80/index.html (+2ms) 
+21:59:37   ├─ /page/81/index.html (+2ms) 
+21:59:37   ├─ /page/82/index.html (+2ms) 
+21:59:37   ├─ /page/83/index.html (+2ms) 
+21:59:37   ├─ /page/84/index.html (+2ms) 
+21:59:37   ├─ /page/85/index.html (+2ms) 
+21:59:37   ├─ /page/86/index.html (+2ms) 
+21:59:37   ├─ /page/87/index.html (+2ms) 
+21:59:37   ├─ /page/88/index.html (+2ms) 
+21:59:37   ├─ /page/89/index.html (+2ms) 
+21:59:37   ├─ /page/90/index.html (+2ms) 
+21:59:37   ├─ /page/91/index.html (+2ms) 
+21:59:37   ├─ /page/92/index.html (+2ms) 
+21:59:37   ├─ /page/93/index.html (+2ms) 
+21:59:37   ├─ /page/94/index.html (+6ms) 
+21:59:37   ├─ /page/95/index.html (+3ms) 
+21:59:37   ├─ /page/96/index.html (+5ms) 
+21:59:37   ├─ /page/97/index.html (+3ms) 
+21:59:37   ├─ /page/98/index.html (+6ms) 
+21:59:37   ├─ /page/99/index.html (+3ms) 
+21:59:37   ├─ /page/100/index.html (+2ms) 
+21:59:37   ├─ /page/101/index.html (+3ms) 
+21:59:37   ├─ /page/102/index.html (+3ms) 
+21:59:37   ├─ /page/103/index.html (+2ms) 
+21:59:37   ├─ /page/104/index.html (+2ms) 
+21:59:37   ├─ /page/105/index.html (+2ms) 
+21:59:37   ├─ /page/106/index.html (+2ms) 
+21:59:37   ├─ /page/107/index.html (+2ms) 
+21:59:37   ├─ /page/108/index.html (+2ms) 
+21:59:37   ├─ /page/109/index.html (+2ms) 
+21:59:37   ├─ /page/110/index.html (+2ms) 
+21:59:37   ├─ /page/111/index.html (+2ms) 
+21:59:37   ├─ /page/112/index.html (+1ms) 
+21:59:37   ├─ /page/113/index.html (+2ms) 
+21:59:37   ├─ /page/114/index.html (+3ms) 
+21:59:37   ├─ /page/115/index.html (+3ms) 
+21:59:37   ├─ /page/116/index.html (+4ms) 
+21:59:37   ├─ /page/117/index.html (+5ms) 
+21:59:37   ├─ /page/118/index.html (+3ms) 
+21:59:37   ├─ /page/119/index.html (+3ms) 
+21:59:37   ├─ /page/120/index.html (+3ms) 
+21:59:37   ├─ /page/121/index.html (+2ms) 
+21:59:37   ├─ /index.html (+115ms) 
+21:59:38   ├─ /a-declarative-web/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 15 min read
+ (+112ms) 
+21:59:38   ├─ /a-deep-dive-into-cross-origin-isolation/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 16 min read
+ (+97ms) 
+21:59:38   ├─ /a-deep-dive-into-modern-fonts/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 14 min read
+ (+101ms) 
+21:59:38   ├─ /a-frame-3d-markup/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+140ms) 
+21:59:38   ├─ /a-history-of-css-resets/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+103ms) 
+21:59:38   ├─ /a-look-at-web-workers/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+91ms) 
+21:59:38   ├─ /a-new-baseline-for-front-end-development/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+91ms) 
+21:59:38   ├─ /a-new-way-to-create-block-plugins/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+85ms) 
+21:59:38   ├─ /abstractions-versus-underlying-structures/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+96ms) 
+21:59:38   ├─ /accessibility-best-practices/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+96ms) 
+21:59:39   ├─ /accessibility-introduction/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+95ms) 
+21:59:39   ├─ /accessibility-its-more-than-the-tech/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+97ms) 
+21:59:39   ├─ /accessibility-test-your-content/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+91ms) 
+21:59:39   ├─ /accessibility-the-problem-and-how-to-fix-it/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+86ms) 
+21:59:39   ├─ /add-inline-scripts-in-wordpress/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+103ms) 
+21:59:39   ├─ /add-speech-to-form-interactions/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+92ms) 
+21:59:39   ├─ /adding-amp-to-a-wordpress-blog/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+88ms) 
+21:59:39   ├─ /adding-async-defer-to-wordpress-site/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+97ms) 
+21:59:39   ├─ /adding-audio-feedback-cues-to-web-forms/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+96ms) 
+21:59:39   ├─ /adding-browserslist-support-to-your-project/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+129ms) 
+21:59:40   ├─ /adding-cpt-and-taxonomies-to-an-existing-theme/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+107ms) 
+21:59:40   ├─ /adding-fonts-to-theme-json-for-wordpress-6-x/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+96ms) 
+21:59:40   ├─ /adding-information-based-on-the-type-of-resource/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+88ms) 
+21:59:40   ├─ /adding-jwt-to-wordpress/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+93ms) 
+21:59:40   ├─ /adding-math-formulas-to-web-pages/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+91ms) 
+21:59:40   ├─ /adding-patterns-in-theme-json/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tag', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+90ms) 
+21:59:40   ├─ /adding-transparency-to-hex-colors/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+94ms) 
+21:59:40   ├─ /additional-considerations-for-oop-plugin-development/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+104ms) 
+21:59:40   ├─ /additional-syntax-for-font-face/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+110ms) 
+21:59:40   ├─ /additional-updates-for-my-gulp-build-scripts/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+105ms) 
+21:59:41   ├─ /advanced-typography/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+96ms) 
+21:59:41   ├─ /ai-and-assistants/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 13 min read
+ (+84ms) 
+21:59:41   ├─ /ai-apps-with-gemini3-langchain-and-langserve/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+101ms) 
+21:59:41   ├─ /ai-generated-ui-and-the-accessibility-prompt-problem/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 12 min read
+ (+92ms) 
+21:59:41   ├─ /ai-programming-beyond-vibe-coding/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+97ms) 
+21:59:41   ├─ /ai-prompts-as-requirements/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+91ms) 
+21:59:41   ├─ /ai-sumarizer-custom-element/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+93ms) 
+21:59:41   ├─ /alt-text-in-css-background-images/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+87ms) 
+21:59:41   ├─ /alternate-and-user-style-sheets/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+104ms) 
+21:59:41   ├─ /alternate-stylesheets-still-a-thing/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+96ms) 
+21:59:41   ├─ /amp-hope-and-fears-part-1/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+86ms) 
+21:59:42   ├─ /amp-hope-and-fears-part-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 19 min read
+ (+93ms) 
+21:59:42   ├─ /amp-hope-and-fears-part-3/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+88ms) 
+21:59:42   ├─ /an-interesting-image-css-reset/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'youtube', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+84ms) 
+21:59:42   ├─ /analyzing-a-font-with-wakamaifondue/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+89ms) 
+21:59:42   ├─ /animating-display-none-and-height-auto/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'youtube', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+93ms) 
+21:59:42   ├─ /animating-variable-fonts/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+86ms) 
+21:59:42   ├─ /animating-variable-fonts-2023/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+95ms) 
+21:59:42   ├─ /animation-and-effects-with-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+91ms) 
+21:59:42   ├─ /annotating-a-wordpress-site-with-hypothesis/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+82ms) 
+21:59:42   ├─ /another-look-at-my-gulp-build-system/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+90ms) 
+21:59:42   ├─ /another-set-of-possible-color-palettes/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+89ms) 
+21:59:43   ├─ /application-shells-and-service-workers-building-manually/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+83ms) 
+21:59:43   ├─ /application-shells-and-service-workers-caching-strategies/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+90ms) 
+21:59:43   ├─ /application-shells-and-service-workers-introduction/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+90ms) 
+21:59:43   ├─ /application-shells-and-service-workers-links-and-resources/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+84ms) 
+21:59:43   ├─ /application-shells-and-service-workers-sw-toolbox-and-polymer/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+93ms) 
+21:59:43   ├─ /archival-web/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 16 min read
+ (+94ms) 
+21:59:43   ├─ /archiving-and-storing-content/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+83ms) 
+21:59:43   ├─ /arti-directed-layouts-and-css-grid/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 12 min read
+ (+89ms) 
+21:59:43   ├─ /asking-the-user-for-permission/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+88ms) 
+21:59:43   ├─ /asm-js-and-web-assembly/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 13 min read
+ (+84ms) 
+21:59:43   ├─ /aspect-ratio-in-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+91ms) 
+21:59:43   ├─ /async-and-defer-scripts/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+127ms) 
+21:59:44   ├─ /async-clipboard-api/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+114ms) 
+21:59:44   ├─ /async-functions-better-async/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+108ms) 
+21:59:44   ├─ /asynchronous-javascript-introduction-and-synchronous-code/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+101ms) 
+21:59:44   ├─ /asynchronous-javascript-settimeout-and-setinterval/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+105ms) 
+21:59:44   ├─ /athena-revisiting-a-possible-digital-publishing-flow/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+97ms) 
+21:59:44   ├─ /athena-what-an-ofline-web-reading-experience-may-look-like/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 17 min read
+ (+103ms) 
+21:59:44   ├─ /auto-reload-content-as-you-work/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+107ms) 
+21:59:44   ├─ /autoload-patterns-from-the-pattern-directory/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+101ms) 
+21:59:44   ├─ /automating-accessibility-testing/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+95ms) 
+21:59:45   ├─ /automating-image-work/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+100ms) 
+21:59:45   ├─ /automating-wordpress-translations/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+101ms) 
+21:59:45   ├─ /av1-video-in-browsers/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+103ms) 
+21:59:45   ├─ /avoiding-overengineering-how-to-balance-simplicity-and-complexity/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+97ms) 
+21:59:45   ├─ /axios-toolkit-for-wordpress-api-working-with-custom-post-types/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+104ms) 
+21:59:45   ├─ /axios-toolkit-for-wordpress-rest-api/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+103ms) 
+21:59:45   ├─ /baking-accessibility-into-our-web-workflows/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+99ms) 
+21:59:45   ├─ /balancing-content-with-flexbox/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+98ms) 
+21:59:45   ├─ /balancing-text-in-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+106ms) 
+21:59:45   ├─ /baseline-for-javascript-development-modules-in-the-browser-without-transpilation/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+108ms) 
+21:59:46   ├─ /baseline-web-component/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+104ms) 
+21:59:46   ├─ /basic-grid-layouts/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+96ms) 
+21:59:46   ├─ /basic-performance-analysis-1-webpagetest/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+106ms) 
+21:59:46   ├─ /basic-performance-analysis-2-corewebvitals/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+105ms) 
+21:59:46   ├─ /basic-performance-analysis-3-lighthouse/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+106ms) 
+21:59:46   ├─ /basic-performance-analysis-4-user-perception/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+98ms) 
+21:59:46   ├─ /bazel-build-system-backend-code-even-more-choices/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+105ms) 
+21:59:46   ├─ /bazel-build-system-frontend-styling/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+106ms) 
+21:59:46   ├─ /bazel-build-system-overall-notes-and-observations/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+106ms) 
+21:59:46   ├─ /bazel-build-system-typescript-and-node-js/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+105ms) 
+21:59:47   ├─ /be-mindful-of-ch-units/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+112ms) 
+21:59:47   ├─ /be-mindful-of-jargon/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+104ms) 
+21:59:47   ├─ /be-mindful-of-the-reading-order/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+102ms) 
+21:59:47   ├─ /before-and-after-pseudo-elements/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+99ms) 
+21:59:47   ├─ /better-color-contrast-on-the-web/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+108ms) 
+21:59:47   ├─ /better-links-for-print/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+113ms) 
+21:59:47   ├─ /better-markdown-from-node/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+104ms) 
+21:59:47   ├─ /blocking-google-from-indexing-your-site/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+94ms) 
+21:59:47   ├─ /blockly-as-a-programming-teaching-tool/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+105ms) 
+21:59:48   ├─ /books-as-web-apps-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 29 min read
+ (+102ms) 
+21:59:48   ├─ /breaking-down-long-tasks-in-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+101ms) 
+21:59:48   ├─ /brotli-compression-streams/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+95ms) 
+21:59:48   ├─ /browser-default-stylesheets/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+104ms) 
+21:59:48   ├─ /build-a-card-component/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+108ms) 
+21:59:48   ├─ /build-a-pattern-library/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'templateEngineOverride', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+283ms) 
+21:59:48   ├─ /building-a-3d-scene/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+107ms) 
+21:59:48   ├─ /building-a-backend-using-express-js/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+120ms) 
+21:59:49   ├─ /building-a-custom-build-system/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+112ms) 
+21:59:49   ├─ /building-a-fuller-starter-kit/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+104ms) 
+21:59:49   ├─ /building-a-lightweight-youtube-embed-component/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'mermaid', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+97ms) 
+21:59:49   ├─ /building-a-network-navigator/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+101ms) 
+21:59:49   ├─ /building-a-performance-test-suite/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'templateEngineOverride', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+104ms) 
+21:59:49   ├─ /building-a-postcss-workflow/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+101ms) 
+21:59:49   ├─ /building-a-postcss-workflow-part-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+95ms) 
+21:59:49   ├─ /building-a-recipe-database/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+101ms) 
+21:59:49   ├─ /building-a-reset/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+105ms) 
+21:59:49   ├─ /building-a-stylesheet-using-cascade-layers/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+102ms) 
+21:59:50   ├─ /building-a-text-to-speech-custom-element/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'mermaid', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+97ms) 
+21:59:50   ├─ /building-a-utility-toolkit/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+105ms) 
+21:59:50   ├─ /building-a-vscode-like-editor/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+198ms) 
+21:59:50   ├─ /building-a-website-to-host-codelabs/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+148ms) 
+21:59:50   ├─ /building-ai-chrome-extensions/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 17 min read
+ (+109ms) 
+21:59:50   ├─ /building-an-ai-powered-digital-object-repository/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'mermaid', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+115ms) 
+21:59:50   ├─ /building-an-app-builder-tool/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+101ms) 
+21:59:50   ├─ /building-an-express-app-cretinga-database-in-express/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+99ms) 
+21:59:51   ├─ /building-an-xapi-profile/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+92ms) 
+21:59:51   ├─ /building-gutenberg-blocks-part-1/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+106ms) 
+21:59:51   ├─ /building-gutenberg-blocks-part-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+99ms) 
+21:59:51   ├─ /building-gutenberg-blocks-part-3/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+98ms) 
+21:59:51   ├─ /building-gutenberg-blocks-part-4/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+99ms) 
+21:59:51   ├─ /building-long-form-articles-on-the-web/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+99ms) 
+21:59:51   ├─ /building-long-form-content-for-the-web-use-space-wisely/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+103ms) 
+21:59:51   ├─ /building-long-form-content-on-the-web-columns/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+99ms) 
+21:59:51   ├─ /building-long-form-content-on-the-web-font-availability-and-usage/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+92ms) 
+21:59:51   ├─ /building-long-form-content-on-the-web-font-size-and-reading-distance/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+102ms) 
+21:59:52   ├─ /building-long-form-content-on-the-web-justification-and-hyphenation/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+102ms) 
+21:59:52   ├─ /building-long-form-content-on-the-web-opentype-features/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+107ms) 
+21:59:52   ├─ /building-long-form-content-on-the-web-selecting-fonts-is-not-as-simple-as-it-seems/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+99ms) 
+21:59:52   ├─ /building-long-form-content-on-the-web-variable-fonts/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+99ms) 
+21:59:52   ├─ /building-xml-programmatically/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+100ms) 
+21:59:52   ├─ /caching-dash-video/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+96ms) 
+21:59:52   ├─ /calculating-font-overrides/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+95ms) 
+21:59:52   ├─ /can-the-web-look-like-print-interesting-things-coming-down-the-pipeline/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+103ms) 
+21:59:52   ├─ /can-the-web-look-like-print-tools-and-techniques/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+104ms) 
+21:59:52   ├─ /can-the-web-look-like-print-why-not/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+100ms) 
+21:59:53   ├─ /can-we-unsass-yet/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+97ms) 
+21:59:53   ├─ /caniuse-web-component/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+101ms) 
+21:59:53   ├─ /case-study-building-a-polymer-application/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+102ms) 
+21:59:53   ├─ /case-study-building-polymer-applications-part-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+102ms) 
+21:59:53   ├─ /case-study-building-polymer-applications-part-3/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+96ms) 
+21:59:53   ├─ /case-study-mobi-publishing-from-docbook/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+102ms) 
+21:59:53   ├─ /cds-2020-moving-to-modern-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+101ms) 
+21:59:53   ├─ /cds-2020-new-css-properties-for-performance/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+97ms) 
+21:59:53   ├─ /cds-2020-new-pwa-goodness-arriving-soonish/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+150ms) 
+21:59:53   ├─ /center-vertically-and-horizontally/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+103ms) 
+21:59:54   ├─ /centering-things-with-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+104ms) 
+21:59:54   ├─ /centering-with-flexbox/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+101ms) 
+21:59:54   ├─ /checking-out-a-tag-from-a-git-repo/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+95ms) 
+21:59:54   ├─ /checking-web-compatibility/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+98ms) 
+21:59:54   ├─ /chip-kidd-at-ted/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+102ms) 
+21:59:54   ├─ /choosing-an-architecture-for-component-development/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 13 min read
+ (+97ms) 
+21:59:54   ├─ /choosing-your-tools-smartly-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+93ms) 
+21:59:54   ├─ /chroma-js-another-color-manipulation-library/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+99ms) 
+21:59:54   ├─ /chrome-built-in-ai/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+101ms) 
+21:59:54   ├─ /chrome-devtools-network-tab/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+112ms) 
+21:59:55   ├─ /chrome-extensions-tutorial/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+96ms) 
+21:59:55   ├─ /chromium-security-architecture-the-rule-of-two-and-mojo/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+98ms) 
+21:59:55   ├─ /clean-way-to-install-npm-packages/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+104ms) 
+21:59:55   ├─ /client-hints-what-they-are-how-do-they-work-why-do-we-need-them/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+98ms) 
+21:59:55   ├─ /code-defensive-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+95ms) 
+21:59:55   ├─ /codec-comparison-2-pass-encoding/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+106ms) 
+21:59:55   ├─ /codec-testing-and-comparison/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+102ms) 
+21:59:55   ├─ /coding-css-defensively/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+103ms) 
+21:59:55   ├─ /color/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+96ms) 
+21:59:55   ├─ /color-contrast-in-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+97ms) 
+21:59:56   ├─ /color-fonts/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+101ms) 
+21:59:56   ├─ /color-fonts-again-with-feeling/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+104ms) 
+21:59:56   ├─ /color-interpolation-and-hue-interpolation/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+93ms) 
+21:59:56   ├─ /color-js-a-css-color-tool-in-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+98ms) 
+21:59:56   ├─ /color-tools-and--experiments-ccolor-converter/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+98ms) 
+21:59:56   ├─ /coloring-text-with-gradients/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+96ms) 
+21:59:56   ├─ /colors-in-css-contrast-and-testing/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+93ms) 
+21:59:56   ├─ /combining-houdini-apis/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+101ms) 
+21:59:56   ├─ /command-line-tools-in-local-by-flywheel/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+97ms) 
+21:59:56   ├─ /comparing-compression-methods/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+98ms) 
+21:59:57   ├─ /compiling-chromium-from-source/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+92ms) 
+21:59:57   ├─ /compiling-go-code/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+98ms) 
+21:59:57   ├─ /composition-and-web-components/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+100ms) 
+21:59:57   ├─ /compressing-avif-images-with-gulp/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+98ms) 
+21:59:57   ├─ /compressing-video-is-more-than-taking-bits-out/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 18 min read
+ (+93ms) 
+21:59:57   ├─ /concepts-and-examples-of-responsive-images/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+97ms) 
+21:59:57   ├─ /conditional-css-using-css-feature-queries/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+99ms) 
+21:59:57   ├─ /conected-city/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+98ms) 
+21:59:57   ├─ /conference-report-books-in-browsers/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'vimeo', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+92ms) 
+21:59:57   ├─ /conference-reports-an-event-apart-san-francisco/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 13 min read
+ (+98ms) 
+21:59:58   ├─ /configurable-reading-options/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+101ms) 
+21:59:58   ├─ /configuring-typescript-for-new-projects/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+102ms) 
+21:59:58   ├─ /configuring-vuepress-default-theme/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+96ms) 
+21:59:58   ├─ /constructable-style-sheets/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+99ms) 
+21:59:58   ├─ /container-queries-and-new-css-to-go-along-with-them/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+99ms) 
+21:59:58   ├─ /converting-commonjs-to-esmodules/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+106ms) 
+21:59:58   ├─ /converting-markdown-to-slides/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+93ms) 
+21:59:58   ├─ /copying-homebrew-to-a-new-mac/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+100ms) 
+21:59:58   ├─ /crafting-type-for-the-web/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+99ms) 
+21:59:58   ├─ /craig-mods-do-lecture/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+118ms) 
+21:59:59   ├─ /crap-in-design/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+94ms) 
+21:59:59   ├─ /crazy-layouts/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 18 min read
+ (+111ms) 
+21:59:59   ├─ /create-a-translation-custom-element/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+99ms) 
+21:59:59   ├─ /creating-a-color-library/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+100ms) 
+21:59:59   ├─ /creating-a-css-reset/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+96ms) 
+21:59:59   ├─ /creating-a-custom-admonition-web-component/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+100ms) 
+21:59:59   ├─ /creating-a-default-pen-for-codepen/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+99ms) 
+21:59:59   ├─ /creating-a-font-inspector/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+99ms) 
+21:59:59   ├─ /creating-a-github-publishing-workflow/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+109ms) 
+21:59:59   ├─ /creating-a-horizontal-nav-menu/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+112ms) 
+22:00:00   ├─ /creating-a-json-schema/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+109ms) 
+22:00:00   ├─ /creating-a-login-system-for-web-apps/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+102ms) 
+22:00:00   ├─ /creating-a-print-stylesheet/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+97ms) 
+22:00:00   ├─ /creating-a-technology-glossary/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+99ms) 
+22:00:00   ├─ /creating-an-eleventy-publishing-calendar-plugin/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'mermaid', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+100ms) 
+22:00:00   ├─ /creating-an-eleventy-website-part-1/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+102ms) 
+22:00:00   ├─ /creating-an-eleventy-website-part-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+94ms) 
+22:00:00   ├─ /creating-an-encoder-ladder/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+99ms) 
+22:00:00   ├─ /creating-an-in-browser-editor/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+101ms) 
+22:00:00   ├─ /creating-an-oklch-generator-tool/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+101ms) 
+22:00:01   ├─ /creating-and-running-your-own-homebrew-tap/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 12 min read
+ (+95ms) 
+22:00:01   ├─ /creating-arrays-from-node-lists/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+103ms) 
+22:00:01   ├─ /creating-color-palettes-with-color-mix/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+105ms) 
+22:00:01   ├─ /creating-custom-buttons-1-action-buttons/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+97ms) 
+22:00:01   ├─ /creating-custom-buttons-2-toggle-buttons/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+93ms) 
+22:00:01   ├─ /creating-editable-live-code-for-presentations/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+101ms) 
+22:00:01   ├─ /creating-epub3-content-opf-file/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+102ms) 
+22:00:01   ├─ /creating-gradient-colored-text/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+103ms) 
+22:00:01   ├─ /creating-gutenberg-parts-and-templates-manually/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+109ms) 
+22:00:01   ├─ /creating-hashes-in-node/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+104ms) 
+22:00:02   ├─ /creating-hls-content/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+106ms) 
+22:00:02   ├─ /creating-print-css-stylesheets/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+99ms) 
+22:00:02   ├─ /creating-printable-content-from-the-web/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 24 min read
+ (+96ms) 
+22:00:02   ├─ /creating-sane-css-defaults/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+101ms) 
+22:00:02   ├─ /creating-svg-sprites/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+101ms) 
+22:00:02   ├─ /creating-the-backend-for-a-web-app-in-go/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+100ms) 
+22:00:02   ├─ /creating-the-right-kind-of-wow/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+98ms) 
+22:00:02   ├─ /critical-path-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+99ms) 
+22:00:02   ├─ /cropping-images-in-css-with-object-fit/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+100ms) 
+22:00:02   ├─ /css-and-javascript-working-together/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+101ms) 
+22:00:03   ├─ /css-aspect-ratio/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+113ms) 
+22:00:03   ├─ /css-clipping-and-masking/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+160ms) 
+22:00:03   ├─ /css-colors/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+105ms) 
+22:00:03   ├─ /css-containment/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+98ms) 
+22:00:03   ├─ /css-containment-and-container-queries/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+104ms) 
+22:00:03   ├─ /css-display-positioning-and-related-concepts/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+101ms) 
+22:00:03   ├─ /css-font-variant-attribute/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+98ms) 
+22:00:03   ├─ /css-function/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+98ms) 
+22:00:03   ├─ /css-grid-template-areas/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+103ms) 
+22:00:04   ├─ /css-houdini-css-typed-object-model/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+102ms) 
+22:00:04   ├─ /css-houdini-present-and-future-of-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+102ms) 
+22:00:04   ├─ /css-houdini-properties-values/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+99ms) 
+22:00:04   ├─ /css-if-function/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+106ms) 
+22:00:04   ├─ /css-image-set/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+103ms) 
+22:00:04   ├─ /css-is-learning-from-sass/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+102ms) 
+22:00:04   ├─ /css-js-coverage-in-chrome-devtools/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+148ms) 
+22:00:04   ├─ /css-length-units/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+107ms) 
+22:00:04   ├─ /css-list-markers/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+109ms) 
+22:00:05   ├─ /css-logical-properties/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+106ms) 
+22:00:05   ├─ /css-logical-property-shorthand-attributes/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+100ms) 
+22:00:05   ├─ /css-math-functions-min-max-and-clamp/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+103ms) 
+22:00:05   ├─ /css-media-queries-in-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+103ms) 
+22:00:05   ├─ /css-modules-and-constructable-stylesheets/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+102ms) 
+22:00:05   ├─ /css-namespaces-if-youre-not-scared-of-xml/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+96ms) 
+22:00:05   ├─ /css-paged-media/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+103ms) 
+22:00:05   ├─ /css-paged-media-in-the-browser/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+103ms) 
+22:00:05   ├─ /css-paged-media-update/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 13 min read
+ (+100ms) 
+22:00:05   ├─ /css-regions-exclusions-shapes-and-new-publishing-paradigms/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 15 min read
+ (+101ms) 
+22:00:06   ├─ /css-regions-part-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+104ms) 
+22:00:06   ├─ /css-relative-colors-and-building-color-palettes/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+108ms) 
+22:00:06   ├─ /css-revert-rule-a-more-lenient-reset/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+101ms) 
+22:00:06   ├─ /css-shapes-an-update-and-an-expansion/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+101ms) 
+22:00:06   ├─ /css-shapes-once-more-with-feeling/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+102ms) 
+22:00:06   ├─ /css-support-and-namespaces/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+104ms) 
+22:00:06   ├─ /css-units-of-measurement/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+108ms) 
+22:00:06   ├─ /css-variables-for-handling-fonts/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+117ms) 
+22:00:06   ├─ /css-what-we-are-missing/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 12 min read
+ (+108ms) 
+22:00:07   ├─ /custom-controls-for-html5-video/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+95ms) 
+22:00:07   ├─ /custom-counter-styles/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+103ms) 
+22:00:07   ├─ /custom-elements-revisited-once-more/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+104ms) 
+22:00:07   ├─ /custom-html5-video-playlist/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+99ms) 
+22:00:07   ├─ /custom-list-styles-in-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+95ms) 
+22:00:07   ├─ /custom-loops-in-wordpress/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+101ms) 
+22:00:07   ├─ /custom-material-design-typography/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+102ms) 
+22:00:07   ├─ /custom-media-queries/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+100ms) 
+22:00:07   ├─ /customizing-gutenberg-features-from-functions-php/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+95ms) 
+22:00:07   ├─ /customizing-markdown-it/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+99ms) 
+22:00:08   ├─ /customizing-wordpress/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+103ms) 
+22:00:08   ├─ /cutting-the-mustard/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+104ms) 
+22:00:08   ├─ /cutting-the-mustard-then-and-now/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+108ms) 
+22:00:08   ├─ /data-attributes/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+107ms) 
+22:00:08   ├─ /date-vs-temporal/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+103ms) 
+22:00:08   ├─ /dealing-with-significant-white-space-in-html/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+101ms) 
+22:00:08   ├─ /dealing-with-third-party-libraries/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+95ms) 
+22:00:08   ├─ /deep-dive-into-color-mix/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+101ms) 
+22:00:08   ├─ /deep-dive-on-promises/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+102ms) 
+22:00:08   ├─ /deep-dive-opentype-features-in-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+100ms) 
+22:00:09   ├─ /deep-dive-origin-trials/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'mermaid', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+95ms) 
+22:00:09   ├─ /deep-dive-the-sanitizer-api/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'mermaid', 'minutesRead' ]
+DEBUG minutesRead: 18 min read
+ (+103ms) 
+22:00:09   ├─ /default-font-stack/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+108ms) 
+22:00:09   ├─ /default-parameters-and-sibling-parameters/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+102ms) 
+22:00:09   ├─ /defensive-coding-default-parameters/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+96ms) 
+22:00:09   ├─ /defining-custom-properties-from-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+102ms) 
+22:00:09   ├─ /defining-multiple-syntaxes-in-css-variables/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+124ms) 
+22:00:09   ├─ /design-brainstorm/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'mermaid', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+100ms) 
+22:00:09   ├─ /design-for-bad-performance/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'minutesRead' ]
+DEBUG minutesRead: 15 min read
+ (+96ms) 
+22:00:09   ├─ /design-for-the-lower-end-of-the-spectrum-part-1/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+100ms) 
+22:00:10   ├─ /design-for-the-lower-end-of-the-spectrum-part-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+103ms) 
+22:00:10   ├─ /design-for-the-lower-end-of-the-spectrum-part-3/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+103ms) 
+22:00:10   ├─ /designing-a-service-worker/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+98ms) 
+22:00:10   ├─ /designing-predictable-web-component-apis/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 18 min read
+ (+107ms) 
+22:00:10   ├─ /designing-with-grids/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+138ms) 
+22:00:10   ├─ /designing-without-breakpoints-is-it-possible/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+102ms) 
+22:00:10   ├─ /destructuring-in-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+93ms) 
+22:00:10   ├─ /detecting-javascript-support-in-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+102ms) 
+22:00:10   ├─ /detecting-users-color-preferences/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+104ms) 
+22:00:11   ├─ /dev-tools-device-simulation-and-network-throttling/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+98ms) 
+22:00:11   ├─ /developer-frustration-better-be-ready/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+93ms) 
+22:00:11   ├─ /devtools-audits-powered-by-lighthouse/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+100ms) 
+22:00:11   ├─ /devtools-code-coverage/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+101ms) 
+22:00:11   ├─ /dialogues-in-html/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+98ms) 
+22:00:11   ├─ /dialogues-in-the-web/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+93ms) 
+22:00:11   ├─ /difference-between-inline-and-inline-block/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+99ms) 
+22:00:11   ├─ /differences-between-css-custom-properties-and-houdini-properties-and-values/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+100ms) 
+22:00:11   ├─ /different-ai-interaction-clients/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+96ms) 
+22:00:11   ├─ /different-strategies-for-using-support/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+95ms) 
+22:00:11   ├─ /different-views-of-masonry-layout/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+100ms) 
+22:00:12   ├─ /digging-deeper-into-webgpu/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 24 min read
+ (+100ms) 
+22:00:12   ├─ /digital-books-on-the-web/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+97ms) 
+22:00:12   ├─ /digital-storytelling/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 20 min read
+ (+93ms) 
+22:00:12   ├─ /digital-storytelling-conclusion-are-we-ready-for-the-change/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+100ms) 
+22:00:12   ├─ /digital-storytelling-creating-stories-for-the-metaverse/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+102ms) 
+22:00:12   ├─ /digital-storytelling-full-immersive-vr/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+99ms) 
+22:00:12   ├─ /digital-storytelling-hamlet-on-the-holodeck/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+95ms) 
+22:00:12   ├─ /digital-storytelling-place-based-stories/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+101ms) 
+22:00:12   ├─ /disable-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+102ms) 
+22:00:12   ├─ /disecting-a-page-indiewire/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+98ms) 
+22:00:13   ├─ /display-flow-root-a-clearfix-replacement/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+95ms) 
+22:00:13   ├─ /do-we-need-people-in-charge-of-open-source-projects/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+100ms) 
+22:00:13   ├─ /do-you-know-where-your-third-parties-are-going/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+103ms) 
+22:00:13   ├─ /docbook-xml-and-ebooks/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+98ms) 
+22:00:13   ├─ /docker-for-front-end-development/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 15 min read
+ (+96ms) 
+22:00:13   ├─ /docs-as-code-the-technical-side/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+102ms) 
+22:00:13   ├─ /document-order-visual-order-and-accessibility/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+103ms) 
+22:00:13   ├─ /does-the-color-space-we-use-affect-how-gradients-look/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+99ms) 
+22:00:13   ├─ /dont-cross-the-streams/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+95ms) 
+22:00:13   ├─ /double-keyed-caching-and-performance/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'mermaid', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+107ms) 
+22:00:14   ├─ /drawing-with-svg-the-basics/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+106ms) 
+22:00:14   ├─ /dropcaps-in-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+104ms) 
+22:00:14   ├─ /dynamic-imports/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+95ms) 
+22:00:14   ├─ /dynamically-loading-the-temporal-api/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+100ms) 
+22:00:14   ├─ /ebooks-a-new-look-and-an-update/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 27 min read
+ (+102ms) 
+22:00:14   ├─ /editor-as-a-pwa/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+106ms) 
+22:00:14   ├─ /eleventy-is-land-and-island-architecture/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+94ms) 
+22:00:14   ├─ /eleventy-island-guide/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+101ms) 
+22:00:14   ├─ /eme-drm-and-the-web-platform/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+101ms) 
+22:00:14   ├─ /empathy-in-design-and-development/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+100ms) 
+22:00:15   ├─ /empathy-in-design-and-development-accessibility/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+103ms) 
+22:00:15   ├─ /empathy-in-design-and-development-analytics-as-a-user-research-tool/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+117ms) 
+22:00:15   ├─ /empathy-in-design-and-development-conclusion-and-references/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+104ms) 
+22:00:15   ├─ /empathy-in-design-and-development-different-writing-modes-for-different-languages/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+105ms) 
+22:00:15   ├─ /empathy-in-design-and-development-processes-and-tooling/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+95ms) 
+22:00:15   ├─ /empathy-in-design-and-development-research/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+106ms) 
+22:00:15   ├─ /empathy-in-design-and-development-unicode-and-why-its-important/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+103ms) 
+22:00:15   ├─ /encoding-video-for-youtube-and-web-delivery/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+117ms) 
+22:00:15   ├─ /eprdctn-in-the-command-line-basic-shell-commands-pipes-globes-and-others/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+103ms) 
+22:00:16   ├─ /eprdctn-in-the-command-line-introduction/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+98ms) 
+22:00:16   ├─ /eprdctn-in-the-command-line-node-and-java/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+102ms) 
+22:00:16   ├─ /eprdctn-in-the-command-line-package-managers/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+111ms) 
+22:00:16   ├─ /eprdctn-in-the-command-line-wsl-interoperability/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+98ms) 
+22:00:16   ├─ /epub-package-opf-generator/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+95ms) 
+22:00:16   ├─ /epubcheck-4-is-in-the-horizon/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+104ms) 
+22:00:16   ├─ /es6-babel-and-you-exploring-the-new-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 15 min read
+ (+102ms) 
+22:00:16   ├─ /es6-babel-and-you-modules-the-what-and-the-how/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+98ms) 
+22:00:16   ├─ /es6-modules-now-in-a-browser-near-you/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+95ms) 
+22:00:16   ├─ /evaluating-browser-support/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'baseline', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+100ms) 
+22:00:17   ├─ /evaluating-web-component-libraries/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 22 min read
+ (+107ms) 
+22:00:17   ├─ /even-more-array-methods/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+107ms) 
+22:00:17   ├─ /even-more-performance-measurements/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+98ms) 
+22:00:17   ├─ /event-delegation/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+122ms) 
+22:00:17   ├─ /evergreen-may-not-mean-what-you-think-it-does/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+109ms) 
+22:00:17   ├─ /everything-is-a-box/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+105ms) 
+22:00:17   ├─ /evolving-complexity/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'templateEngineOverride', 'minutesRead' ]
+DEBUG minutesRead: 17 min read
+ (+98ms) 
+22:00:17   ├─ /evolving-complexity-conclusion/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+104ms) 
+22:00:17   ├─ /evolving-complexity-design/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+107ms) 
+22:00:17   ├─ /exclusions/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+100ms) 
+22:00:18   ├─ /exclusive-accordions/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+95ms) 
+22:00:18   ├─ /expanding-teams-and-roles-in-wordpress-using-the-members-plugin/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+101ms) 
+22:00:18   ├─ /experimental-native-css-grid-masonry/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+109ms) 
+22:00:18   ├─ /explicitly-sizing-youtube-iframes/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'mermaid', 'minutesRead' ]
+DEBUG minutesRead: 13 min read
+ (+108ms) 
+22:00:18   ├─ /explorations-and-experiments/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+96ms) 
+22:00:18   ├─ /exploring-canvas/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+104ms) 
+22:00:18   ├─ /exploring-decorators/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+102ms) 
+22:00:18   ├─ /exploring-dublin-core-metadata-linked-data-and-the-web/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 17 min read
+ (+100ms) 
+22:00:18   ├─ /exploring-github-copilot/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+96ms) 
+22:00:19   ├─ /exploring-htmx/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+101ms) 
+22:00:19   ├─ /exploring-intrinsic-sizing/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'mermaid', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+107ms) 
+22:00:19   ├─ /exploring-the-picture-element/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+111ms) 
+22:00:19   ├─ /exploring-typescript-3-generics-and-dom-manipulation/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+101ms) 
+22:00:19   ├─ /exploring-typescript-notes-about-the-language-as-i-learn-it/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+105ms) 
+22:00:19   ├─ /exploring-typescript-setting-up-the-tools/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+108ms) 
+22:00:19   ├─ /exploring-typescript-setting-up-typescript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+104ms) 
+22:00:19   ├─ /exploring-typescript2-the-language/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+101ms) 
+22:00:19   ├─ /exporting-block-themes-from-the-editor/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+102ms) 
+22:00:19   ├─ /expressing-colors-in-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+103ms) 
+22:00:20   ├─ /extracting-json-into-another-json-file/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+102ms) 
+22:00:20   ├─ /feature-detection-and-vendor-prefixes-in-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+99ms) 
+22:00:20   ├─ /feature-detection-in-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+106ms) 
+22:00:20   ├─ /feature-policies/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+134ms) 
+22:00:20   ├─ /fetch-and-axios-when-and-how/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+103ms) 
+22:00:20   ├─ /ffmpeg-notes-and-tips/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 13 min read
+ (+95ms) 
+22:00:20   ├─ /figure-as-a-universal-container/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+102ms) 
+22:00:20   ├─ /figures-as-universal-containers/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+103ms) 
+22:00:20   ├─ /file-handling-access-api/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+98ms) 
+22:00:20   ├─ /finally-understanding-svg-i-think/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+96ms) 
+22:00:21   ├─ /first-look-bazel-build-system/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+103ms) 
+22:00:21   ├─ /fixing-issues-with-monospaced-inline-text/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+102ms) 
+22:00:21   ├─ /fixing-typescript-compilation-errors/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+98ms) 
+22:00:21   ├─ /flex-boxes-and-the-holy-grail/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+93ms) 
+22:00:21   ├─ /font-face-font-display-property/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+101ms) 
+22:00:21   ├─ /font-formats-for-the-web-and-converting-from-one-to-another/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+105ms) 
+22:00:21   ├─ /font-licensing-what-do-you-get-and-is-it-worth-it/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+106ms) 
+22:00:21   ├─ /font-optical-sizing/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+98ms) 
+22:00:21   ├─ /font-selection/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+101ms) 
+22:00:21   ├─ /font-stacks-and-other-explorations-on-typography-on-the-web-part-1/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 22 min read
+ (+103ms) 
+22:00:22   ├─ /font-stacks-and-other-explorations-on-typography-on-the-web-part-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 15 min read
+ (+101ms) 
+22:00:22   ├─ /font-synthesis-in-css-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+95ms) 
+22:00:22   ├─ /for-when-you-know-you-will-print/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+100ms) 
+22:00:22   ├─ /formating-numbers-with-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+102ms) 
+22:00:22   ├─ /frameworks-ai-and-the-modern-web-developer/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 16 min read
+ (+98ms) 
+22:00:22   ├─ /from-markdown-to-pdf-a-princexml-pipeline/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'mermaid', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+95ms) 
+22:00:22   ├─ /from-markdown-to-pdf-pandoc/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+103ms) 
+22:00:22   ├─ /fully-understanding-why-to-progressively-enhance/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+101ms) 
+22:00:22   ├─ /functional-programming-concepts/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 13 min read
+ (+99ms) 
+22:00:22   ├─ /further-thoughts-on-performance/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 21 min read
+ (+95ms) 
+22:00:23   ├─ /further-thoughts-on-xapi-cmi5-and-beyond/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+100ms) 
+22:00:23   ├─ /generating-css-variables-from-a-js-file/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+101ms) 
+22:00:23   ├─ /generating-footnotes-on-a-web-page/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+101ms) 
+22:00:23   ├─ /generating-html-and-pdf-from-markdown/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+95ms) 
+22:00:23   ├─ /generating-random-values-in-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+100ms) 
+22:00:23   ├─ /generating-screenshots/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+103ms) 
+22:00:23   ├─ /generating-uuids-with-node/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+100ms) 
+22:00:23   ├─ /generic-blog-web-components-introduction-and-blog-posts-v1/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+96ms) 
+22:00:23   ├─ /generic-bundle-analyzer/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+101ms) 
+22:00:23   ├─ /getting-better-at-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+105ms) 
+22:00:24   ├─ /getting-fancy-animating-text/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+129ms) 
+22:00:24   ├─ /getting-fancy-blend-modes/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+119ms) 
+22:00:24   ├─ /getting-fancy-css-transformations-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+128ms) 
+22:00:24   ├─ /getting-fancy-shapes-masks-and-clip-paths/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+120ms) 
+22:00:24   ├─ /getting-into-a-performance-mindset/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'youtube', 'minutesRead' ]
+DEBUG minutesRead: 13 min read
+ (+116ms) 
+22:00:24   ├─ /getting-markdown-plugins-to-work-with-gulp/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+99ms) 
+22:00:24   ├─ /getting-started-with-typescript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 12 min read
+ (+101ms) 
+22:00:24   ├─ /getting-the-codec-attribute-for-html-video/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 11 min read
+ (+105ms) 
+22:00:25   ├─ /git-adding-a-remote-parent-to-a-forked-repository/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+111ms) 
+22:00:25   ├─ /github-actions-for-process-automation/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+156ms) 
+22:00:25   ├─ /globalize-content-caching-localization-assets-with-service-workers/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+100ms) 
+22:00:25   ├─ /globalize-web-content-basic-strategies/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+94ms) 
+22:00:25   ├─ /globalize-web-content-globalize-and-webpack/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'templateEngineOverride', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+101ms) 
+22:00:25   ├─ /globalizing-web-content/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+102ms) 
+22:00:25   ├─ /globalizing-web-content-globalize-js/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+99ms) 
+22:00:25   ├─ /globalthis-in-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+94ms) 
+22:00:25   ├─ /google-fonts-way-of-serving-variable-fonts/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+98ms) 
+22:00:25   ├─ /gpl-and-wordpress-developer-beware/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 17 min read
+ (+98ms) 
+22:00:26   ├─ /graceful-degradation-of-progressive-enhancement/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+150ms) 
+22:00:26   ├─ /grid-template-areas/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+97ms) 
+22:00:26   ├─ /gsap-motion-path-helper-tool/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+104ms) 
+22:00:26   ├─ /gulp-and-avif-part-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+100ms) 
+22:00:26   ├─ /gulp-workflow-basic-setup/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+103ms) 
+22:00:26   ├─ /gulp-workflow-css-processing-sass-post-processing/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+100ms) 
+22:00:26   ├─ /gulp-workflow-custom-tasks-and-auxiliary-functions/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+102ms) 
+22:00:26   ├─ /gulp-workflow-file-management/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+110ms) 
+22:00:26   ├─ /gulp-workflow-introduction/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+101ms) 
+22:00:27   ├─ /gulp-workflow-looking-at-gulp-4/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+101ms) 
+22:00:27   ├─ /gulp-workflow-performance/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+123ms) 
+22:00:27   ├─ /gulp-workflow-polymer-specific-tasks/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+112ms) 
+22:00:27   ├─ /gulp-workflow-sass-compilation-and-linting/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+104ms) 
+22:00:27   ├─ /gulp-workflow-serving-local-content-and-deploying-to-github-pages/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+101ms) 
+22:00:27   ├─ /gulp-workflow-transpilations-and-javascript-processing/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+106ms) 
+22:00:27   ├─ /gutenberg-a-step-forward-or-two-steps-back/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+107ms) 
+22:00:27   ├─ /gutenberg-as-a-design-system-part-1/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+103ms) 
+22:00:27   ├─ /gutenberg-as-a-design-system-part-2/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+103ms) 
+22:00:27   ├─ /gutenberg-as-design-systems-part-3/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+106ms) 
+22:00:28   ├─ /gutenberg-full-site-editing-and-block-based-themes/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 13 min read
+ (+109ms) 
+22:00:28   ├─ /gutenberg-how-do-we-work-with-older-content/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 12 min read
+ (+105ms) 
+22:00:28   ├─ /gutenberg-my-issues-2022-version/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+100ms) 
+22:00:28   ├─ /gutenberg-pagination-and-post-navigation/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+109ms) 
+22:00:28   ├─ /gutenberg-random-thoughts-and-conclusions/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+115ms) 
+22:00:28   ├─ /gutenberg-review-blocks/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 8 min read
+ (+104ms) 
+22:00:28   ├─ /h1-element-style-changes/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+102ms) 
+22:00:28   ├─ /handling-responsive-images-in-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+104ms) 
+22:00:28   ├─ /hanging-punctuation-in-css/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+102ms) 
+22:00:29   ├─ /headings/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+101ms) 
+22:00:29   ├─ /hiding-content-on-the-page-for-advanced-users/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+100ms) 
+22:00:29   ├─ /how-does-digital-affect-funding/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+105ms) 
+22:00:29   ├─ /how-i-write-with-ai/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+120ms) 
+22:00:29   ├─ /how-many-people-actually-browse-your-site-without-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+117ms) 
+22:00:29   ├─ /how-opinionated-is-too-opinionated/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+97ms) 
+22:00:29   ├─ /how-to-color-text-in-the-terminal/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'mermaid', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+103ms) 
+22:00:29   ├─ /how-to-find-stuff-in-devtools/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+103ms) 
+22:00:29   ├─ /how-to-use-responsive-images/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+100ms) 
+22:00:29   ├─ /html-as-a-single-source-format/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 5 min read
+ (+99ms) 
+22:00:30   ├─ /html-is-the-final-product-not-the-initial-source/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 9 min read
+ (+108ms) 
+22:00:30   ├─ /html-landmarks-and-accessibility/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+103ms) 
+22:00:30   ├─ /html-range-inputs/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+102ms) 
+22:00:30   ├─ /html-web-components/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+96ms) 
+22:00:30   ├─ /html5-video-captioning-using-vtt/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'categories', 'minutesRead' ]
+DEBUG minutesRead: 19 min read
+ (+101ms) 
+22:00:30   ├─ /http-headers-and-responsive-images/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+102ms) 
+22:00:30   ├─ /http2-development-in-node-using-self-signed-certs/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+101ms) 
+22:00:30   ├─ /http2-server-push-link-preload-and-resource-hints/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 14 min read
+ (+99ms) 
+22:00:30   ├─ /ideas-and-projects-for-2021/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+99ms) 
+22:00:31   ├─ /image-formats-for-the-web-heic-and-avif/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 10 min read
+ (+101ms) 
+22:00:31   ├─ /image-processing-with-imagemagick/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+104ms) 
+22:00:31   ├─ /immersive-web-webgl-webvr-and-beyond/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 6 min read
+ (+96ms) 
+22:00:31   ├─ /implementing-feature-flags/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'mermaid', 'minutesRead' ]
+DEBUG minutesRead: 13 min read
+ (+101ms) 
+22:00:31   ├─ /implementing-quotebacks-in-wordpress/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 4 min read
+ (+102ms) 
+22:00:31   ├─ /import-maps-are-ready-to-use/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'tags', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+100ms) 
+22:00:31   ├─ /import-maps-everywhere/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+97ms) 
+22:00:31   ├─ /import-maps-what-they-are-and-why-they-are-important/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+102ms) 
+22:00:31   ├─ /import-non-javascript-assets-into-es-modules/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+106ms) 
+22:00:31   ├─ /importing-json-and-css-on-javascript/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+103ms) 
+22:00:32   ├─ /improving-font-performance-cdns-and-service-workers/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 2 min read
+ (+99ms) 
+22:00:32   ├─ /improving-font-performance-introduction-and-the-bulletproof-syntax/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+107ms) 
+22:00:32   ├─ /improving-font-performance-subset-fonts-using-glyphhanger/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+104ms) 
+22:00:32   ├─ /improving-font-performance-use-resource-hints/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 1 min read
+ (+101ms) 
+22:00:32   ├─ /improving-font-performance-work-to-control-font-loading/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 7 min read
+ (+100ms) 
+22:00:32   ├─ /improving-performance-of-a-wordpress-site-1-getting-ready/index.htmlDEBUG frontmatter keys: [ 'title', 'date', 'minutesRead' ]
+DEBUG minutesRead: 3 min read
+ (+104ms) 
+22:00:32   ├─ /improving-performance-of-a-wordpress-site-2-optimizations/index.html

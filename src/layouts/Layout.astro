@@ -1,0 +1,102 @@
+---
+// Import the global site configuration data
+import siteData from '../data/site.json';
+
+// import navigation component
+// import Header from '../components/Header.astro';
+import Nav from '../components/Navigation.astro';
+// import Footer from '../components/Footer.astro';
+
+const { frontmatter, bodyClass } = Astro.props;
+
+// Use Astro's built-in URL helper, fallback to customUrl, fallback to site config
+const currentUrl = Astro.url.href || siteData.url;
+const pageTitle = frontmatter?.title || siteData.site_name;
+const metaDescription = frontmatter?.desc || siteData.site_name;
+const pageBodyClass = [bodyClass, 'prism-page'].filter(Boolean).join(' ');
+---
+<!DOCTYPE html>
+<html lang={siteData.language}>
+<head>
+  <meta charset="utf-8" />
+  <title>{ pageTitle }</title>
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={ currentUrl } />
+  <meta property="og:site_name" content={siteData.site_name} />
+  <meta property="og:locale" content={siteData.language} />
+  <meta property="og:description" content={metaDescription} />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content={siteData.social_links.twitter} />
+    <meta name="twitter:creator" content={siteData.social_links.twitter} />
+    <meta name="twitter:url" content={currentUrl} />
+    <!-- Change the value of twitter:image when you have a final image  -->
+    <meta name="twitter:image" content="https://publishing-project.rivendellweb.net/images/Thumbnail_Trinity_College_Dublin_Ireland.webp" />
+    <meta name="twitter:image:alt" content="Trinity College Library, Dublin" />
+    <meta name="twitter:description" content={metaDescription} />
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#1e456e" />
+    <!-- Feeds -->
+    <!-- Apple touch icon -->
+    <link rel="apple-touch-icon" href="/images/icon-192x192.png" />
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <!-- Load main stylesheet -->
+    <script>
+      performance.mark('start load css');
+    </script>
+    <link rel="preload" href="/css/main.css" as="style" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script>
+      performance.mark('end load css');
+      performance.measure('load css', 'start load css', 'end load css');
+    </script>
+    <!-- custom-admonition web component -->
+    <script is:inline type="module" src="/js/admonition.js"></script>
+    <!-- Load Prism globally -->
+      <script>
+        performance.mark('start load prism css');
+      </script>
+      <link rel="preload" href="/css/prism.css" as="style" />
+      <link rel="stylesheet" href="/css/prism.css" />
+      <script>
+        performance.mark('end load prism css');
+        performance.measure('load prism css', 'start load prism css', 'end load prism css');
+      </script>
+    {frontmatter?.mavo && (
+      <link rel="stylesheet" href="https://get.mavo.io/mavo.css" />
+      <script is:inline defer src="https://get.mavo.io/mavo.js"></script>
+    )}
+    {frontmatter?.vimeo && (
+      <script is:inline type="module" src="https://cdn.jsdelivr.net/npm/@slightlyoff/lite-vimeo@0.1.1/lite-vimeo.js"></script>
+    )}
+    {frontmatter?.youtube && (
+      <link rel="stylesheet" href="/css/lite-yt-embed.css" />
+      <script is:inline defer src="/js/lite-yt-embed.js"></script>
+    )}
+    {frontmatter?.colorjs && (
+      <script is:inline src="https://esm.sh/color-elements" type="module"></script>
+    )}
+    {frontmatter?.baseline && (
+      <script is:inline src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js" type="module"></script>
+    )}
+  </head>
+  <body class={pageBodyClass}>
+    <div class="wrapper">
+      <Nav />
+      <slot />
+    </div>
+    <script defer is:inline src="/js/prism/prism.js"></script>
+    <script defer is:inline src="/js/prism/plugins/autoloader/prism-autoloader.js"></script>
+    <script defer is:inline src="/js/prism/plugins/toolbar/prism-toolbar.js"></script>
+    <script defer is:inline src="/js/prism/plugins/copy-to-clipboard/prism-copy-to-clipboard.js"></script>
+    <script defer is:inline src="/js/prism/plugins/show-language/prism-show-language.js"></script>
+    <script defer>
+      if (window.Prism?.highlightAll) {
+        window.Prism.highlightAll();
+      }
+    </script>
+  </body>
+</html>

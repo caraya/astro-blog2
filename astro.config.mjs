@@ -1,5 +1,40 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
+import mdx from '@astrojs/mdx';
+import icon from 'astro-icon';
+import pagefind from 'astro-pagefind';
+import sitemap from '@astrojs/sitemap';
+import mermaid from 'astro-mermaid';
+
+import { unified } from '@astrojs/markdown-remark';
+
+// remark plugins
+import { remarkDefinitionList, defListHastHandlers } from 'remark-definition-list';
+import { remarkReadingTime } from './src/remark/remark-reading-time.mjs';
 
 // https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  site: 'https://publishing-project.rivendellweb.net',
+  markdown: {
+    syntaxHighlight: false,
+    processor: unified({
+      remarkPlugins: [
+        remarkDefinitionList,
+        remarkReadingTime,
+
+      ],
+      remarkRehype: {
+        handlers: defListHastHandlers,
+      },
+    })
+  },
+  integrations: [
+    react(),
+    mdx(),
+    icon(),
+    pagefind(),
+    sitemap(),
+    mermaid(),
+  ]
+});

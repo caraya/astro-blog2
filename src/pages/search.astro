@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout frontmatter={{ title: 'Search Results' }}>
+	<Header />
+	<main>
+		<h1>Search Results</h1>
+		<div id="search" class="search-container"></div>
+	</main>
+</Layout>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script is:inline src="/pagefind/pagefind-ui.js"></script>
+
+<script is:inline>
+	window.addEventListener('DOMContentLoaded', () => {
+		// Initialize the standard vanilla Pagefind UI
+		const pagefindUI = new PagefindUI({ 
+			element: "#search",
+			showImages: false,
+			showSubResults: true,
+			resetStyles: false
+		});
+
+		// Grab the query from the URL
+		const urlParams = new URLSearchParams(window.location.search);
+		const query = urlParams.get('q');
+		
+		// If there is a query, trigger the search
+		if (query) {
+			pagefindUI.triggerSearch(query);
+		}
+	});
+</script>
+
+<style>
+	.search-container {
+		margin-top: 2rem;
+		min-height: 50vh;
+	}
+	
+	/* Tweak vanilla pagefind UI to blend in better */
+	:global(.pagefind-ui__search-input) {
+		font-family: inherit;
+	}
+	:global(.pagefind-ui__result) {
+		padding: 1rem 0;
+		border-bottom: 1px solid #eee;
+	}
+	:global(.pagefind-ui__result-title) {
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+</style>
