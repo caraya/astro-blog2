@@ -3,9 +3,9 @@ title: "Looking forward: CSS Layers and the @layer at-rule"
 date: "2021-12-13"
 ---
 
-!!! warning **Warning:**
-This post is about CSS specifications that are still under development and, as far as I know, have no implementation in production browsers yet. Furthermore, the specification may change in the future. To keep track of the progress, please follow the `Cascade Layers` section of the [CSS Cascading and Inheritance Level 5](https://www.w3.org/TR/css-cascade-5/) specification.
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>This post is about CSS specifications that are still under development and, as far as I know, have no implementation in production browsers yet. Furthermore, the specification may change in the future. To keep track of the progress, please follow the `Cascade Layers` section of the [CSS Cascading and Inheritance Level 5](https://www.w3.org/TR/css-cascade-5/) specification.</p>
+</custom-admonition>
 
 Looking at some of the current draft specifications, I found something that looks very promising and, when implemented, will be a very useful feature. The feature is called CSS Layers and it's a way to group elements together so they will cascade as a unit.
 

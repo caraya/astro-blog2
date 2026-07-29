@@ -3,9 +3,9 @@ title: "Building a stylesheet using cascade layers"
 date: "2022-09-12"
 ---
 
-!!! note Note:
-Credit for a lot of information and ideas on this post goes to Miriam Zuzanne's [A Complete Guide to CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/) publlished in CSS Tricks.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>Credit for a lot of information and ideas on this post goes to Miriam Zuzanne's [A Complete Guide to CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/) publlished in CSS Tricks.</p>
+</custom-admonition>
 
 CSS layers present an interesting design paradigm. They allow developers to group styles based on the criteria we define.
 

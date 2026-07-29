@@ -50,9 +50,9 @@ type (via MIME type), you use the attribute key called type. To validate
 that the module is a JSON module, the value is "json".
 ```
 
-!!! note **Note**
-The actual type attribute value does not correspond directly to the MIME type. It's separately specified by the HTML specification.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>The actual type attribute value does not correspond directly to the MIME type. It's separately specified by the HTML specification.</p>
+</custom-admonition>
 
 
 ## How they work?

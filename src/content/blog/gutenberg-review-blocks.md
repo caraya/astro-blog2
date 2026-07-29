@@ -208,15 +208,15 @@ Deprecations do not operate as a chain of updates, like database migrations. Ins
 
 At this point, the current block should now be in a valid state and the deprecations workflow stops.
 
-!!! note Note:
-If a deprecation’s save method does not produce a valid block then it is skipped completely. If you have several deprecations for a block and want to perform a new migration, like moving content to `InnerBlocks`, you may need to update the migrate methods in multiple deprecations in order for the required changes to be applied to all previous versions of the block.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>If a deprecation’s save method does not produce a valid block then it is skipped completely. If you have several deprecations for a block and want to perform a new migration, like moving content to `InnerBlocks`, you may need to update the migrate methods in multiple deprecations in order for the required changes to be applied to all previous versions of the block.</p>
+</custom-admonition>
 
 &nbsp;
 
-!!! note Note:
-If a deprecation’s save method imports additional functions from other files, changes to those files may accidentally change the behavior of the deprecation. You may want to add a snapshot copy of these functions to the deprecations file instead of importing them in order to avoid inadvertently breaking the deprecations.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>If a deprecation’s save method imports additional functions from other files, changes to those files may accidentally change the behavior of the deprecation. You may want to add a snapshot copy of these functions to the deprecations file instead of importing them in order to avoid inadvertently breaking the deprecations.</p>
+</custom-admonition>
 
 For blocks with multiple deprecations, it is easier to save each deprecation to a constant with the version of the block it applies to, and then add each of these to the block’s deprecated array. The deprecations in the array should be in reverse chronological order. This allows the block editor to attempt to apply the most recent and likely deprecations first, avoiding unnecessary and expensive processing.
 

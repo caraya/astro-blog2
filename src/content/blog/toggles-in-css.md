@@ -5,9 +5,9 @@ date: "2022-11-28"
 
 Google is prototyping an unofficial [CSS Toggles](https://tabatkins.github.io/css-toggle/) specification. The specification defines a way to associate a `toggleable value` with an element which developers can use to select an element and declarative ways to set and modify this value on the element.
 
-!!! warning **Warning**
-This is not a complete specification that is ready to use in production. There are some issues still remaining, including accessibility concerns that can't be resolved by the toggles specification alone.
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>This is not a complete specification that is ready to use in production. There are some issues still remaining, including accessibility concerns that can't be resolved by the toggles specification alone.</p>
+</custom-admonition>
 
 The HTML is just a basic button.
 

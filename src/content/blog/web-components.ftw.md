@@ -272,9 +272,9 @@ You can have as many slots as you need to convey the meaning and structure of yo
 
 ### Template Parts
 
-!!! note Note:
-Parts will only work, and are necessary, when using shadow DOM. When not using shadow DOM parts are unnecessary since you will be able to style the content with CSS directly.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>Parts will only work, and are necessary, when using shadow DOM. When not using shadow DOM parts are unnecessary since you will be able to style the content with CSS directly.</p>
+</custom-admonition>
 
 Template parts do for styles what slots do for content. You can specify names for specific sections of your component and then style it from CSS using the [::part](https://developer.mozilla.org/en-US/docs/Web/CSS/::part) pseudo-element.
 

@@ -96,15 +96,12 @@ Once your data is coded, you need tools to extract the insights. Below are three
 
 Here is a brief section you can insert right before "Implementation Examples". It bridges the gap between the XML structure and the code that follows.
 
-!!! note  **Understanding XML Namespaces**
-You will notice the `xmlns="http://www.tei-c.org/ns/1.0"` attribute in the root of the data file. This is an XML Namespace.
-
-Namespaces are critical in professional data workflows because they prevent "naming collisions." Just as a User class in your application might conflict with a User class in a third-party library, an XML tag like `<title>` could refer to a book title, a job title, or a legal deed.
-
-In TEI, every tag technically has a "surname." The parser sees `<seg>` as `{http://www.tei-c.org/ns/1.0}seg`.
-
-**Why this matters for your code**: If you try to find `seg` using a standard XML parser without declaring the namespace, your script will return zero results. The examples below explicitly handle this by registering the TEI namespace before searching.
-!!!
+<custom-admonition type="note" title="Understanding XML Namespaces">
+	<p>You will notice the `xmlns="http://www.tei-c.org/ns/1.0"` attribute in the root of the data file. This is an XML Namespace.</p>
+	<p>Namespaces are critical in professional data workflows because they prevent "naming collisions." Just as a User class in your application might conflict with a User class in a third-party library, an XML tag like `<title>` could refer to a book title, a job title, or a legal deed.</p>
+	<p>In TEI, every tag technically has a "surname." The parser sees `<seg>` as `{http://www.tei-c.org/ns/1.0}seg`.</p>
+	<p>**Why this matters for your code**: If you try to find `seg` using a standard XML parser without declaring the namespace, your script will return zero results. The examples below explicitly handle this by registering the TEI namespace before searching.</p>
+</custom-admonition>
 
 ### XML Code Example
 
@@ -262,11 +259,10 @@ if __name__ == "__main__":
 
 ### Typescript Extraction (React/Angular/Web/Node)
 
-!!! note  **Transpilation or Third Party Tool Required**
-We assume that you will transpile this code to run in a browser or use TSX or similar tool to run in Node.js.
-
-React and Angular can be configured to transpile TS to JS so there are no changes needed
-!!!
+<custom-admonition type="note" title="Transpilation or Third Party Tool Required">
+	<p>We assume that you will transpile this code to run in a browser or use TSX or similar tool to run in Node.js.</p>
+	<p>React and Angular can be configured to transpile TS to JS so there are no changes needed</p>
+</custom-admonition>
 
 This function parses the TEI XML string and extracts pull quotes with high intensity or critical issue codes.
 

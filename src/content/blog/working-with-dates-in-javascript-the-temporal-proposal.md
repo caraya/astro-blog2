@@ -3,9 +3,9 @@ title: "Working with dates in Javascript: The Temporal proposal"
 date: "2021-05-12"
 ---
 
-!!! note **Note:**
-The Temporal code is not ready for production, it is still possible (but not likely) that it'll change in incompatible ways before the final version is added to the ECMAScript specification, and because of that, it shouldn't be used in production until it reaches stage 4 in the TC39 process. However, you can test how it works now and decide if you want to use it in future projects.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>The Temporal code is not ready for production, it is still possible (but not likely) that it'll change in incompatible ways before the final version is added to the ECMAScript specification, and because of that, it shouldn't be used in production until it reaches stage 4 in the TC39 process. However, you can test how it works now and decide if you want to use it in future projects.</p>
+</custom-admonition>
 
 One of the most infuriating things to do in Javascript is date manipulation. The default Javascript [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object is hard to work with. This has lead to a proliferation of third-party libraries like [Moment.js](https://momentjs.com/), [Luxon](https://moment.github.io/luxon/), [date-fns](https://date-fns.org/) and even the Javascript [Intl API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) for some types of data manipulation.
 

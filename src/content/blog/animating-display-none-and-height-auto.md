@@ -28,14 +28,15 @@ These are the properties we'll use for these examples.
 
 The `transition-behavior` property specifies whether transitions will be started for properties whose animation behavior is [discrete](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-behavior#examples).
 
-!!! note **Discrete definition**
-Discrete properties' values are not additive, and interpolation swaps from the start value to the end value at 50%.
+<custom-admonition type="note" title="Discrete definition">
+	<p>Discrete properties' values are not additive, and interpolation swaps from the start value to the end value at 50%.</p>
+	<p>Specifically, denoting p as the progress value:</p>
 
-Specifically, denoting p as the progress value:
-
-* If p < 0.5, then V_result = V_start
-* If p ≥ 0.5, then V_result = V_end
-!!!
+  <ul>
+    <li>If p < 0.5, then V_result = V_start</li>
+    <li>If p ≥ 0.5, then V_result = V_end</li>
+  </ul>
+</custom-admonition>
 
 ### `calc-size()`
 
@@ -125,7 +126,7 @@ The support table for desktop browsers looks nice.
 
 | Chrome | Edge | Safari | Firefox |
 | --- | --- | --- | --- |
-|128 - 130<br>Supported | 127<br> Supported | 17.6 - TP<br>Supported | 129 - 131<br>Partial support<br><br>Doesn't animate from `display: none` |
+| 128 - 130<br>Supported | 127<br> Supported | 17.6 - TP<br>Supported | 129 - 131<br>Partial support<br><br>Doesn't animate from `display: none` |
 
 The mobile support is a little more spotty.
 
@@ -164,4 +165,3 @@ It'll be interesting to see how these properties work once they are implemented.
 * [transition-behavior](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-behavior) &mdash; MDN
 * [calc-size](https://drafts.csswg.org/css-values-5/#calc-size) as specified
 * [@starting-style](https://developer.mozilla.org/en-US/docs/Web/CSS/@starting-style) &mdash; MDN
-

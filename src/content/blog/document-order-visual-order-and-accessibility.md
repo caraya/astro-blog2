@@ -61,9 +61,9 @@ WCAG actively works to prevent:
 
 ### Related WCAG criteria
 
-!!!note Note:
-All the links in this section point to [WCAG 2.2 Understanding](https://www.w3.org/WAI/WCAG22/Understanding) resources, which is the most recent version of the guidelines as of this writing. However, these criteria have been in place since WCAG 2.0 and remain relevant regardless of the version.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>All the links in this section point to [WCAG 2.2 Understanding](https://www.w3.org/WAI/WCAG22/Understanding) resources, which is the most recent version of the guidelines as of this writing. However, these criteria have been in place since WCAG 2.0 and remain relevant regardless of the version.</p>
+</custom-admonition>
 
 Focus order is a central pillar of accessibility, but it does not operate in isolation. The following criteria often fail alongside focus order issues:
 

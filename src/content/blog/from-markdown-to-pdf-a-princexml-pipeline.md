@@ -56,9 +56,9 @@ The pipeline functions as a multi-stage transformation process coordinated by a 
 - **Highlighting ([Highlight.js](https://highlightjs.org/)):** Executes a pure-string highlighting pass within the PrinceXML DOM to apply Solarized themes.
 - **Rendering (PrinceXML):** Generates the final PDF using CSS Paged Media standards.
 
-!!!note  **Technical Note**
-The pipeline utilizes Saxon-HE 12.9, which provides basic support for XSLT 3.0, XPath 3.1, and XQuery 3.1 features. Advanced features like streaming and JSON processing are not supported, but the pipeline's requirements are fully met by the supported subset.
-!!!
+<custom-admonition type="note" title="Technical Note">
+	<p>The pipeline utilizes Saxon-HE 12.9, which provides basic support for XSLT 3.0, XPath 3.1, and XQuery 3.1 features. Advanced features like streaming and JSON processing are not supported, but the pipeline's requirements are fully met by the supported subset.</p>
+</custom-admonition>
 
 ## Key architectural decisions
 

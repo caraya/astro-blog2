@@ -220,9 +220,9 @@ A font doesn't need to use all axes. Optical size is one we don't see in too man
 
 In addition to these default axes, fonts can define any number of custom axes that are exclusive to the font.
 
-!!! note **Note:**
-See Microsoft's [OpenType Design-Variation Axis Tag Registry](https://learn.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg) documentation for a more in-depth discussion about the OpenType tags and why you would want to register them (or not).
-!!!
+<custom-admonition type="note" title="Note">
+	<p>See Microsoft's [OpenType Design-Variation Axis Tag Registry](https://learn.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg) documentation for a more in-depth discussion about the OpenType tags and why you would want to register them (or not).</p>
+</custom-admonition>
 
 For example, [Recursive](https://www.recursive.design/) defines the following custom axes in addition to `wght` (weight) and `slnt` (Slant):
 
@@ -230,9 +230,9 @@ For example, [Recursive](https://www.recursive.design/) defines the following cu
 * CASL (Casual)
 * CRSV (Cursive)
 
-!!! warning **Warning:**
-The name of the axes are case-sensitive. Registered axes are all lowercase and custom axes are all uppercased.
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>The name of the axes are case-sensitive. Registered axes are all lowercase and custom axes are all uppercased.</p>
+</custom-admonition>
 
 There are no CSS equivalent to these custom features, so we resort to the lower-level `font-variation-settings` descriptor.
 

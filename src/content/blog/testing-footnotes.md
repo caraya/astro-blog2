@@ -30,43 +30,41 @@ Run [[cmd]] + [[shift]] + [[R]] on macOS or [[ctrl]] + [[shift]] + [[R]] on Wind
 
 <lite-vimeo videoid="364402896"></lite-vimeo>
 
-!!! bug
-It works so much better when you do your research before engaging in arguments
-!!!
+<custom-admonition type="bug" title="It works so much better when you do your research before engaging in arguments">
+	<p></p>
+</custom-admonition>
 
-!!! note
-It works so much better when you do your research before engaging in arguments
-!!!
+<custom-admonition type="note" title="It works so much better when you do your research before engaging in arguments">
+	<p></p>
+</custom-admonition>
 
-!!! danger
-It works so much better when you do your research before engaging in arguments
-!!!
+<custom-admonition type="danger" title="It works so much better when you do your research before engaging in arguments">
+	<p></p>
+</custom-admonition>
 
-!!! warning Do your research
-It works so much better when you do your research before engaging in arguments
-!!!
+<custom-admonition type="warning" title="Do your research">
+	<p>It works so much better when you do your research before engaging in arguments</p>
+</custom-admonition>
 
-!!! warning
-It works so much better when you do your research before engaging in arguments
-!!!
+<custom-admonition type="warning" title="It works so much better when you do your research before engaging in arguments">
+	<p></p>
+</custom-admonition>
 
-!!! info
-It works so much better when you do your research before engaging in arguments
-!!!
+<custom-admonition type="info" title="It works so much better when you do your research before engaging in arguments">
+	<p></p>
+</custom-admonition>
 
-!!! tip
-Let's see how fast she can go...
+<custom-admonition type="tip" title="Let's see how fast she can go...">
+	<p>Punch it</p>
+</custom-admonition>
 
-Punch it
-!!!
+<custom-admonition type="success" title="It works so much better when you do your research before engaging in arguments">
+	<p></p>
+</custom-admonition>
 
-!!! success
-It works so much better when you do your research before engaging in arguments
-!!!
-
-!!! failure
-It works so much better when you do your research before engaging in arguments
-!!!
+<custom-admonition type="failure" title="It works so much better when you do your research before engaging in arguments">
+	<p></p>
+</custom-admonition>
 
 Even their Pro service, Google Earth Pro doesn’t provide real-time images:
 

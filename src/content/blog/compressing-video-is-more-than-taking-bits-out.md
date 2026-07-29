@@ -206,9 +206,9 @@ ffmpeg -i sources/Tears-of-Steel.mp4 \
 
 In a 2-pass encoding scenario the first pass will not produce video; instead it will produce a log file that will help the second pass be more efficient
 
-!!! note **Note:**
-You can add additional commands in the second pass but all parameters you put in the first pass **must** also be in the second pass.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>You can add additional commands in the second pass but all parameters you put in the first pass **must** also be in the second pass.</p>
+</custom-admonition>
 
 &nbsp;
 

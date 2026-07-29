@@ -91,13 +91,11 @@ This is what the code looks like in Codepen.
 
 <p></p>
 
-!!! note <h2 style="margin-block-start:0;">Be careful</h2>
-Changing the viewing order can have accessibility implications since the visual rendering of the page will be different than what screen readers will read (they will still work from the document order).
-
-Make sure that changing the visual order will not affect the meaning of the content for people using assistive technology.
-
-See [Reordering and Accessibility](https://drafts.csswg.org/css-grid/#order-accessibility) in the [CSS Grid Layout Module Level 2](https://drafts.csswg.org/css-grid/) draft specification
-!!!
+<custom-admonition type="note" title="<h2 style="margin-block-start:0;">Be careful</h2>">
+	<p>Changing the viewing order can have accessibility implications since the visual rendering of the page will be different than what screen readers will read (they will still work from the document order).</p>
+	<p>Make sure that changing the visual order will not affect the meaning of the content for people using assistive technology.</p>
+	<p>See [Reordering and Accessibility](https://drafts.csswg.org/css-grid/#order-accessibility) in the [CSS Grid Layout Module Level 2](https://drafts.csswg.org/css-grid/) draft specification</p>
+</custom-admonition>
 
 ## Auto placement and implicit grids
 

@@ -38,9 +38,9 @@ const name2 = "bar";
 export { name1, name2 }
 ```
 
-!!! warning **Warning**
-`export {}` does not export an empty object &ndash; it's a no-op declaration that exports nothing (an empty name list).
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>`export {}` does not export an empty object &ndash; it's a no-op declaration that exports nothing (an empty name list).</p>
+</custom-admonition>
 
 ## Types of Exports
 

@@ -19,9 +19,9 @@ Because SVG images are defined in XML  files, they can be searched, indexed, scr
 
 This post will provide a brief introduction to what SVG is and what it can do. It will avoid going into details about the XML syntax and focus on the practical aspects of using SVG.
 
-!!! note  Note
-This post will cover things that are in the SVG 1.1 specification. The SVG 2 specification is still a work in progress and not all browsers support it yet.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>This post will cover things that are in the SVG 1.1 specification. The SVG 2 specification is still a work in progress and not all browsers support it yet.</p>
+</custom-admonition>
 
 ## General concepts
 
@@ -239,9 +239,9 @@ The `path` element allows you to draw arbitrary shapes and curves. This is allow
 
 The path syntax uses the `d` attribute. It contains a series of commands that define the shape.
 
-!!! note **Note:**
-Path commands are case sensitive and mean different things
-!!!
+<custom-admonition type="note" title="Note">
+	<p>Path commands are case sensitive and mean different things</p>
+</custom-admonition>
 
 1. MoveTo
      * `M x,y`: Moves to the absolute coordinates (x, y)

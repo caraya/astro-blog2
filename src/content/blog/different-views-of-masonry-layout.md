@@ -14,9 +14,9 @@ This post will analyze the different proposals and then express an opinion as to
 
 ## Expressing the problem
 
-!!! note Note:
-I'm not going deep into each proposal. You can read the posts and the current Grid Level 3 specification. It is important to understand the differences.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>I'm not going deep into each proposal. You can read the posts and the current Grid Level 3 specification. It is important to understand the differences.</p>
+</custom-admonition>
 
 In [Help us invent CSS Grid Level 3, aka “Masonry” layout](https://webkit.org/blog/15269/help-us-invent-masonry-layouts-for-css-grid-level-3/), Jen Simmons (now from the Safari team) presents their view of what masonry should look like and how it's specified by the W3C (currently an [editor's draft](https://drafts.csswg.org/css-grid-3/)) and implemented in Safari and Firefox.
 

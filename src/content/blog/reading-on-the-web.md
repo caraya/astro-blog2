@@ -74,11 +74,10 @@ Character similarity
 
 ## Working with typography in CSS
 
-!!! note **Note:**
-This is not always the right thing to do since it may override the user's desired font size configured in the browser settings.
-
-You need to consider the multiple devices that can access your site or app. The font size on a small mobile device may be different than the font size on a large monitor.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>This is not always the right thing to do since it may override the user's desired font size configured in the browser settings.</p>
+	<p>You need to consider the multiple devices that can access your site or app. The font size on a small mobile device may be different than the font size on a large monitor.</p>
+</custom-admonition>
 
 The easiest way to control text size with CSS is to set a size in the root element, either `html` or `:root` and use that as the base for all relative calculations.
 

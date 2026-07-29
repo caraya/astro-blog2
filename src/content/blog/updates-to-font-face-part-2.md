@@ -106,9 +106,9 @@ Whenever possible, authors should use the [font-variant](https://developer.mozil
 * [font-variant-numeric](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)
 * [font-variant-position](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-position)
 
-!!! warning Warning:
-Using `font-feature-settings` inside a `@font-face` at-rule is only supported in Firefox.
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>Using `font-feature-settings` inside a `@font-face` at-rule is only supported in Firefox.</p>
+</custom-admonition>
 
 The longhand `font-variant-*` descriptors have varying level of browser support, according to [caniuse](https://caniuse.com/?search=font-variant)
 
@@ -130,8 +130,8 @@ All metrics associated with the font are scaled by the given percentage. This in
 
 Specifies font resources to load. A comma-separated list representing the resource fallback order, each resource specified by [url()](https://developer.mozilla.org/en-US/docs/Web/CSS/url) or local() functions. If the previous resource is loaded successfully, the latter resources will not be used. The `url()` can be followed by `format()` and `tech()`. Specifies font resources to load. A comma-separated list representing the resource fallback order, each resource specified by [url()](https://developer.mozilla.org/en-US/docs/Web/CSS/url) or `local()` functions. Browsers will use the first font they support, whether it's loaded locally or remotely.
 
-!!! warning **Warning**
-Local fonts can be used as a vector for fingerprinting, particularly if you have company-specific fonts installed on your computer. For example, if you have Google Sans installed on your system, it is likely that you work for Google since the font has not been released for public use.
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>Local fonts can be used as a vector for fingerprinting, particularly if you have company-specific fonts installed on your computer. For example, if you have Google Sans installed on your system, it is likely that you work for Google since the font has not been released for public use.</p>
+</custom-admonition>
 
 The `url()` function can be followed by `format()` and `tech()`.

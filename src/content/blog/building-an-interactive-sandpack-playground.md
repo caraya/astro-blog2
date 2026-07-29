@@ -58,7 +58,6 @@ It includes several quality-of-life enhancements:
 
 This is the custom Sandpack implementation TSX wrapper.
 
-{% raw %}
 ```tsx
 import React, {
   useEffect,
@@ -82,7 +81,7 @@ import estreePlugin from 'prettier/plugins/estree';
 // Exported as a type to easily import into your Astro wrapper
 export type CustomSandpackProps = {
   files: Record<string, string>;
-  template?: 'react-ts' | 'react' | 'vanilla-ts' | 'css' | 'html';
+  template?: 'react-ts' | 'react' | 'vanilla-ts' | 'static';
 };
 
 const FormatButton: React.FC<{ isDark: boolean }> = ({ isDark }) => {
@@ -223,7 +222,6 @@ export const CustomSandpack: React.FC<CustomSandpackProps> = ({ files, template 
   );
 };
 ```
-{% endraw %}
 
 ## Integration: The Astro Architecture
 
@@ -237,9 +235,9 @@ The Astro wrapper serves as an invisible bridge that automatically applies the h
 
 Single Source of Truth (SSOT): By importing CustomSandpackProps directly from the React component and assigning it to Astro's Props, the wrapper automatically inherits all type definitions. If the API changes in the React component, the Astro wrapper updates instantly.
 
-Property Forwarding: Utilizing const props = Astro.props; and the spread operator ({...props}), the wrapper safely passes all incoming data down to the React layer without requiring manual destructuring of every attribute.
+Property Forwarding: Utilizing `const props = Astro.props;` and the spread operator (`{...props}`), the wrapper safely passes all incoming data down to the React layer without requiring manual destructuring of every attribute.
 
-The Source Code (Sandpack.astro)
+The Source Code (`Sandpack.astro`)
 
 ```tsx
 import { CustomSandpack } from './CustomSandpack';
@@ -254,108 +252,8 @@ const props = Astro.props;
 <CustomSandpack client:only="react" {...props} />
 ```
 
-## Creating an Astro Integration
+## Usage in Astro projects
 
-To take this a step further and create a reusable Astro integration, we can create an npm package.  This package allows developers to run `npx astro add astro-sandpack`, you can create and publish a specific npm package structure.
-
-When a user runs that command, Astro automatically looks for a default export in your package's main file and injects it into their astro.config.mjs.
-
-### Package Structure
-
-Your integration repository will look like this:
-
-```plaintext
-astro-sandpack/
-├── package.json
-├── index.ts                  # The integration hook
-└── components/
-    ├── Sandpack.astro        # The transparent wrapper
-    └── CustomSandpack.tsx    # The core React logic
-```
-
-### The package.json
-
-This file is crucial. It tells npm what your package is, and it explicitly exports the components so they can be imported by the end user via import { Sandpack } from 'astro-sandpack/components'.
-
-Notice the keywords array contains "astro-integration". This is how the Astro CLI discovers your package.
-
-```json
-{
-  "name": "astro-sandpack",
-  "version": "1.0.0",
-  "description": "A plug-and-play Sandpack interactive coding environment for Astro.",
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js",
-    "./components": "./components/Sandpack.astro"
-  },
-  "keywords": [
-    "astro-integration",
-    "astro-component",
-    "sandpack",
-    "react"
-  ],
-  "dependencies": {
-    "@codesandbox/sandpack-react": "^2.0.0",
-    "prettier": "^3.0.0"
-  },
-  "peerDependencies": {
-    "astro": "^7.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  }
-}
-```
-
-### The Integration Hook (`index.ts`)
-
-This is the code that runs when the user's `astro.config.mjs` is evaluated.
-
-Because Sandpack relies on React, we can use the `astro:config:setup` hook to check if the user already has `@astrojs/react` installed and configured. If they don't, our integration can automatically inject it for them!
-
-```ts
-import type { AstroIntegration } from 'astro';
-import react from '@astrojs/react';
-
-export default function sandpackIntegration(): AstroIntegration {
-  return {
-    name: 'astro-sandpack',
-    hooks: {
-      'astro:config:setup': ({ config, updateConfig }) => {
-        // Check if the user already has the React integration configured
-        const hasReact = config.integrations.some(
-          (integration) => integration.name === '@astrojs/react'
-        );
-
-        // If they don't have React, inject it automatically so Sandpack works out of the box
-        if (!hasReact) {
-          updateConfig({
-            integrations: [react()],
-          });
-        }
-      },
-    },
-  };
-}
-```
-
-### The End-User Experience
-
-Once you publish this to npm, the developer experience becomes magical.
-
-#### Installation
-
-The user simply runs:
-
-```bash
-npx astro add astro-sandpack
-```
-
-Astro will automatically install `@codesandbox/sandpack-react` and update their `astro.config.mjs` with the React integration if it's missing.
-
-#### Usage in their project:
 They can now drop interactive playgrounds anywhere in their site without writing a single line of React or worrying about hydration directives:
 
 ```markdown

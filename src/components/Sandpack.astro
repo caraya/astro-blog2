@@ -1,0 +1,12 @@
+---
+import { CustomSandpack } from './CustomSandpack';
+import type { CustomSandpackProps } from './CustomSandpack';
+
+// Inherit the exact types directly from the React component
+type Props = CustomSandpackProps;
+
+// Capture all incoming attributes to forward to React
+const props = Astro.props;
+---
+
+<CustomSandpack client:only="react" {...props} />

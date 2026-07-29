@@ -11,15 +11,14 @@ Each time Netlify publishes a new version of the blog, it runs Lighthouse agains
 
 The two areas I was surprised with are performance and PWA so I decided to dive deeper into them.
 
-!!! note **Note**:
-The Service Worker and the manifest are working and would let me install the site as an app, just not a full PWA as Google recommends.
-!!!
+<custom-admonition type="note" title="Note**">
+	<p>The Service Worker and the manifest are working and would let me install the site as an app, just not a full PWA as Google recommends.</p>
+</custom-admonition>
 
-!!! danger **Something to watch out for**
-Lighthouse is fickle and results can and will vary greatly depending on where you run the tests from.
-
-For example, running the tests when Netlify publishes a deploy will produce significantly better results than running against the same deployed site from
-!!!
+<custom-admonition type="danger" title="Something to watch out for">
+	<p>Lighthouse is fickle and results can and will vary greatly depending on where you run the tests from.</p>
+	<p>For example, running the tests when Netlify publishes a deploy will produce significantly better results than running against the same deployed site from</p>
+</custom-admonition>
 
 ## Performance
 

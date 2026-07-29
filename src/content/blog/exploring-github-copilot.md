@@ -12,11 +12,10 @@ GitHub Copilot is an AI pair programmer that provides intelligent suggestions as
 
 This post will explore Github Copilot's capabilities, focusing on practical examples as well as its use as a writing assistant for documentation and blog posts.
 
-!!! note Answers are non-deterministic
-Copilot, and all other AI tools I'm aware of, generate non-deterministic outputs.
-
-This means that if you follow the same steps multiple times, you may get different suggestions each time. The examples shown here are representative of typical outputs but may not match exactly what you see.
-!!!
+<custom-admonition type="note" title="Answers are non-deterministic">
+	<p>Copilot, and all other AI tools I'm aware of, generate non-deterministic outputs.</p>
+	<p>This means that if you follow the same steps multiple times, you may get different suggestions each time. The examples shown here are representative of typical outputs but may not match exactly what you see.</p>
+</custom-admonition>
 
 ## Prerequisites
 

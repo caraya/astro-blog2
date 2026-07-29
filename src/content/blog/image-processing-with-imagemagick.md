@@ -90,9 +90,9 @@ magick input/image.jpg \
 magick mogrify -path output -format webp -resize 500x input/*
 ```
 
-!!! warning **Warning:**
-As with many tools that modify images, you should always keep the original image. The `mogrify` command will overwrite the original image, so be careful when using it.
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>As with many tools that modify images, you should always keep the original image. The `mogrify` command will overwrite the original image, so be careful when using it.</p>
+</custom-admonition>
 
 ## Customizing images
 

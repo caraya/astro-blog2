@@ -7,7 +7,7 @@ interface Props {
 
 const { count = 10 } = Astro.props;
 
-const allPosts = await getBlogPosts(import.meta.env.DEV);
+const allPosts = await getBlogPosts();
 const latestPosts = allPosts.slice(0, count);
 ---
 

@@ -9,7 +9,7 @@ import Excerpt from '../../components/Excerpt.astro';
 import Footer from '../../components/Footer.astro';
 
 export async function getStaticPaths() {
-  const allPosts = await getBlogPosts(import.meta.env.DEV);
+  const allPosts = await getBlogPosts();
   const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
 
   return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {

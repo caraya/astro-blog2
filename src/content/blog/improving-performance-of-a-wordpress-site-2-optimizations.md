@@ -101,9 +101,9 @@ W3 Total Cache provides tools change the behavior of these files. The default be
 
 However, even though it improves performance, it doesn't change the caching behavior of my font file, one of the largest assets downloaded.
 
-!!! note **Note**:
-I forgot to run my tests after this change so no data is recorded.
-!!!
+<custom-admonition type="note" title="Note**">
+	<p>I forgot to run my tests after this change so no data is recorded.</p>
+</custom-admonition>
 
 ### Add `fetchpriority` to the header image
 

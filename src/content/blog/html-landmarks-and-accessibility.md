@@ -30,9 +30,9 @@ footer ul li {
 
 This will only remove the bullets in lists inside the footer but will not affect list outside the footer.
 
-!!! note **A consideration**:
-Some of these landmark elements may be nested.
-!!!
+<custom-admonition type="note" title="A consideration**">
+	<p>Some of these landmark elements may be nested.</p>
+</custom-admonition>
 
 For example, the following elements can have `header` and `footer` elements as children:
 

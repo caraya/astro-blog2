@@ -87,11 +87,10 @@ const unicode = domainToUnicode('xn--mnchen-3ya.de'); // münchen.de
 
 The following implementation provides the core Punycode encoding algorithm as defined in RFC 3492. It is a simplified version intended for educational purposes and should not be used in production environments.
 
-!!!note  Note on implementation source:
-This reference implementation derives directly from the technical specifications defined in RFC 3492. It is an original adaptation designed to translate the mathematical pseudocode of the RFC into modern, idiomatic TypeScript. Modifications include simplifying the adaptation logic for clarity and utilizing the array spread operator to handle Unicode surrogate pairs without the complexity of manual high/low surrogate detection.
-
-The code was generated with Gemini Pro.
-!!!
+<custom-admonition type="note" title="Note on implementation source">
+	<p>This reference implementation derives directly from the technical specifications defined in RFC 3492. It is an original adaptation designed to translate the mathematical pseudocode of the RFC into modern, idiomatic TypeScript. Modifications include simplifying the adaptation logic for clarity and utilizing the array spread operator to handle Unicode surrogate pairs without the complexity of manual high/low surrogate detection.</p>
+	<p>The code was generated with Gemini Pro.</p>
+</custom-admonition>
 
 ### Why this is not production-ready
 

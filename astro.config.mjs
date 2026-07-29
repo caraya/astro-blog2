@@ -12,22 +12,27 @@ import { unified } from '@astrojs/markdown-remark';
 // remark plugins
 import { remarkDefinitionList, defListHastHandlers } from 'remark-definition-list';
 import { remarkReadingTime } from './src/remark/remark-reading-time.mjs';
+import remarkGfm from 'remark-gfm';
+import { remarkExtendedTable, extendedTableHandlers } from 'remark-extended-table';
+
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://publishing-project.rivendellweb.net',
   markdown: {
     syntaxHighlight: false,
-    processor: unified({
-      remarkPlugins: [
-        remarkDefinitionList,
-        remarkReadingTime,
-
-      ],
-      remarkRehype: {
-        handlers: defListHastHandlers,
+    remarkPlugins: [
+      remarkDefinitionList,
+      remarkReadingTime,
+      remarkGfm,
+      remarkExtendedTable,
+    ],
+    remarkRehype: {
+      handlers: {
+        ...defListHastHandlers,
+        ...extendedTableHandlers,
       },
-    })
+    },
   },
   integrations: [
     react(),

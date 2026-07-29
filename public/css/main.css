@@ -621,6 +621,7 @@
   .left-footer [data-icon] {
     color: #000;
     font-size: 2rem;
+    margin-inline: 1rem;
   }
 
   article {
@@ -792,6 +793,10 @@
     font-family: bootstrap-icons;
     content: var(--icon-arrow-right-circle, "→");
     margin-left: 0.3em;
+  }
+
+  .posts-grid article {
+    margin-block-end: 3rem;
   }
 
   /* Tags */

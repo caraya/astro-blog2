@@ -131,21 +131,16 @@ The scoping rules for CSS are complicated:
 4. **Scoping proximity**: When two selectors in the origin layer with precedence have the same specificity, the property value within scoped rules with the smallest number of hops up the DOM hierarchy to the scope root wins
 5. **Order of appearance**: In the origin with precedence, if there are competing values for a property that are in style block matching selectors of equal specificity and scoping proximity, the last declaration in the style order is applied
 
-!!! info **Detalis about origins and user agents**:
-The different origins used in step 2 are:
-
-User-agent stylesheets
-: User-agents, or browsers, have basic stylesheets that give default styles to any document. These stylesheets are named user-agent stylesheets. Most browsers use actual stylesheets for this purpose, while others simulate them in code. The end result is the same.
-
-Author stylesheets
-: Author stylesheets are the most common type of stylesheet; these are the styles written by web developers. These styles can reset user-agent styles, as noted above, and define the styles for the design of a given web page or application. The author, or web developer, defines the styles for the document using one or more linked or imported stylesheets, `style` blocks, and inline styles defined with the style attribute.
-
-User stylesheets
-: In most browsers, the user (or reader) of the website can choose to override styles using a custom user stylesheet designed to tailor the experience to the user's wishes. Depending on the user agent, user styles can be configured directly or added via browser extensions
-
-The full precedence order is described in the table below:
-
-| Precedence Order<br>(low to high)	| Origin | Importance |
+<custom-admonition type="info" title="Detalis about origins and user agents**">
+	<p>The different origins used in step 2 are:</p>
+	<p>User-agent stylesheets
+: User-agents, or browsers, have basic stylesheets that give default styles to any document. These stylesheets are named user-agent stylesheets. Most browsers use actual stylesheets for this purpose, while others simulate them in code. The end result is the same.</p>
+	<p>Author stylesheets
+: Author stylesheets are the most common type of stylesheet; these are the styles written by web developers. These styles can reset user-agent styles, as noted above, and define the styles for the design of a given web page or application. The author, or web developer, defines the styles for the document using one or more linked or imported stylesheets, `style` blocks, and inline styles defined with the style attribute.</p>
+	<p>User stylesheets
+: In most browsers, the user (or reader) of the website can choose to override styles using a custom user stylesheet designed to tailor the experience to the user's wishes. Depending on the user agent, user styles can be configured directly or added via browser extensions</p>
+	<p>The full precedence order is described in the table below:</p>
+	<p>| Precedence Order<br>(low to high)	| Origin | Importance |
 | :---: | :---: | --- |
 | 1 | user-agent | normal |
 | 2 | user | normal |
@@ -154,9 +149,8 @@ The full precedence order is described in the table below:
 | 5 | author | !important |
 | 6 | user | !important |
 | 7 | user-agent | !important |
-| 8 | CSS transitions | |
-
-!!!
+| 8 | CSS transitions | |</p>
+</custom-admonition>
 
 The cascade is a powerful tool but it can be hard to manage.
 

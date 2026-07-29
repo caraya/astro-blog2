@@ -47,8 +47,9 @@ These values are not separated by commas and the alpha value is separated by a s
 
 Lea Verou does much better and thorough work in explaining what LCH is and why should we use it in her post: [LCH colors in CSS: what, why, and how?](https://lea.verou.me/2020/04/lch-colors-in-css-what-why-and-how/). She also provides an [LCH color picker](https://css.land/lch/) as a tool to learn about and use the LCH color space.
 
-!!! note **Note:** As of this writing (early July 2022), LCH is only supported in Safari but it's under development in Chromium browsers and under discussion in Firefox
-!!!
+<custom-admonition type="note" title="Note:** As of this writing (early July 2022), LCH is only supported in Safari but it's under development in Chromium browsers and under discussion in Firefox">
+	<p></p>
+</custom-admonition>
 
 ## Color-mix()
 

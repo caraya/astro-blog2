@@ -28,9 +28,9 @@ This post will explore the Built-in AI features of Chrome, how they work, how to
 This is the core API for interacting with Gemini Nano. It creates a new session for text generation and conversational AI, allowing for a wide range of applications.
 
 
-!!!warning  Note on API Status:
-As of now, `createTextSession` is still considered an experimental, early-access feature. You must keep the Chrome flags enabled to use it, even in versions later than 127.
-!!!
+<custom-admonition type="warning" title="Note on API Status">
+	<p>As of now, `createTextSession` is still considered an experimental, early-access feature. You must keep the Chrome flags enabled to use it, even in versions later than 127.</p>
+</custom-admonition>
 
 ### Checking for Availability
 

@@ -7,11 +7,10 @@ tags:
 colorjs: true
 ---
 
-!!! warning **Warning:**
-These components are under development and they may change without notice.
-
-If the current version of the components meets your needs you may want to pin to the specific version you're currently using. This may also mean hosting your own version of the library
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>These components are under development and they may change without notice.</p>
+	<p>If the current version of the components meets your needs you may want to pin to the specific version you're currently using. This may also mean hosting your own version of the library</p>
+</custom-admonition>
 
 Working in blog updates (and ideas for future projects) I started looking at web components as an alternative to manually updating code for each type of component I want.
 

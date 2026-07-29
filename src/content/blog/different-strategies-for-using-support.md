@@ -53,9 +53,9 @@ The `not` operator negates the parameter that follows. In essence, we're telling
 
 ## Selector list argument of :nth-child pseudo-classes
 
-!!! note **Note:**
-As of this writing, the feature is only supported in Safari
-!!!
+<custom-admonition type="note" title="Note">
+	<p>As of this writing, the feature is only supported in Safari</p>
+</custom-admonition>
 
 All our examples work with properties and values like `(perspective: 10px)`. Most of the time this is all that we will need.
 

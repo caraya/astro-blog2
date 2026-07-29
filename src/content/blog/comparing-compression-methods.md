@@ -86,9 +86,9 @@ I am using the following tools installed via [Homebrew](https://brew.sh/):
 | Brotli | 1.1.0 |
 | zstd | 1.5.7 |
 
-!!! note Note
-In this post I will not research whether there's a difference in using tools installed via Homebrew and those compiled from source. I will assume that the tools installed via Homebrew will behave the same as those manually compiled
-!!!
+<custom-admonition type="note" title="Note">
+	<p>In this post I will not research whether there's a difference in using tools installed via Homebrew and those compiled from source. I will assume that the tools installed via Homebrew will behave the same as those manually compiled</p>
+</custom-admonition>
 
 The files that we'll be testing with:
 
@@ -98,11 +98,10 @@ The files that we'll be testing with:
 
 We will run multiple compression tests  and compare the results for each compression methods.
 
-!!! note Note
-I chose to only compress a sample text file because it's the most likely thing to compress in the command line.
-
-Photos and videos can be better compressed with specialized tools so I wouldn't expect to see much difference in compression file sizes when using any of the tools in this post.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>I chose to only compress a sample text file because it's the most likely thing to compress in the command line.</p>
+	<p>Photos and videos can be better compressed with specialized tools so I wouldn't expect to see much difference in compression file sizes when using any of the tools in this post.</p>
+</custom-admonition>
 
 ### GZip
 

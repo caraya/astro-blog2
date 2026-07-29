@@ -225,11 +225,10 @@ The order of precedence becomes:
 * Unlayered normal styles
 * Layered normal styles (respecting layer order)
 
-!!!note  **Rule of thumb**
-Avoid !important where possible.
-
-Prefer unlayered styles for intentional overrides, and reserve !important for absolute last-resort situations.
-!!!
+<custom-admonition type="note" title="Rule of thumb">
+	<p>Avoid !important where possible.</p>
+	<p>Prefer unlayered styles for intentional overrides, and reserve !important for absolute last-resort situations.</p>
+</custom-admonition>
 
 ## Browser Support and Fallbacks
 

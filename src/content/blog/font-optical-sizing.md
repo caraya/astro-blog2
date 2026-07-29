@@ -5,9 +5,9 @@ date: "2021-12-20"
 
 I came to optical sizing via variable fonts. The idea is that by having an optical sizing axis in your variable font you can control how the font looks at different sizes. For small text sizes, usually have thicker strokes with larger serifs. Larger text often has more contrast between thicker and thinner strokes.
 
-!!! note **Note:**
-Optical sizing will only work with variable fonts that have an opsz axis. If the font doesn't have an optical sizing axis, there will be no effect. They are also limited to operating systems that support variable fonts.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>Optical sizing will only work with variable fonts that have an opsz axis. If the font doesn't have an optical sizing axis, there will be no effect. They are also limited to operating systems that support variable fonts.</p>
+</custom-admonition>
 
 We're using [Amstelvar](https://github.com/TypeNetwork/Amstelvar/releases) for the code and the attached demo. We first register the font with the weight and stretch using variable font ranges rather than single values
 

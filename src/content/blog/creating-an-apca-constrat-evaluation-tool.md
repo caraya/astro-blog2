@@ -53,9 +53,9 @@ Now we have a function to calculate the APCA contrast value between text and bac
 
 Unlike WCAG contrast tests that use a single contrast value in all instances, APCA has several levels of conformance within the same test.
 
-!!! note Note:
-The specification is not final so these definitions, as everything else in the world of APCA and ARC, may change between the time this was written and when the specification becomes final. The authoritative source of truth is always the [ARC website](https://readtech.org/ARC/)
-!!!
+<custom-admonition type="note" title="Note">
+	<p>The specification is not final so these definitions, as everything else in the world of APCA and ARC, may change between the time this was written and when the specification becomes final. The authoritative source of truth is always the [ARC website](https://readtech.org/ARC/)</p>
+</custom-admonition>
 
 To understand ARC requirements we need to look at some definitions they use:
 

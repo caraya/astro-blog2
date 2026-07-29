@@ -14,9 +14,9 @@ Previously, the primary way to influence multi-column behavior was to set a fixe
 
 This post covers two features in the CSS Multi-Column Layout Module Level 2 specification that address these limitations: column-height and column-wrap. These features provide solutions for managing content flow and wrapping in complex layouts.
 
-!!! warning Warning:
-These features are part of the CSS Multi-Column Layout Module Level 2 specification, which is currently a working draft. Browser support is limited or non-existent. Verify compatibility before using these features in production.
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>These features are part of the CSS Multi-Column Layout Module Level 2 specification, which is currently a working draft. Browser support is limited or non-existent. Verify compatibility before using these features in production.</p>
+</custom-admonition>
 
 ## Current Browser Support & Flags
 
@@ -36,9 +36,9 @@ If you do not set a height for the container, the columns default to the height 
 
 The Level 2 specification introduces two properties to provide more granular control: `column-height` and `column-wrap`.
 
-!!! note Note:
-Although these properties appear in the editor's draft, major browsers have not yet implemented them. Furthermore, an ongoing GitHub discussion regarding whether both properties are necessary suggests the attributes may change before the specification is finalized.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>Although these properties appear in the editor's draft, major browsers have not yet implemented them. Furthermore, an ongoing GitHub discussion regarding whether both properties are necessary suggests the attributes may change before the specification is finalized.</p>
+</custom-admonition>
 
 ### Column Height
 

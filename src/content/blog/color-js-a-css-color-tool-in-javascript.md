@@ -41,9 +41,9 @@ let color4p3 = color4.to("p3");
 
 &nbsp;
 
-!!! note **Note:**
-These examples purposefully ignore the issues of color gamut mapping and the possibility that, after conversion from a larger color space to a smaller one like sRGB, the resulting colors may be outside the smaller colorspace visible colors. Color.js provides tools and functions to deal with this; check [gamut mapping](https://colorjs.io/docs/gamut-mapping.html) for more information.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>These examples purposefully ignore the issues of color gamut mapping and the possibility that, after conversion from a larger color space to a smaller one like sRGB, the resulting colors may be outside the smaller colorspace visible colors. Color.js provides tools and functions to deal with this; check [gamut mapping](https://colorjs.io/docs/gamut-mapping.html) for more information.</p>
+</custom-admonition>
 
 Once we define the color we can adjust different properties of the color that will change the color in place or will change it to a different color.
 

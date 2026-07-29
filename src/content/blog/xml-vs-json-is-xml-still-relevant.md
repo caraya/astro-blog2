@@ -183,11 +183,10 @@ XSLT is a functional language designed to transform XML into other formats (HTML
 - **XSLT 2.0**: A massive leap forward (2007). It introduced strong typing (integers, dates), user-defined functions (xsl:function), regular expressions, and the ability to output multiple files from a single source.
 - **XSLT 3.0**: The modern standard (2017). It adds streaming (processing files larger than memory), higher-order functions, and full JSON support (transforming JSON to XML and vice-versa).
 
-!!! warning  **XSLT in Browsers**
-Browsers generally only support XSLT 1.0. For modern XSLT 2.0/3.0 features, you must use server-side processors like Saxon (Java/JS/Node) or process the transformations on the server before displaying the changes.
-
-Browsers are removing built-in XSLT support altogether, so relying on client-side XSLT is not future-proof since browsers only support XSLT 1.0 and even that old support is being taken away.
-!!!
+<custom-admonition type="warning" title="XSLT in Browsers">
+	<p>Browsers generally only support XSLT 1.0. For modern XSLT 2.0/3.0 features, you must use server-side processors like Saxon (Java/JS/Node) or process the transformations on the server before displaying the changes.</p>
+	<p>Browsers are removing built-in XSLT support altogether, so relying on client-side XSLT is not future-proof since browsers only support XSLT 1.0 and even that old support is being taken away.</p>
+</custom-admonition>
 
 #### XQuery
 

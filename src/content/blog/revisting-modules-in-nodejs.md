@@ -105,8 +105,9 @@ Node.js treats files as CommonJS by default. To use ESM, you must either
 }
 ```
 
-!!! Note  **Note**
-If you add `"type": "module"` to your package.json, all .js files in that project will be treated as ESM. You must rename any CommonJS files to .cjs.!!!
+<custom-admonition type="Note" title="Note">
+	<p>If you add <code>"type": "module"</code> to your <code>package.json</code>, all .js files in that project will be treated as ESM. You must rename any CommonJS files to .cjs.</p>
+</custom-admonition>
 
 ## Interoperability: Mixing CommonJS and ESM
 
@@ -119,7 +120,6 @@ This generally works easily. You can import a CJS file, but be aware of the "Dou
 ```js
 // ❌ Named import might fail
 import { foo } from 'cjs-lib';
-
 // ✅ Default import works
 import pkg from 'cjs-lib';
 const { foo } = pkg;
@@ -129,18 +129,20 @@ const { foo } = pkg;
 
 This is version-specific.
 
-- **Node.js 20.18 & Older**: You cannot use require() to load an ESM file. You must use dynamic imports:
+* **Node.js 20.18 & Older**: You cannot use require() to load an ESM file. You must use dynamic imports:
 
-    ```js(async () => {
-      const myModule = await import('./my-module.mjs');
-    })();
-    ```
+```js
+(async () => {
+  const myModule = await import('./my-module.mjs');
+})();
+```
 
-- **Node.js 22 (LTS) & 23+**: You can use require() to load synchronous ESM files.
+* **Node.js 22 (LTS) & 23+**: You can use require() to load synchronous ESM files.
 
 ```js
 const myModule = require('./my-module.mjs');
 ```
+
 
 The next table summarizes ESM support in Node.
 
@@ -151,12 +153,14 @@ The next table summarizes ESM support in Node.
 | 20.19 | Backported | require('./file.mjs') |
 | 20.18 & Older | Not Supported | Use await import('./file.mjs'). |
 
-!!! warning  Warning
+<custom-admonition type="warning" title="Warning">
 require(esm) has two caveats:
 
-- You can only require the default export.
-- It will crash if the ESM module uses Top-Level Await.
-!!!
+<ul>
+  <li>You can only require the default export.</li>
+  <li>It will crash if the ESM module uses Top-Level Await.</li>
+</ul>
+</custom-admonition>
 
 ## The createRequire() Bridge
 
@@ -198,11 +202,11 @@ The exports field is the modern standard for defining entry points. It allows Co
 
 ### Detailed Breakdown
 
-- "exports": If Node sees this, it ignores "main".
-  - "types": **Must be first**. Tells Typescript where the definitions are.
-  - "import": Served when the user uses import (ESM).
-  - "require": Served when the user uses require() (CommonJS).
-- "main" / "module" / "types" (Root level): These are fallback fields for older Node versions, legacy bundlers, and older Typescript versions that don't understand exports.
+* "exports": If Node sees this, it ignores "main".
+  * "types": **Must be first**. Tells Typescript where the definitions are.
+  * "import": Served when the user uses import (ESM).
+  * "require": Served when the user uses require() (CommonJS).
+* "main" / "module" / "types" (Root level): These are fallback fields for older Node versions, legacy bundlers, and older Typescript versions that don't understand exports.
 
 ### Bundler Configuration (Rollup Example)
 

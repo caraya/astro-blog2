@@ -17,9 +17,9 @@ This will create more appealing transitions between pages in an application.
 
 ## How they work
 
-!!! note <strong>Note:</strong>
-Cross-document view transitions are limited to same-origin navigations only. Navigation is considered to be same-origin if the origin of both participating pages is the same.
-!!!
+<custom-admonition type="note" title="<strong>Note:</strong>">
+	<p>Cross-document view transitions are limited to same-origin navigations only. Navigation is considered to be same-origin if the origin of both participating pages is the same.</p>
+</custom-admonition>
 
 To have a cross-document view transition between two documents, both participating pages need to opt-in to allow this. we do this with the `@view-transition` at-rule in CSS.
 

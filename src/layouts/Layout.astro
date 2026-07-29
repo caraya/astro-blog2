@@ -39,6 +39,8 @@ const pageBodyClass = [bodyClass, 'prism-page'].filter(Boolean).join(' ');
     <!-- Theme Colors -->
     <meta name="theme-color" content="#1e456e" />
     <!-- Feeds -->
+    <link rel="alternate" type="application/rss+xml" title={`${siteData.site_name} - RSS`} href={new URL("rss.xml", Astro.site)} />
+    <link rel="alternate" type="application/atom+xml" title={`${siteData.site_name} - Atom`} href={new URL("atom.xml", Astro.site)} />
     <!-- Apple touch icon -->
     <link rel="apple-touch-icon" href="/images/icon-192x192.png" />
     <!-- Manifest -->
@@ -54,7 +56,7 @@ const pageBodyClass = [bodyClass, 'prism-page'].filter(Boolean).join(' ');
       performance.measure('load css', 'start load css', 'end load css');
     </script>
     <!-- custom-admonition web component -->
-    <script is:inline type="module" src="/js/admonition.js"></script>
+    <script is:inline defer type="module" src='/js/admonition.js';></script>
     <!-- Load Prism globally -->
       <script>
         performance.mark('start load prism css');
@@ -74,10 +76,13 @@ const pageBodyClass = [bodyClass, 'prism-page'].filter(Boolean).join(' ');
     )}
     {frontmatter?.youtube && (
       <link rel="stylesheet" href="/css/lite-yt-embed.css" />
-      <script is:inline defer src="/js/lite-yt-embed.js"></script>
+      <script is:inline type="module" src="/js/lite-yt-embed.js"></script>
     )}
     {frontmatter?.colorjs && (
-      <script is:inline src="https://esm.sh/color-elements" type="module"></script>
+      <>
+        <script is:inline src="https://elements.colorjs.io/importmap.js"></script>
+        <script is:inline type="module" src="https://elements.colorjs.io/index.js"></script>
+      </>
     )}
     {frontmatter?.baseline && (
       <script is:inline src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js" type="module"></script>

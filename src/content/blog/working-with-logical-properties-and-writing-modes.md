@@ -45,9 +45,9 @@ So what can we use logical properties for?
 
 We've seen them used for margins and paddings but there is a long list of logical properties we'll concentrate on a few of them:
 
-!!! note **Note:**
-All these equivalencies are for top to bottom and left to right languages.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>All these equivalencies are for top to bottom and left to right languages.</p>
+</custom-admonition>
 
 ### dimensions
 

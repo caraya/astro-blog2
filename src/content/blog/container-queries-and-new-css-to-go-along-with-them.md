@@ -137,9 +137,9 @@ In the near future, we will have to change the code above to accommodate the new
 
 ### Container type
 
-!!! note **Note:**
-The properties described below are different than the contain properties in the CSS Containment Module Level 2. You can use `container-type` without using `contain`.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>The properties described below are different than the contain properties in the CSS Containment Module Level 2. You can use `container-type` without using `contain`.</p>
+</custom-admonition>
 
 The `container-type` property establishes the element as a query container for the purpose of container queries, allowing style rules styling its descendants to query various aspects of its sizing, layout, and style and respond accordingly.
 

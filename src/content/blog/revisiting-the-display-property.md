@@ -47,9 +47,9 @@ block
 inline
 : The element generates one or more inline boxes **without** line breaks before or after themselves. In normal flow, the next element will be on the same line if there is space.
 
-!!! note **Note:**
-In browsers that support two-value syntax, `inline` and `block` are equivalent to `inline flow` and `block flow`.  If you specify an element to be block, you expect the children of the element to participate in block and inline flow layouts.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>In browsers that support two-value syntax, `inline` and `block` are equivalent to `inline flow` and `block flow`.  If you specify an element to be block, you expect the children of the element to participate in block and inline flow layouts.</p>
+</custom-admonition>
 
 ### Display inside
 
@@ -74,9 +74,9 @@ grid
 : The element behaves like a block-level element
 : Lays out its content according to the [grid model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout).
 
-!!! note
-Browsers that support the two-value display syntax will treat `flex` and `grid` as `box flex` and `box grid`.  If we're using grid and flex, we expect them to create block-level boxes.
-!!!
+<custom-admonition type="note" title="Browsers that support the two-value display syntax will treat `flex` and `grid` as `box flex` and `box grid`.  If we're using grid and flex, we expect them to create block-level boxes.">
+	<p></p>
+</custom-admonition>
 
 ### Legacy precomposed values
 

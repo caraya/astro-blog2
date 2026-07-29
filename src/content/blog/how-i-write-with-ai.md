@@ -58,9 +58,9 @@ I then have three options:
 
 We can repeat this process as many times as needed until we are satisfied with the result.
 
-!!! info  **Aside: Why export to Google Docs?**
-Google Docs now has a Markdown export option that preserves the formatting, allowing me to just paste the content to my blog's Markdown file
-!!!
+<custom-admonition type="info" title="Aside: Why export to Google Docs?">
+	<p>Google Docs now has a Markdown export option that preserves the formatting, allowing me to just paste the content to my blog's Markdown file</p>
+</custom-admonition>
 
 ## AI As An Exploratory Writing Tool
 

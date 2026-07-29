@@ -117,9 +117,9 @@ customElements.define('info-card', InfoCard);
 </info-card>
 ```
 
-!!! note **Tip: Template Scoping**
-Defining the template in the module scope (outside the class) ensures the browser parses the HTML string exactly once. If defined inside the constructor, every new instance would re-parse the template, wasting resources.
-!!!
+<custom-admonition type="note" title="Tip: Template Scoping">
+	<p>Defining the template in the module scope (outside the class) ensures the browser parses the HTML string exactly once. If defined inside the constructor, every new instance would re-parse the template, wasting resources.</p>
+</custom-admonition>
 
 ### Shadow DOM
 
@@ -272,9 +272,9 @@ classDiagram
 | `<input>` | HTMLInputElement | Custom masking, validation, or formatting. |
 | `<video>` | HTMLVideoElement | Custom overlays or playback controls. |
 
-!!! warning  **Warning: Visual Overrides**
-Attaching a Shadow Root to a built-in element like `<video>` overrides the native "User Agent Shadow DOM" (the browser's default UI). To keep native controls, avoid attachShadow and interact with the host directly.
-!!!
+<custom-admonition type="warning" title="Warning: Visual Overrides">
+	<p>Attaching a Shadow Root to a built-in element like `<video>` overrides the native "User Agent Shadow DOM" (the browser's default UI). To keep native controls, avoid attachShadow and interact with the host directly.</p>
+</custom-admonition>
 
 ### ElementInternals: The Bridge
 

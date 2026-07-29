@@ -125,16 +125,15 @@ your-project/
 
 The following commands should be run from the root directory.
 
-!!! note **Important Note for macOS users**
-Encountering dyld errors (like "Library not loaded"):
+<custom-admonition type="note" title="Important Note for macOS users">
+<p>If you haven't already, export `DYLD_LIBRARY_PATH` in your current shell session before running the brotli commands:</p>
 
-If you haven't already, export `DYLD_LIBRARY_PATH` in your current shell session before running the brotli commands:
-
-```bash
+<pre class="language-bash"><code>
 export DYLD_LIBRARY_PATH=brotli/out/
-```
+</code></pre>
 
-This tells the dynamic linker where to find the Brotli libraries. This path assumes you are in your-project/ and brotli/out/ is the correct relative path to the libraries.
+<p>This tells the dynamic linker where to find the Brotli libraries. This path assumes you are in <code>your-project/</code> and <code>brotli/out/</code> is the correct relative path to the libraries.</p>
+</custom-admonition>
 
 Create the Shared Brotli Dictionary using  jquery-3.7.1.js as the source material.
 

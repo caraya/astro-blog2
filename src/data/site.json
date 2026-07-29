@@ -1,6 +1,7 @@
 {
   "url": "https:/publishing-project.rivendellweb.net",
-  "site_name": "Carlos Araya's Portfolio",
+  "site_name": "The Publishing Project",
+    "email": "mailto:carlos.araya@gmail.com",
   "language": "en_US",
   "social_links": {
     "github": "https://github.com/caraya",
@@ -12,9 +13,10 @@
   "nav_links": {
     "Home": "/",
     "GitHub": "https://github.com/caraya",
-    "Guides & Tutorials": "https://guides-tutorials.rivendellweb.net/",
-    "projects": "https://projects.rivendellweb.net"
-  },
-  "email": "mailto:carlos.araya@gmail.com"
-
+    "Patterns": "https://patterns.rivendellweb.net",
+    "Layouts": "https://layouts.rivendellweb.net",
+    "Guides": "https://guides-tutorials.rivendellweb.net/",
+    "projects": "https://projects.rivendellweb.net",
+    "Blog Repo": "https://github.com/caraya/astro-blog2"
+  }
 }

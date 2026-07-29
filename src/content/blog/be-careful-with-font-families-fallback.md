@@ -5,7 +5,6 @@ tags:
   - Web
   - CSS
   - Fonts
-draft: true
 ---
 
 When we use web fonts, we often specify a font using the `font-family` at-rule. This allows us to specify a list of fonts that the browser should try to use, in order of preference. If the first font isn't available, the browser will try the next one, and so on, until it finds a font that is available on the user's system.

@@ -6,7 +6,7 @@
  *   https://autoplay-youtube-player.glitch.me/
  *
  * Once built it, I also found these:
- *   https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube (👍👍)
+ *   https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube
  *   https://github.com/Daugilas/lazyYT
  *   https://github.com/vb/lazyframe
  */

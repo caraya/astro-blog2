@@ -3,9 +3,9 @@ title: "New and Upcoming CSS: @media (prefers-reduced-data)"
 date: "2022-07-27"
 ---
 
-!!! warning **Warning:**
-This feature is only supported behind a flag in Chromium browsers since version 85 and, as far as I know, there is no polyfill. **Do not use this feature in production.**
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>This feature is only supported behind a flag in Chromium browsers since version 85 and, as far as I know, there is no polyfill. **Do not use this feature in production.**</p>
+</custom-admonition>
 
 The `prefers-reduced-data` media query detects if the user has requested the web content that consumes less internet traffic via the browser or operating system's `data-saver` option.
 

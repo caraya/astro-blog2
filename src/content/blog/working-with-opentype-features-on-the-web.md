@@ -3,9 +3,9 @@ title: "Working with OpenType Features on the web"
 date: "2020-09-14"
 ---
 
-!!! warning Warning
-The support for these features depends on the browser and not all browsers support all the features discussed below. Check the corresponding entries on [caniuse.com](https://caniuse.com/) or [MDN](https://developer.mozilla.org/) to ensure the feature will work in your target browsers.
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>The support for these features depends on the browser and not all browsers support all the features discussed below. Check the corresponding entries on [caniuse.com](https://caniuse.com/) or [MDN](https://developer.mozilla.org/) to ensure the feature will work in your target browsers.</p>
+</custom-admonition>
 
 Using a font's OpenType features on the web is possible but difficult. This post will explore what we can do and how we can do it.
 

@@ -142,9 +142,9 @@ Gutenberg supports meta boxes as a transitional step towards the new editor. We 
 
 WP-Cron works by checking, on every page load, a list of scheduled tasks to see what needs to be run. Any tasks due to run will be called during that page load.
 
-!!! note **Note:**
-WP-Cron only triggered on page load. It does not run constantly as the system cron does
-!!!
+<custom-admonition type="note" title="Note">
+	<p>WP-Cron only triggered on page load. It does not run constantly as the system cron does</p>
+</custom-admonition>
 
 Scheduling errors could occur if you schedule a task for 2:00PM and no page loads occur until 5:00PM.
 

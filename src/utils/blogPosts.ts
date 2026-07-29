@@ -10,11 +10,16 @@ export function toBlogDate(date: string) {
   return Temporal.PlainDate.from(date);
 }
 
+export function isDraftBuild() {
+  return import.meta.env.DEV || process.env.BUILD_DRAFTS === 'true';
+}
+
 export function isPublicBlogPost(post: BlogPostEntry, currentDate = Temporal.Now.plainDateISO()) {
+  if (isDraftBuild()) return true;
   return !post.data.draft && Temporal.PlainDate.compare(toBlogDate(post.data.date), currentDate) <= 0;
 }
 
-export async function getBlogPosts(includeDrafts = false) {
+export async function getBlogPosts(includeDrafts = isDraftBuild()) {
   const posts = await getCollection('blog');
 
   const visiblePosts = includeDrafts
@@ -41,7 +46,7 @@ export function getPageHref(pageNumber: number) {
   return pageNumber <= 1 ? '/' : `/page/${pageNumber}`;
 }
 
-export function getBlogPostNavigation(currentPost: BlogPostEntry, includeDrafts = false) {
+export function getBlogPostNavigation(currentPost: BlogPostEntry, includeDrafts = isDraftBuild()) {
   return getBlogPosts(includeDrafts).then((posts) => {
     const currentIndex = posts.findIndex((post) => post.id === currentPost.id);
 

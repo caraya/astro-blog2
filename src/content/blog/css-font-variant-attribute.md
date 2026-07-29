@@ -138,9 +138,9 @@ The possible values are:
 
 ## font-variant-alternates
 
-!!! note **Note:**
-Currently, `font-variant-alternate`only works in Firefox and Safari (desktop and iOS/iPadOS) Chromium browsers have equivalent support under `font-feature-settings`.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>Currently, `font-variant-alternate`only works in Firefox and Safari (desktop and iOS/iPadOS) Chromium browsers have equivalent support under `font-feature-settings`.</p>
+</custom-admonition>
 
 [font-variant-alternates](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates) controls the usage of alternate glyphs. This `font-variant-*` property is tightly coupled with the font you use as it's almost certain that the results will vary from font to font.
 

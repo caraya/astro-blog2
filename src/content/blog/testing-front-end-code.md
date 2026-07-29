@@ -196,9 +196,9 @@ So far we've told Playwright the URL of the page and the specific element within
 
 The assertions in the list below will continue retrying until they succeed or timeout.
 
-!!! note **Note**
-You must use `await` with these assertions
-!!!
+<custom-admonition type="note" title="Note">
+	<p>You must use `await` with these assertions</p>
+</custom-admonition>
 
 <p>&nbsp;</p>
 

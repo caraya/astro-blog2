@@ -33,9 +33,9 @@ When written horizontally, we use the same attributes as for western languages: 
 
 ## Cosmetical uses
 
-!!! warning Warning:
-This feature is only supported in Firefox.
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>This feature is only supported in Firefox.</p>
+</custom-admonition>
 
 There are two additional values for `writing-mode`: `sideways-rl` and `sideways-lr`.
 

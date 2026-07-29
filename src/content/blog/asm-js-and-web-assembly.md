@@ -235,11 +235,10 @@ Open a command prompt inside the SDK directory and run the following emsdk comma
 ./emsdk activate latest
 ```
 
-!!! note **Notes:**
-On Windows, invoke the tool with emsdk instead of ./emsdk.
-
-Linux and Mac OS X only: Call source ./emsdk\_env.sh after activate to set the system path to the active version of Emscripten.
-!!!
+<custom-admonition type="note" title="Notes">
+	<p>On Windows, invoke the tool with emsdk instead of ./emsdk.</p>
+	<p>Linux and Mac OS X only: Call source ./emsdk\_env.sh after activate to set the system path to the active version of Emscripten.</p>
+</custom-admonition>
 
 **Platform-specific notes**
 

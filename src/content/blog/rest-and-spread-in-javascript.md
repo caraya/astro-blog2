@@ -27,9 +27,9 @@ In a function's parameter list, `...` followed by a parameter name will gather a
 
 This array will contain all arguments from the point the rest parameter is declared to the end.
 
-!!! note **Note**
-A function can only have one rest parameter, and it must be the last parameter in the function's signature.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>A function can only have one rest parameter, and it must be the last parameter in the function's signature.</p>
+</custom-admonition>
 
 Example:
 

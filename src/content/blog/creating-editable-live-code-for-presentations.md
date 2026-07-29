@@ -35,10 +35,8 @@ Once the script has been added to the slide where you want the replay to happen,
 
 This has two main benefits. It saves you from making typos during the live presentation and it allows people viewing the deck after the conference to step through the video just like the presenter did.
 
-!!! note **A final note:**
-Be mindful about how you add the text to replay.
-
-Rety will play back exactly what you tell it to, so if you copy a large block of text into the editor, it'll appear all at once when people replay the demo. This can be confusing for people who were not present during the original presentation.
-
-If at all possible, type the code as you would if you were coding in front of an audience.
-!!!
+<custom-admonition type="note" title="A final note">
+	<p>Be mindful about how you add the text to replay.</p>
+	<p>Rety will play back exactly what you tell it to, so if you copy a large block of text into the editor, it'll appear all at once when people replay the demo. This can be confusing for people who were not present during the original presentation.</p>
+	<p>If at all possible, type the code as you would if you were coding in front of an audience.</p>
+</custom-admonition>

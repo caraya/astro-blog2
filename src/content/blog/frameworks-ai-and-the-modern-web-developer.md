@@ -261,9 +261,9 @@ As the W3C standardized the DOM, Javascript became an international standard thr
 
 The second generation of frameworks introduced new concepts and approaches to web development.
 
-!!! note **Note:**
-The code in the framework examples below is not a complete application. It is meant to show the basic structure of a component.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>The code in the framework examples below is not a complete application. It is meant to show the basic structure of a component.</p>
+</custom-admonition>
 
 [React](https://react.dev/) introduced a component-based approach and a virtual DOM. It has also become the go-to framework in the industry for building user interfaces and has been adopted by large companies and open source projects like WordPress as their front-end framework for the block editor.
 

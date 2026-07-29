@@ -1,6 +1,6 @@
 ---
 title: "Understanding SVG Filters"
-date: 2026-07-31
+date: 2026-07-29
 tags:
   - SVG
   - Development

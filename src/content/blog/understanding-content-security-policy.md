@@ -212,9 +212,9 @@ You generally cannot reuse cache-busting hashes (like main.a1b2c3d.js) for your 
 
 If your build tool generates Subresource Integrity (SRI) hashes for your external files (which look like integrity="sha384-oqVuAfXRKap7fdgcCY5uykM6..."), these use the exact cryptographic algorithms and Base64 encoding required by CSP.
 
-!!!important  **Important**
-You must obtain the SRI hash directly from a trusted source (such as the official documentation of the library) or generate it yourself from a verified file. If you blindly accept a hash from an untrusted third party, an attacker could provide both a malicious file and its matching hash, completely defeating the security benefits of SRI.
-!!!
+<custom-admonition type="important" title="Important">
+	<p>You must obtain the SRI hash directly from a trusted source (such as the official documentation of the library) or generate it yourself from a verified file. If you blindly accept a hash from an untrusted third party, an attacker could provide both a malicious file and its matching hash, completely defeating the security benefits of SRI.</p>
+</custom-admonition>
 
 Under the CSP Level 3 specification, you can use an SRI hash directly inside your script-src or style-src directive to allowlist a specific external file without allowlisting the entire domain.
 

@@ -30,9 +30,9 @@ Doing this is a two-step process.
     3. Click on `Upload file and import`
     4. Under `Import Attachments`, check the `Download and import file attachments` box and click submit
 
-!!! note **Note:**
-You may have to repeat the Import step until you see "All Done" to obtain the full list of Posts and Media.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>You may have to repeat the Import step until you see "All Done" to obtain the full list of Posts and Media.</p>
+</custom-admonition>
 
 Downloading and importing file attachments means that the production server must be up and running when you import the data.
 

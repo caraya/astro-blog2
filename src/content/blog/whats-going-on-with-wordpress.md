@@ -8,13 +8,11 @@ tags:
   - Opinion
 ---
 
-!!! tip **Full Disclosure**
-I worked with WordPress for 18 years until 2023 when the direction it was moving to didn't align with what I wanted to do.
-
-I've also strongly disagreed with Matt Mullenweg's policies in the past.
-
-I'm working hard to keep the biases in check, but want to put them up front, just in case.
-!!!
+<custom-admonition type="tip" title="Full Disclosure">
+	<p>I worked with WordPress for 18 years until 2023 when the direction it was moving to didn't align with what I wanted to do.</p>
+	<p>I've also strongly disagreed with Matt Mullenweg's policies in the past.</p>
+	<p>I'm working hard to keep the biases in check, but want to put them up front, just in case.</p>
+</custom-admonition>
 
 
 I have to admit that this caught me by surprise. I've never been a fan of Matt Mullenweg and his heavy handed approach to managing WordPress, its partners and ecosystem but this is getting out of hand and will have serious impact on the community as a whole.

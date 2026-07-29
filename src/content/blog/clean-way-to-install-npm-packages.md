@@ -38,9 +38,9 @@ The key differences between `npm ci` and `npm install` are:
 * **Clean Slate**: `npm ci` always deletes `node_modules` before installing to prevent any inconsistencies.
 * **Package Management**: You cannot use `npm ci` to add, update, or remove individual packages (e.g., `npm ci express`). It only installs the entire project at once.
 
-!!! note Note:
-If you use special flags like `--legacy-peer-deps` when running `npm install`, you must use the same flags with `npm ci`. An easy way to enforce this is to create a `.npmrc` file in your project with these settings (e.g., `legacy-peer-deps=true`) and commit it to your repository.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>If you use special flags like `--legacy-peer-deps` when running `npm install`, you must use the same flags with `npm ci`. An easy way to enforce this is to create a `.npmrc` file in your project with these settings (e.g., `legacy-peer-deps=true`) and commit it to your repository.</p>
+</custom-admonition>
 
 ## Using npm ci with Overrides
 

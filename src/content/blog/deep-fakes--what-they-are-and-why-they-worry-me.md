@@ -18,9 +18,9 @@ This post is meant as a cautionary tale about the evolution of technology and th
 
 ## A brief history
 
-!!! note Note:
-This section is based on content from [Rise of DeepFake Technology](https://legamart.com/articles/deepfake-technology/), [Video Rewrite, Origins of Deepfakes](https://www.historyofinformation.com/detail.php?id=4792) and [Face/Off: Changing the face of movies with deepfakes](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10325052/)
-!!!
+<custom-admonition type="note" title="Note">
+	<p>This section is based on content from [Rise of DeepFake Technology](https://legamart.com/articles/deepfake-technology/), [Video Rewrite, Origins of Deepfakes](https://www.historyofinformation.com/detail.php?id=4792) and [Face/Off: Changing the face of movies with deepfakes](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10325052/)</p>
+</custom-admonition>
 
 According to [Face/Off: Changing the face of movies with deepfakes](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10325052/):
 

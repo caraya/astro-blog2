@@ -22,7 +22,9 @@ const blogSchema = z.object({
   vimeo: z.boolean().optional().default(false),
   mavo: z.boolean().optional().default(false),
   mermaid: z.boolean().optional().default(false),
-}).passthrough();
+  sandpack: z.boolean().optional().default(false),
+  codeSnippets: z.record(z.string(), z.record(z.string(), z.string())).optional(),
+});
 
 const blog = defineCollection({
   loader: glob({ pattern: '[^_]*.{md,mdx}', base: 'src/content/blog' }),

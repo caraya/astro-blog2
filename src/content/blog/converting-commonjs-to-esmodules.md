@@ -184,9 +184,9 @@ Because `import()` returns a promise, we can use `async/await` to write our code
 })();
 ```
 
-!!! warning Warning
-Although `import()` looks like a function call, it is specified as syntax that just happens to use parentheses (similar to `super()`). This means that `import` doesn’t inherit from `Function.prototype` so you can't use any of the function prototype's methods like `call`, `apply`, or `bind`.
-!!!
+<custom-admonition type="warning" title="Warning">
+	<p>Although `import()` looks like a function call, it is specified as syntax that just happens to use parentheses (similar to `super()`). This means that `import` doesn’t inherit from `Function.prototype` so you can't use any of the function prototype's methods like `call`, `apply`, or `bind`.</p>
+</custom-admonition>
 
 ## Mix and Match Imports
 

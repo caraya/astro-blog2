@@ -8,13 +8,14 @@ import TableOfContent from '../components/TableOfContents.astro';
 import CategoryList from '../components/CategoryList.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Social from '../components/Social.astro';
+import Sandpack from '../components/Sandpack.astro';
+import EditOnGithub from '../components/EditOnGithub.astro';
 
 type BlogPostEntry = CollectionEntry<'blog'>;
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  const publicPosts = import.meta.env.DEV ? posts : posts.filter((post) => isPublicBlogPost(post));
+  const publicPosts = posts.filter((post) => isPublicBlogPost(post));
 
   return publicPosts.map((post) => ({
     params: { id: post.id },
@@ -30,9 +31,9 @@ const { post } = Astro.props;
 const renderedPost = await render(post);
 const { Content, remarkPluginFrontmatter } = renderedPost || {};
 const postDate = post.data.date.toString();
-const { newerPost, olderPost } = await getBlogPostNavigation(post, import.meta.env.DEV);
+const { newerPost, olderPost } = await getBlogPostNavigation(post);
 ---
-<Layout frontmatter={{ title: post.data.title }}>
+<Layout frontmatter={post.data}>
   <Header />
   <main>
     <article class="detail-card">
@@ -60,8 +61,9 @@ const { newerPost, olderPost } = await getBlogPostNavigation(post, import.meta.e
         </header>
 
           <TableOfContent headings={renderedPost?.headings ?? []} />
-          {Content && <Content />}
+          {Content && <Content components={post.data.sandpack ? { Sandpack } : {}} />}
 
+          <EditOnGithub postId={post.id} />
         <nav class="post-navigation" aria-label="Post navigation">
           {newerPost ? (
             <div class="nav-previous">

@@ -17,9 +17,9 @@ I want to highlight [elementInternals()](https://developer.mozilla.org/en-US/doc
 
 The interface provides a way for custom elements to handle forms. It also exposes the [Accessibility Object Model (AOM)](https://wicg.github.io/aom/explainer.html).
 
-!!! note Note:
-Using this interface is in addition to the manual work that you do to create accessibility affordances. You can also override the default values provided by the interface by setting `aria-*` attributes directly on the element.
-!!!
+<custom-admonition type="note" title="Note">
+	<p>Using this interface is in addition to the manual work that you do to create accessibility affordances. You can also override the default values provided by the interface by setting `aria-*` attributes directly on the element.</p>
+</custom-admonition>
 
 These are the recommended roles and attributes to provide basic accessibility according to the [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/), a site that provides a useful set of patterns to start your own accesible web component implementations. We'll use these guidelines to add accessibility attributes to our element.
 
@@ -30,11 +30,10 @@ These are the recommended roles and attributes to provide basic accessibility ac
 | | aria-pressed="false" | a | <ul><li>Identifies the button as a toggle button</li><li> Indicates the toggle button is not pressed. |
 | | aria-pressed="true" | a | <ul><li>Identifies the button as a toggle button</li><li> Indicates the toggle button is pressed. |
 
-!!! tip **No ARIA is better than bad ARIA**
-[No ARIA is better than bad ARIA](https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/).
-
-If you will do accessibility, do it well and don't 'half-ass' it.
-!!!
+<custom-admonition type="tip" title="No ARIA is better than bad ARIA">
+	<p>[No ARIA is better than bad ARIA](https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/).</p>
+	<p>If you will do accessibility, do it well and don't 'half-ass' it.</p>
+</custom-admonition>
 
 First, we will use  `elementInternals` to add `role` and `ariaRole` attributes to the element in the `connectedCallback()`. This is flagged in the Chrome Devtools accessibility panel and will be used by Assistive Technology tools.
 
@@ -77,9 +76,9 @@ connectedCallback() {
 
 As far as accessibility implementatons go, a button is simple. There are more complex structures to work and experiment with.
 
-!!! tip **Test, test and test again**
-Make sure that you include accessibility testing on your target devices or that you engage with experts to test your app/site/product for accessibility testing. You may find the hard, and expensive, way that your site wasn't accessible.
-!!!
+<custom-admonition type="tip" title="Test, test and test again">
+	<p>Make sure that you include accessibility testing on your target devices or that you engage with experts to test your app/site/product for accessibility testing. You may find the hard, and expensive, way that your site wasn't accessible.</p>
+</custom-admonition>
 
 ## Low-Level Web Component Libraries
 
