@@ -32,6 +32,7 @@
     "astrojs-atom": "^4.0.29",
     "mdast-util-to-string": "^4.0.0",
     "mermaid": "^11.16.0",
+    "netlify-plugin-cache": "^1.0.3",
     "prettier": "^3.9.6",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
@@ -48,7 +49,6 @@
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
-    "js-yaml": "^5.2.2",
-    "netlify-plugin-cache": "^1.0.3"
+    "js-yaml": "^5.2.2"
   }
 }
