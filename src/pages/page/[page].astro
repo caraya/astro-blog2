@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
     return {
       params: { page: String(currentPage) },
-      props: { currentPage, totalPages, posts },
+      props: { currentPage, totalPages, posts, latestPosts: allPosts.slice(0, 10) },
     };
   });
 }
@@ -27,9 +27,10 @@ interface Props {
   currentPage: number;
   totalPages: number;
   posts: Awaited<ReturnType<typeof getBlogPosts>>;
+  latestPosts: Awaited<ReturnType<typeof getBlogPosts>>;
 }
 
-const { currentPage, totalPages, posts } = Astro.props;
+const { currentPage, totalPages, posts, latestPosts } = Astro.props;
 ---
 <Layout frontmatter={{ title: `Blog - Page ${currentPage}` }}>
   <Header />
@@ -88,5 +89,5 @@ const { currentPage, totalPages, posts } = Astro.props;
       </>
     )}
   </main>
-  <Footer />
+  <Footer latestPosts={latestPosts} />
 </Layout>

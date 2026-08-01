@@ -7,6 +7,11 @@ import Social from './Social.astro';
 import Nav from './Navigation.astro';
 import LatestPosts from '../components/LatestPosts.astro';
 
+interface Props {
+  latestPosts?: any[];
+}
+
+const { latestPosts } = Astro.props;
 ---
 
 <!-- <footer>
@@ -24,7 +29,7 @@ import LatestPosts from '../components/LatestPosts.astro';
 
           <section class="latest">
             <h4>Latest Posts</h4>
-            <LatestPosts count={5}/>
+            <LatestPosts count={5} posts={latestPosts} />
           </section>
         </div>
 

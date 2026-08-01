@@ -14,6 +14,7 @@ import { remarkDefinitionList, defListHastHandlers } from 'remark-definition-lis
 import { remarkReadingTime } from './src/remark/remark-reading-time.mjs';
 import remarkGfm from 'remark-gfm';
 import { remarkExtendedTable, extendedTableHandlers } from 'remark-extended-table';
+import { devSavePostPlugin } from './src/plugins/devSavePost.mjs';
 
 
 // https://astro.build/config
@@ -41,5 +42,10 @@ export default defineConfig({
     pagefind(),
     sitemap(),
     mermaid(),
-  ]
+  ],
+  vite: {
+    plugins: [
+      devSavePostPlugin()
+    ]
+  }
 });

@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { getBlogPosts, paginateBlogPosts, POSTS_PER_PAGE, toBlogDate } from '../utils/blogPosts';
 
 const allPosts = await getBlogPosts();
+const latestPosts = allPosts.slice(0, 10);
 const { currentPage, totalPages, posts } = paginateBlogPosts(allPosts, 1, POSTS_PER_PAGE);
 
 import Header from '../components/Header.astro';
@@ -60,5 +61,5 @@ import Excerpt from '../components/Excerpt.astro';
 			</>
 		)}
 	</main>
-	<Footer />
+	<Footer latestPosts={latestPosts} />
 </Layout>

@@ -3,12 +3,20 @@ import { getBlogPosts } from '../utils/blogPosts';
 
 interface Props {
   count?: number;
+  posts?: any[];
 }
 
-const { count = 10 } = Astro.props;
+const { count = 10, posts } = Astro.props;
 
-const allPosts = await getBlogPosts();
-const latestPosts = allPosts.slice(0, count);
+// If posts are passed down as a prop, use them directly (optimized).
+// Otherwise, fallback to fetching them internally.
+let latestPosts = posts || [];
+if (!posts) {
+  const allPosts = await getBlogPosts();
+  latestPosts = allPosts;
+}
+
+latestPosts = latestPosts.slice(0, count);
 ---
 
 <!--

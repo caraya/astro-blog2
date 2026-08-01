@@ -13,6 +13,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.10",
     "@astrojs/markdown-remark": "^7.2.1",
     "@astrojs/mdx": "^7.0.3",
     "@astrojs/react": "^6.0.1",
@@ -37,7 +38,8 @@
     "reading-time": "^1.5.0",
     "remark-definition-list": "^2.0.0",
     "remark-extended-table": "^2.0.3",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "typescript": "^6.0.3"
   },
   "allowScripts": {
     "esbuild@0.28.1": true,

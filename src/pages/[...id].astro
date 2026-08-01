@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import { getBlogPostNavigation, isPublicBlogPost, toBlogDate } from '../utils/blogPosts';
+import { getBlogPostNavigation, isPublicBlogPost, toBlogDate, getBlogPosts } from '../utils/blogPosts';
 
 import TableOfContent from '../components/TableOfContents.astro';
 import CategoryList from '../components/CategoryList.astro';
@@ -14,20 +14,20 @@ import EditOnGithub from '../components/EditOnGithub.astro';
 type BlogPostEntry = CollectionEntry<'blog'>;
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  const publicPosts = posts.filter((post) => isPublicBlogPost(post));
+  const posts = await getBlogPosts();
 
-  return publicPosts.map((post) => ({
+  return posts.map((post) => ({
     params: { id: post.id },
-    props: { post },
+    props: { post, latestPosts: posts.slice(0, 10) },
   }));
 }
 
 interface Props {
   post: BlogPostEntry;
+  latestPosts: BlogPostEntry[];
 }
 
-const { post } = Astro.props;
+const { post, latestPosts } = Astro.props;
 const renderedPost = await render(post);
 const { Content, remarkPluginFrontmatter } = renderedPost || {};
 const postDate = post.data.date.toString();
@@ -85,7 +85,7 @@ const { newerPost, olderPost } = await getBlogPostNavigation(post);
         </nav>
     </article>
   </main>
-  <Footer />
+  <Footer latestPosts={latestPosts} />
 </Layout>
 
 <style>
