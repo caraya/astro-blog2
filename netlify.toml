@@ -1,0 +1,22 @@
+
+[[plugins]]
+  package = "netlify-plugin-cache"
+
+  [plugins.inputs]
+    # These are the crucial folders Astro uses to cache parsed Markdown and processed Images
+    paths = [
+      "node_modules/.astro",
+      "node_modules/.vite"
+    ]
+
+[[headers]]
+	# What the headers are for
+  for = "/*"
+	# Headers to set
+	[headers.values]
+	# CORS
+	X-Content-Type-Options = "nosniff"
+	Access-Control-Allow-Origin = "*"
+	# Client Hints
+	Accept-CH = "Sec-CH-Width"
+	Permissions-Policy = 'ch-width=(self "https://images.cloudfour.com")'

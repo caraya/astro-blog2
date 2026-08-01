@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
-    "js-yaml": "^5.2.2"
+    "js-yaml": "^5.2.2",
+    "netlify-plugin-cache": "^1.0.3"
   }
 }

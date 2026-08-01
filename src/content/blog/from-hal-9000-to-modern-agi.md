@@ -166,7 +166,7 @@ Bai, Yuntao, et al. "[Constitutional AI: Harmlessness from AI Feedback.](https:/
 
 ### DeepMind Engineering, Robotics, and Physical Optimization
 
-Degrave, Jonas, et al. "[Magnetic Control of Tokamak Plasmas through Deep Reinforcement Learning.](https://www.nature.com/articles/s41586-022-04338-2)" Nature 602 (2022): 414-419.
+Degrave, Jonas, et al. "[Magnetic Control of Tokamak Plasmas through Deep Reinforcement Learning.](https://www.nature.com/articles/s41586-021-04301-9)" Nature 602 (2022): 414-419.
 : This study documents how DeepMind utilized reinforcement learning to dynamically manipulate and shape high-energy hydrogen plasma in EPFL’s tokamak nuclear fusion reactor. By managing nineteen independent magnetic coils at microsecond speeds, this work proves that unified, high-dimensional neural networks can successfully cross the digital-physical divide, acting directly on volatile natural environments.
 
 Abramson, Josh, et al. "[Accurate structure prediction of biomolecular interactions with AlphaFold 3.](https://doi.org/10.1038/s41586-024-07487-w)" Nature 630 (2024): 493–500.

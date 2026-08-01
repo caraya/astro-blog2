@@ -6,8 +6,7 @@ tags:
   - ai
 ---
 
-WebMCP and the Ongoing Debate Over Browser API Capabilities
-The introduction of the Web Model Context Protocol (WebMCP) reignites a longstanding debate over browser capabilities. At the heart of this discussion is a fundamental tension between empowering developers with rich web technologies and protecting users through restricted, highly secure browser sandboxes.
+The introduction of the Web Model Context Protocol (WebMCP) and its deplyment in Chromium browsers reignites a longstanding debate over browser capabilities. At the heart of this discussion is a fundamental tension between empowering developers with rich web technologies and protecting users through restricted, highly secure browser sandboxes.
 
 This post presents my analysis and opinion on the WebMCP conversation and ancillary information that may help developers and researchers understand its implications.
 
