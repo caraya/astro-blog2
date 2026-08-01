@@ -40,15 +40,14 @@
     "remark-definition-list": "^2.0.0",
     "remark-extended-table": "^2.0.3",
     "remark-gfm": "^4.0.1",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "@types/js-yaml": "^4.0.9",
+    "js-yaml": "^5.2.2"
   },
   "allowScripts": {
     "esbuild@0.28.1": true,
     "fsevents@2.3.3": true,
     "es5-ext@0.10.64": true
   },
-  "devDependencies": {
-    "@types/js-yaml": "^4.0.9",
-    "js-yaml": "^5.2.2"
-  }
+  "devDependencies": {}
 }
