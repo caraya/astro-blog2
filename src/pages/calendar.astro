@@ -108,13 +108,16 @@ const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
                             const isUnpublished = isDraft || isFuture;
                             
                             return (
-                              <a 
-                                href={`/${post.id}`} 
-                                class={`post-pill ${isUnpublished ? 'unpublished' : 'published'}`}
-                                title={post.data.title}
-                              >
-                                <span class="truncate">{post.data.title}</span>
-                              </a>
+                              <div class="pill-wrapper">
+                                <a 
+                                  href={`/${post.id}`} 
+                                  class={`post-pill ${isUnpublished ? 'unpublished' : 'published'}`}
+                                  title={post.data.title}
+                                >
+                                  <span class="truncate">{post.data.title}</span>
+                                </a>
+                                <a href={`/editor?post=${post.id}`} class="edit-btn" title="Edit Post">✎</a>
+                              </div>
                             );
                           })}
                         </div>
@@ -153,6 +156,7 @@ const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
                       <a href={`/${post.id}`} class="post-link">
                         {post.data.title}
                       </a>
+                      <a href={`/editor?post=${post.id}`} class="edit-link" title="Edit">✏️ Edit</a>
                       {isDraft && <span class="badge draft">Draft</span>}
                       {isFuture && !isDraft && <span class="badge scheduled">Scheduled</span>}
                     </li>
@@ -329,6 +333,12 @@ const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     gap: 0.25rem;
   }
 
+  .pill-wrapper {
+    display: flex;
+    gap: 2px;
+    align-items: stretch;
+  }
+
   .post-pill {
     display: block;
     font-size: 0.75rem;
@@ -337,6 +347,25 @@ const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     text-decoration: none;
     line-height: 1.2;
     transition: filter 0.2s;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+
+  .edit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gray-20, #e5e5e5);
+    color: var(--color-gray-70, #444);
+    text-decoration: none;
+    padding: 0 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    transition: background 0.2s;
+  }
+
+  .edit-btn:hover {
+    background: var(--color-gray-40, #ccc);
   }
 
   .post-pill:hover {
@@ -409,6 +438,19 @@ const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   .post-link:hover {
     text-decoration: underline;
+  }
+
+  .edit-link {
+    font-size: 0.85rem;
+    color: var(--color-accent, #3b82f6);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: background 0.2s;
+  }
+
+  .edit-link:hover {
+    background: color-mix(in srgb, var(--color-accent, #3b82f6) 10%, transparent);
   }
 
   .badge {

@@ -1,10 +1,17 @@
 ---
-title: "Be Careful With Font Families Fallback"
-date: 2026-07-01
+title: Be Careful With Font Families Fallback
+date: '2026-07-01'
+author: Carlos Araya
 tags:
   - Web
   - CSS
   - Fonts
+draft: false
+baseline: false
+colorjs: false
+youtube: false
+mermaid: false
+sandpack: false
 ---
 
 When we use web fonts, we often specify a font using the `font-family` at-rule. This allows us to specify a list of fonts that the browser should try to use, in order of preference. If the first font isn't available, the browser will try the next one, and so on, until it finds a font that is available on the user's system.

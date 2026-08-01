@@ -17,11 +17,11 @@ This document is my attempt at remembering all the things I've added so I can co
 
 This post is my attempt at a cheat sheet for the extra Markdown Elements that I use in this blog.
 
-<custom-admonition type="tip" title="This post is specific to this site">
-<p>The commands, as explained in this post, are designed for this blog and will only work as explained here.</p>
+!!! tip **This post is specific to this site**
+The commands, as explained in this post, are designed for this blog and will only work as explained here.
 
-<p>If you want to get them to work in your own site contact me and I'll try to help.</p>
-</custom-admonition>
+If you want to get them to work in your own site contact me and I'll try to help.
+!!!
 
 ## Front matter attributes
 
@@ -47,6 +47,46 @@ mavo: true
 One thing that has been very frustrating is to figure out how to handle drafts and future posts (posts that are complete but will not be published for a while).
 
 if you set `draft: true` in the post front matter or the date is in the future from the date you're publishing. Eleventy will set the permalink to false and exclude the post from all collections
+
+## Attributes
+
+This plugin will insert the specified attributes to the element. If the class exists the look of the content may change.
+
+For example:
+
+The following Markdown code:
+
+```markdown
+column1 | column2
+--- | --- |
+Read | Write
+
+{.special}
+```
+
+Will insert the `.special` class into the table. Inspect the code to see the result.
+
+| column1 | column2 |
+| --- | --- |
+| Read | Write |
+
+{.special}
+
+While the Markdown below will change the markers to use a customized CSS list number style.
+
+```markdown
+1. 22354
+2. 54252
+3. 1231231542
+
+{.custom-ordered}
+```
+
+1. 22354
+2. 54252
+3. 1231231542
+
+{.custom-ordered}
 
 ## Figures
 
@@ -167,7 +207,71 @@ The text that needs a footnote goes here. Look for the footnote at the bottom of
 
 ## Admonitions
 
-There are times when I want a different type of admonitions.  Instead of modifying the Markdown plugin, I decided to create a web component based on  Lea Verou's admonition design on [her website](https://lea.verou.me/).
+Admonitions are asides with relevant information that are not essential to the body of the text.
+
+The following types of admonitions are supported:
+
+* info
+* note
+* tip
+* warning
+* bug
+* danger
+* failure
+* success
+
+The structure is the same:
+
+1. Three exclamation marks, `!!!` followed by the `type` of admonition and an optional title
+   1. If you don't provide a title, then the type of admonition will be used
+2. The body of the admonition
+3. Three exclamation marks, `!!!` on a line of their own
+
+A `warning` admonition would look like this
+
+```markdown
+!!! warning
+You never know who'll get to read it :)
+!!!
+```
+
+```html
+<div class="admonition warning">
+  <p class="admonition-title">warning</p>
+  <p>It works so much better when you do your research before engaging in arguments</p>
+</div>
+```
+
+!!! warning
+You never know who'll get to read it :)
+!!!
+
+You can also add a title to the admonition by adding the title after the type of admonition.
+
+To add a title to the warning example, the modified code will look like this:
+
+```markdown
+!!! warning Do your research
+You never know who'll get to read it :)
+!!!
+```
+
+And the resulting HTML will look like this:
+
+```html
+<div class="admonition warning">
+  <p class="admonition-title">Do your research</p>
+  <p>You never know who'll get to read it :)</p>
+</div>
+```
+
+!!! warning Do your research
+You never know who'll get to read it :)
+!!!
+
+## New style of admonitions
+
+There are times when I want a different type of admonitions.  Instead of modifying the Markdown plugin, I decided to create a web component based on  Lea Verou's admonition design on her website (<https://lea.verou.me/>).
 
 The admonition takes these attributes: `type`, `no-icon`, and `title`.
 
@@ -307,29 +411,35 @@ lite-vimeo {
 
 ## Special table formatting
 
-This table uses GFM styling (strikethroughs, tasks) alongside merged layout cells.
+Basic Markdown table support is good for basic tables but it doesn't work for more complex tables where cells span rows and/or columns.
+
+For a full reference see [MultiMarkdown Table Syntax](https://fletcher.github.io/MultiMarkdown-6/syntax/tables.html)
+
+This example adds multiple headings at the top of the table, cells spanning more than one column and a caption for the table at the bottom, below the content.
 
 ```markdown
-| Phase | Task Details | Assigned Team | Status |
-| :---: | :--- | :--- | :--- |
-| **Phase 1** | Database Migration Setup | Backend Infrastructure | [x] Completed |
-| **Phase 2** | API Authentication Engine | ~Security Team~ Core Devs | [ ] In Progress |
-| ^ | Frontend UI Components | Design & UI Team | [ ] Pending |
-| **Phase 3** | Global CDN Deployment | > | DevOps Team |
-| ^ | Final End-to-End Testing | > | DevOps Team |
+|             |          Grouping           ||
+| First Header | Second Header | Third Header |
+ ------------ | :-----------: | -----------: |
+Content       |          *Long Cell*        ||
+Content       |   **Cell**    |         Cell |
+
+New section   |     More      |         Data |
+And more      | With an escaped '\|'         ||
+[Prototype table]
 ```
 
-The resulting HTML looks like this:
+And the resulting table, with all the table formatting done in CSS, looks like this:
 
-| Phase | Task Details | Assigned Team | Status |
-| :---: | :--- | :--- | :--- |
-| **Phase 1** | Database Migration Setup | Backend Infrastructure | [x] Completed |
-| **Phase 2** | API Authentication Engine | ~Security Team~ Core Devs | [ ] In Progress |
-| ^ | Frontend UI Components | Design & UI Team | [ ] Pending |
-| **Phase 3** | Global CDN Deployment | > | DevOps Team |
-| ^ | Final End-to-End Testing | > | DevOps Team |
+|             |          Grouping           ||
+| First Header  | Second Header | Third Header |
+| ------------ | :-----------: | -----------: |
+| Content       |          *Long Cell*        ||
+| Content       |   **Cell**    |         Cell |
 
-Note that this will affect the color stripping of the table and may produce unexpected results.
+New section   |     More      |         Data |
+And more      | With an escaped '\|'         ||
+[Prototype table]
 
 ## Web Components
 

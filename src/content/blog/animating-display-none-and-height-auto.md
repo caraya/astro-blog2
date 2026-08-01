@@ -29,13 +29,14 @@ These are the properties we'll use for these examples.
 The `transition-behavior` property specifies whether transitions will be started for properties whose animation behavior is [discrete](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-behavior#examples).
 
 <custom-admonition type="note" title="Discrete definition">
-	<p>Discrete properties' values are not additive, and interpolation swaps from the start value to the end value at 50%.</p>
-	<p>Specifically, denoting p as the progress value:</p>
+<p>Discrete properties' values are not additive, and interpolation swaps from the start value to the end value at 50%.</p>
 
-  <ul>
-    <li>If p < 0.5, then V_result = V_start</li>
-    <li>If p ≥ 0.5, then V_result = V_end</li>
-  </ul>
+<p>Specifically, denoting p as the progress value:</p>
+
+<ul>
+	<li>If p < 0.5, then V_result = V_start</li>
+	<li>If p ≥ 0.5, then V_result = V_end</li>
+</ul>
 </custom-admonition>
 
 ### `calc-size()`

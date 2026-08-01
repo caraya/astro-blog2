@@ -6,94 +6,187 @@ tags:
   - ai
 ---
 
-As artificial intelligence shifts from cloud-hosted chatbots to autonomous client-side assistants, the web faces a familiar architectural crisis. Users increasingly expect AI to interact with web pages on their behalf—filling out forms, comparing products, booking reservations, and executing multi-step workflows.
+WebMCP and the Ongoing Debate Over Browser API Capabilities
+The introduction of the Web Model Context Protocol (WebMCP) reignites a longstanding debate over browser capabilities. At the heart of this discussion is a fundamental tension between empowering developers with rich web technologies and protecting users through restricted, highly secure browser sandboxes.
 
-Yet, the mechanism for how these agents interact with the web remains a battleground. Enter WebMCP, a proposed standard designed to let websites programmatically expose capabilities to client-side AI agents. But as browser vendors, developers, and standards bodies debate its implementation, WebMCP has triggered a deeper philosophical debate about the nature of the web itself.
+This post presents my analysis and opinion on the WebMCP conversation and ancillary information that may help developers and researchers understand its implications.
 
-The Capability vs. Security Divide
-To understand the controversy surrounding WebMCP, we have to look at the historical tension between web capabilities and security. Over the past decade, Google and other browser vendors pushed for powerful hardware APIs—such as Web Bluetooth, WebUSB, and Serial APIs—to bridge the gap between web applications and native apps.
+## The Capability vs. Security Divide
 
-While Google argued these APIs were necessary for the web to compete with native mobile apps, both Apple and Mozilla maintained that the web's primary trust model—that a user can safely visit any URL without permanently compromising their machine—must not be broken.
+While Google argues these APIs are necessary for the web to compete with native mobile apps, both Apple and Mozilla maintain that the web's primary trust model, that a user can safely visit any URL without permanently compromising their machine, must not be broken.
 
-However, there is a critical distinction between Apple and Mozilla's positions. Mozilla does not control a dominant mobile operating system; its rejection is purely security-driven. Apple, on the other hand, provides native equivalents for all of these "risky" APIs within iOS and iPadOS. The same fingerprinting and tracking potential exists on native apps if traffic is monitored, yet Apple permits them there. Because Apple tightly controls native app distribution and monetization, restricting these capabilities on the open web inevitably incentivizes developers to build native iOS applications instead.
+However, there is a critical distinction between Apple and Mozilla's historical positions. Mozilla does not control a dominant mobile operating system; its rejection of hardware APIs was purely security-driven. Apple, on the other hand, provides native equivalents for all of these "risky" APIs within iOS and iPadOS. The same fingerprinting and tracking potential exists on native apps if traffic is monitored, yet Apple permits them there. Because Apple tightly controls native app distribution and monetization, restricting these capabilities on the open web inevitably incentivizes developers to build native iOS applications instead.
 
-This dynamic forces severe market fragmentation and a massive engineering tax. To deliver a feature-rich experience, organizations are often pushed to maintain at least three separate codebases: a native Android app (where features are supported), a native iOS app (to access the capabilities Apple denies to the web), and a web app (which requires complex fallbacks for non-supporting browsers like Safari). Paired with uneven adoption of Progressive Web App (PWA) features across different platforms, this funnels development toward proprietary storefronts, reinforcing ecosystem control and centralized application distribution models.
+This dynamic forces severe market fragmentation and a massive engineering tax. Consider a common web workflow: booking a flight. To deliver a feature-rich flight reservation experience, organizations are often pushed to maintain at least three separate codebases: a native Android app (where hardware and background features are supported), a native iOS app (to access the capabilities Apple denies to the web), and a web app (which requires complex fallbacks for non-supporting browsers like Safari). Paired with uneven support for Progressive Web App (PWA) features across different platforms, this funnels development toward proprietary storefronts, reinforcing ecosystem control and centralized application distribution models.
 
-Now, WebMCP is stepping into this exact same crossfire. Just as Apple and Mozilla pushed back on hardware APIs, they are heavily scrutinizing WebMCP's proposal to let developer-authored, client-side AI agents interface directly with web pages. The industry is facing a familiar dilemma: if WebMCP is universally adopted, the open web becomes a powerful, standardized hub for AI assistants. But if it is restricted under the banner of security, developers will once again be incentivized to build AI-agent capabilities exclusively into native applications, repeating the cycle of market fragmentation and walled-garden control.
+Now, WebMCP is stepping into this exact same crossfire. While Apple's WebKit team has forcefully scrutinized WebMCP's proposal to let developer-authored, client-side AI agents interface directly with web pages, Mozilla has notably refrained from declaring a formal position, leaving its standards position issue open and uncommitted. This hesitancy—whether reflecting cautious neutrality or ongoing internal debate—highlights the industry's familiar dilemma: if WebMCP is universally adopted, booking that flight via an in-browser AI assistant becomes a seamless, standardized interaction across the open web. But if it is restricted or left in standards limbo, developers will once again be incentivized to build AI-agent capabilities exclusively into native applications, repeating the cycle of market fragmentation and walled-garden control.
 
-Defining WebMCP
-WebMCP (Web Model Context Protocol) is an architectural proposal that extends agent communication standards directly into the browser engine. Rather than forcing AI agents to rely on fragile DOM scraping or screen-parsing—techniques that break whenever a CSS class or layout changes—WebMCP allows a website to explicitly declare its capabilities, schemas, and actions to authorized client-side agents.
+## Defining WebMCP
 
-It is vital to distinguish WebMCP from developer-centric tools like the Safari MCP Server. The Safari MCP Server is a local debugging and developer-productivity tool that lets an AI assist a developer in building or testing software from the outside-in. WebMCP, conversely, is an open web standard operating from the inside-out: it allows public websites to expose structured, programmatic interfaces to whatever client-side AI agent a user happens to be running.
+WebMCP introduces a standardized way for web pages to expose client-side tools directly to browser-based AI agents. To understand its role, it is essential to contrast WebMCP with the foundational Model Context Protocol (MCP).
 
-The Architectural Critique
-Despite its promise, WebMCP faces heavy skepticism from standards stakeholders. A prominent critique emerged from WebKit's standards position (authored by contributors like Apple's engineering teams), which framed AI agents primarily as a form of assistive technology:
+Standard MCP is designed for server-side or local environment integrations—allowing AI models to interface with external databases, APIs, and backend microservices via transport mechanisms like stdio or HTTP/SSE. WebMCP, by contrast, brings this concept into the browser engine itself. It allows web applications running in the user's browser to expose dynamic JavaScript functions and page state directly to client-side AI agents without requiring external backend round-trips.
 
-"Our deeper concern is architectural. An agent acting on a user's behalf is, in effect, assistive technology: it should operate a site as the user would, and the site should not single it out for different treatment. WebMCP does the opposite, making 'an agent is driving' an observable fact. Once that is separately addressable, nothing keeps the agent-facing and human-facing surfaces in parity... We are not convinced an API whose primary effect is to make agent-driven interaction separately addressable is the right foundation."
+<custom-admonition type="info" title="Note">
+  <p>Utilities such as Safari, Chrome and Firefox MCP Servers operate strictly as developer-centric tools for local debugging and QA automation, whereas WebMCP is an open client-side web standard designed for end-user, in-browser interaction.</p>
+</custom-admonition>
 
-This perspective relies on an equivalence between AI agents and traditional screen readers. However, this argument collapses under closer examination. Equating an AI agent—which is essentially a function-calling, programmatic actor—to a screen reader (which is a passive tool designed to facilitate human sensory perception) is a category error.
+| Feature / Dimension | Standard MCP (Model Context Protocol) | WebMCP (Web Model Context Protocol) |
+| --- | --- | --- |
+| **Primary Scope** | Backend & local system integrations | In-browser client-side webpage interactions |
+| **Execution Environment** | External processes / servers (Node, Python, binaries) | Native browser JavaScript runtime |
+| **Transport Layer** | stdio, Server-Sent Events (SSE), HTTP | In-memory DOM / Web API context (navigator.modelContext) |
+| **Primary Consumer** | Server-hosted LLMs, IDE assistants, local CLI tools | Client-side browser AI agents & browser extensions |
 
-Screen readers bridge a human's sensory limitations; AI agents bridge the gap between human intent and machine execution. Treating them as identical ignores the reality that agents are programmatic extensions of user intent, not disabled users requiring sensory translation. Forcing them into the accessibility box misses the technical reality of how programmatic interactions work.
+## The Architectural Critique
 
-Furthermore, as noted in discussions on the blink-dev forums, relying on traditional screen scraping or DOM manipulation for AI interactions introduces massive brittleness, security risks through prompt injection via un-sanitized page text, and unacceptable latency. Standardizing a clean interaction layer is not about creating a "second-class" surface; it is about acknowledging that programmatic consumers require deterministic contracts rather than heuristic guesses.
+Critics of WebMCP, including representatives from WebKit, argue that the protocol fundamentally shifts the web's interaction model. They posit that an agent acting on a user's behalf is, in effect, assistive technology; it should operate a site as the user would, using existing accessibility trees (AT) rather than a specialized API. They argue that making "an agent is driving" an observable fact invites parity gaps where sites might withhold features from humans or provide "super-user" capabilities exclusively to agents.
 
-Expanding the Debate: Grigsby's "Shared Layers" Argument
-Adding to the architectural discourse, industry voices like Jason Grigsby have emphasized the importance of shared design layers and content parity. Grigsby’s position cautions against treating agent interfaces as isolated silos that diverge from the core product experience.
+### The Case for Shared Semantics
 
-While Grigsby's concern about maintaining parity between human-facing and agent-facing interfaces is valid from a maintenance perspective, the reality of modern web usage makes total parity impractical. Human users navigate via visual cues, heuristic evaluation, and flexible layouts. Programmatic agents navigate via structured data, explicit parameters, and predictable schemas. Forcing an AI to parse human UI elements rather than explicit semantic contracts does not protect the user; it simply guarantees inefficiency, higher error rates, and increased token costs. A standardized protocol like WebMCP bridges this gap without sacrificing the underlying design integrity of the site.
+Jason Grigsby, a noted proponent of inclusive web design, aligns with this perspective. He argues that when a site's actions are hard for an AI agent to use, that is a gap in the site's own semantics. His position is that we should first close those gaps in the platform's shared layers (HTML and ARIA), where the user, assistive technology, and agents all benefit.
 
-WebMCP Beyond the Prompt API
-While browser-native AI features (such as Chrome's window.ai Prompt API) handle unstructured text generation and inference, WebMCP steps in where deterministic execution is required. It bridges the gap between natural language understanding and application state manipulation.
+While Grigsby’s commitment to universal web standards is commendable, this position may rest on a category error. Human users navigate through subjective volition—evaluating visual layout cues, interactive date-picker widgets, and seating charts to book a flight. Agents follow programmatic instructions, operating via structured parameters (`origin: SFO, destination: JFK, date: 2026-10-15, seatPreference: { position: "window", arrangement: "together" }`). By attempting to force agents into the "assistive technology" box, we risk ignoring that agents are not merely helping a human see the page—they are acting as a new type of programmable interface. A bridge for a human is not the same as a bridge for a machine.
 
-Here is how a developer might expect to expose capabilities using a WebMCP-style manifest or API within a web application:
+WebMCP does not attempt to standardize the web's business logic. Instead, it provides a structured protocol wrapper for bespoke application features—custom code engineered by site developers to solve specific user tasks, like searching flight availability or processing a seat selection. From a web architecture perspective, WebMCP operates on the proven principle of progressive enhancement. If a visiting user agent lacks an AI assistant, the page remains fully functional through standard HTML forms and UI controls without penalty. If the browser makes WebMCP available to an active agent, the interaction is enhanced. Ultimately, this places responsibility back into developers' hands: it is up to engineers to ensure that the agentic workflows they expose perform just as reliably—if not better—than the traditional UX.
 
-TypeScript
-// Registering application capabilities for visiting AI agents
-navigator.ai.registerCapability({
-  name: "book_flight",
-  description: "Selects flights and proceeds to checkout based on user preferences.",
-  schema: {
-    type: "object",
-    properties: {
-      origin: { type: "string", description: "3-letter airport code" },
-      destination: { type: "string", description: "3-letter airport code" },
-      date: { type: "string", format: "date" }
+## Technical Implementation and Implementation Signals
+
+WebMCP relies strictly on TypeScript/JavaScript and JSON Schema, providing a rigid, programmatic contract between the webpage and visiting AI agents.
+
+## Registering Custom Tools with WebMCP
+
+Developers declare capabilities by registering tools with `navigator.modelContext`. Here is how an airline application exposes a flight search capability directly to a visiting AI agent, explicitly handling seating arrangements for multi-passenger bookings to prevent ambiguity:
+
+```ts
+// Registering a custom application tool with WebMCP
+if ('modelContext' in navigator) {
+  navigator.modelContext.registerTool({
+    name: "search_flights",
+    description: "Searches available flights based on origin, destination, travel dates, passenger count, and explicit seating arrangements.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        origin: {
+          type: "string",
+          description: "3-letter IATA airport code (e.g., SFO)"
+        },
+        destination: {
+          type: "string",
+          description: "3-letter IATA airport code (e.g., JFK)"
+        },
+        departureDate: {
+          type: "string",
+          format: "date",
+          description: "Departure date in YYYY-MM-DD format"
+        },
+        passengers: {
+          type: "integer",
+          minimum: 1,
+          default: 1
+        },
+        seatPreference: {
+          type: "object",
+          properties: {
+            position: {
+              type: "string",
+              enum: [
+                "window",
+                "aisle",
+                "middle",
+                "no_preference"],
+              default: "no_preference",
+              description: "Primary seat location preference (e.g., window)"
+            },
+            arrangement: {
+              type: "string",
+              enum: [
+                "together",
+                "direct_across",
+                "no_preference"
+              ],
+              default: "together",
+              description: "Proximity requirement when booking for multiple passengers"
+            }
+          }
+        }
+      },
+      required: [
+        "origin",
+        "destination",
+        "departureDate"]
     },
-    required: ["origin", "destination", "date"]
-  },
-  handler: async (params) => {
-    const response = await fetch('/api/flights/book', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(params)
-    });
-    return await response.json();
-  }
-});
-With this capability registered, a client-side agent can invoke the action directly with structured parameters rather than attempting to click buttons and guess input fields:
+    // The handler connects the agent's structured call directly to app state/APIs
+    handler: async (params) => {
+      const response = await fetch('/api/flights/search', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(params)
+      });
+      return await response.json();
+    }
+  });
+}
+```
 
-TypeScript
-// Executing the registered capability from a client-side agent framework
-const availableCapabilities = await navigator.ai.getCapabilities();
+Once registered, an active agent discovers these available tools and executes them deterministically without parsing the DOM:
 
-const flightCapability = availableCapabilities.find(c => c.name === "book_flight");
+```ts
+// How a client-side agent discovers and executes registered webpage tools
+const registeredTools = await navigator.modelContext.getTools();
+const flightTool = registeredTools.find(tool => tool.name === "search_flights");
 
-if (flightCapability) {
-  const result = await flightCapability.execute({
+if (flightTool) {
+  const flightResults = await navigator.modelContext.executeTool("search_flights", {
     origin: "SFO",
     destination: "JFK",
-    date: "2026-10-15"
+    departureDate: "2026-10-15",
+    passengers: 2,
+    seatPreference: {
+      position: "window",
+      arrangement: "together"
+    }
   });
-  console.log("Booking initiated via WebMCP:", result);
+  console.log("Flight search completed via WebMCP:", flightResults);
+  // Do something with the results, like present them on screen
+  // for user's final approval
 }
-Conclusion
-The debate over WebMCP is much more than a technical disagreement about API design; it is a proxy war for the future control of the internet. If browser engines refuse to standardize agent-to-app communication under the banner of security and architectural purity, they risk driving developers and users away from the open web entirely.
+```
 
-Just as mobile app stores capitalized on the web's historical limitations, proprietary AI ecosystems will gladly step into the void, offering seamless agentic workflows inside closed applications. Embracing WebMCP—or a standard equivalent—is essential if the open web is to remain the primary medium where human intent meets digital execution.
+### The Multi-Agent Reality and Model Variance
 
-Bibliography
-WebKit Standards Position: WebKit GitHub Issues #670 (Comment #4608432694)
+A critical caveat for web developers is that WebMCP standardizes the API contract, not the reasoning engine behind it. The resulting landscape mirrors the heavy cross-browser compatibility tax long familiar to web developers—much like the early days of HTML5 media, where developers were forced to encode, test, and maintain multiple file formats (`.mp4`, `.webm`, `.ogv`) inside a `<video>` tag just to achieve basic playback parity across different browser engines.
 
-Blink Development Discussion: Chromium Blink-dev Discussion Thread
+WebMCP serves as the unified container, but developers face a similar maintenance burden across fragmented model engines. In an ecosystem where Safari leverages Apple Intelligence, Chromium embeds Gemini, and browsers like Opera or Firefox allow custom or sideloaded models, WebMCP acts strictly as the discovery layer. Even with strict JSON Schemas, different LLMs will interpret natural language tool descriptions differently. One model may eagerly invoke a tool based on implicit user context, while a smaller on-device model might fail to populate nested parameters or require more explicit prompting.
 
-Safari Developer Tooling: Introducing the Safari MCP Server for Web Developers
+A strict schema guarantees that if an agent calls a function, the payload matches the expected data shape. However, ensuring functional parity across a multi-model ecosystem requires developers to continuously test, prompt-engineer, and refine their tool definitions for multiple browser AI targets—or decide explicitly which browser agents they refuse to support.
+
+This limitation lies not within WebMCP, but in the non-deterministic nature of AI itself. Where deterministic precision is required, an LLM is simply the wrong tool for the job.
+
+### The Blink-Dev Perspective
+
+Discussions in the Chromium blink-dev community reinforce the necessity of these structured contracts. The consensus highlights that screen-scraping—where an agent attempts to visually guess which calendar input or dropdown handles flight dates—is brittle, slow, and insecure. By providing a canonical declaration of capabilities, WebMCP allows developers to avoid the pitfalls of visual-based automation.
+
+However, the blink-dev perspective presents a false dichotomy between visual DOM guessing and adopting WebMCP. In reality, existing Chromium built-in AI APIs (such as `window.ai`) already handle structured JSON tool-calling without specialized browser protocols.
+
+Furthermore, this capability extends well beyond native browser APIs. Developers are already building AI-enabled browser extensions and decoupled web applications powered by third-party LLMs—whether making external API calls or running local quantized models directly in the browser via WebGPU and tools like Transformers.js. While these third-party implementations may face stricter resource limits or latency overhead compared to native browser APIs, they successfully execute complex agentic tool calls today using standard web architecture.
+
+Because modern web applications separate visual rendering from underlying state, any active native or third-party agent can hook structured tool outputs directly into standard JavaScript functions, Custom Events, or module endpoints. WebMCP does not invent client-side function calling; it merely standardizes how those functions are discovered across isolated extensions and agent runtimes.
+
+## Conclusion
+
+WebMCP sits at a defining crossroads for the web. While critics are right to be wary of the architectural implications of making "an agent is driving" an observable fact, the alternative—forcing AI-driven interactions into the same limited paradigms as human users—fails to account for the unique, programmatic nature of AI agents. If we do not provide a standardized, secure way for agents to interact with web pages, we risk repeating the mistakes of the mobile era. We will see AI capabilities siloed into native applications, widening the gap between the "app-first" mobile ecosystem and the open web. WebMCP offers a path toward a more capable, standardized, and interoperable web, provided the industry can move past the security-versus-capability impasse and agree on the fundamental way AI should live alongside the user in the browser.
+
+## Bibliography
+
+Chrome for Developers. [Compare WebMCP and MCP](https://developer.chrome.com/docs/ai/webmcp/compare-mcp) Accessed July 5, 2026.
+
+Grigsby, Jason. [Improvements to Web for AI Should Benefit All Users.](https://cloudfour.com/thinks/improvements-to-web-for-ai-should-benefit-all-users/) Cloud Four. Accessed July 5, 2026.
+
+Mozilla Standards Positions. [WebMCP](https://github.com/mozilla/standards-positions/issues/1412) GitHub. Accessed July 29, 2026.
+
+Web Machine Learning Working Group. [Web Model Context Protocol (WebMCP)](https://webmachinelearning.github.io/webmcp/). GitHub Pages. Accessed July 5, 2026.
+
+WebKit Standards Positions. [WebMCP](https://github.com/WebKit/standards-positions/issues/670#issuecomment-4608432694.) GitHub. Accessed July 5, 2026.
+
+Chromium Project. "Blink-dev Discussion: AI and the Web." Google Groups. Accessed July 5, 2026. https://groups.google.com/a/chromium.org/g/blink-dev/c/iR6R7-nQeHI?pli=1.

@@ -1,6 +1,6 @@
 ---
 title: "The sorcerer's apprentice as a metaphor for AI development."
-date: 2026-08-22
+date: 2026-08-19
 tags:
   - AI
   - Development

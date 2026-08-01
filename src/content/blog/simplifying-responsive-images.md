@@ -356,5 +356,5 @@ Stop trying to micromanage the browser. Give it a fluid grid, a list of image fi
 * [MDN Web Docs: Responsive Images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 * [MDN Web Docs: HTML `<picture>` Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
 * Portis, Eric. ["auto sizes pretty much requires width and height."](https://ericportis.com/posts/2023/auto-sizes-pretty-much-requires-width-and-height/) Eric Portis, 2023.
-* ["The end of responsive images."](https://piccalil.li/blog/the-end-of-responsive-/images/) Piccalilli.
+* ["The end of responsive images."](https://piccalil.li/blog/the-end-of-responsive-images/) Piccalilli.
 * WHATWG. ["HTML Standard: 4.8.4.3.4 The sizes attributes."](https://html.spec.whatwg.org/multipage/images.html#sizes-attributes).

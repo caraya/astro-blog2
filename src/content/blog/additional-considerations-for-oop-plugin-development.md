@@ -185,5 +185,5 @@ The following is a list of what should be documented in WordPress files:
 Where the core PHPDoc documentation and the WordPress Documentation Standards disagree, the WordPress Documentation Standards take precedence.
 
 <custom-admonition type="note" title="Note">
-	<p>This conversation is only applicable to PHP. If you're working with Javascript, check the [JavaScript Documentation Standards](https://developer.wordpress.org/coding-standards/inline-documentation-standards/javascript/) and [JSDoc 3 Standard](http://usejsdoc.org/) for more information.</p>
+	<p>This conversation is only applicable to PHP. If you're working with Javascript, check the <a href="https://developer.wordpress.org/coding-standards/inline-documentation-standards/javascript/">JavaScript Documentation Standards</a> and <a href="http://usejsdoc.org/">JSDoc 3 Standard</a> for more information.</p>
 </custom-admonition>

@@ -994,10 +994,7 @@
     padding: 0.25rem 0.5rem;
   }
 
-  /* Shrink navigation items only in the footer */
-  .right-footer .nav-item {
-    font-size: 1rem;
-  }
+
 
   /* smaller mobile devices */
   /* @media screen and (width <= 30rem) {

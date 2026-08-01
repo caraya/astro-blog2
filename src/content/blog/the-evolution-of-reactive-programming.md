@@ -21,7 +21,7 @@ In the early 2010s, frameworks like AngularJS and Knockout.js pioneered declarat
 
 Knockout.js introduced "observables" using a dependency-tracking getter/setter system that built an implicit graph of dependencies. This was actually a direct ancestor of modern signals. However, the syntax was often verbose, and managing nested structures was notoriously difficult.
 
-AngularJS took a different route with dirty checking via the $digest loop. Instead of tracking dependencies, AngularJS recursively ran through every bound variable in the application whenever an event occurred to see if any value had changed. While simple to write, this approach quickly became a performance bottleneck for larger applications, leading to "digest cycle exceeded" errors and sluggish UIs.
+AngularJS took a different route with dirty checking via the `$digest` loop. Instead of tracking dependencies, AngularJS recursively ran through every bound variable in the application whenever an event occurred to see if any value had changed. While simple to write, this approach quickly became a performance bottleneck for larger applications, leading to "digest cycle exceeded" errors and sluggish UIs.
 
 ### The Virtual DOM Revolution (2013–2020)
 
@@ -60,9 +60,9 @@ While the fundamental concept of a signal is becoming standardized, practical im
 
 ### The Official TC39 Polyfill (@proposal-signals/signal-polyfill)
 
-The TC39 Signals proposal aims to standardize reactivity directly in JavaScript. Because rendering schedulers are environment-dependent, the specification intentionally omits a built-in effect API. Instead, it provides low-level primitives—Signal.State, Signal.Computed, and the low-level Signal.subtle.Watcher API—allowing framework and library authors to build their own optimized scheduling and batching systems.
+The TC39 Signals proposal aims to standardize reactivity directly in JavaScript. Because rendering schedulers are environment-dependent, the specification intentionally omits a built-in effect API. Instead, it provides low-level primitives, `Signal.State`, `Signal.Computed`, and the low-level `Signal.subtle.Watcher` API, allowing framework and library authors to build their own optimized scheduling and batching systems.
 
-(To explore how userland frameworks use these primitives to implement a custom, microtask-batched createEffect utility and drive a real application, see Appendix B: Building a Custom Scheduler with the TC39 Low-Level API).
+To explore how userland frameworks use these primitives to implement a custom, microtask-batched `createEffect` utility and drive a real application, see Appendix B: Building a Custom Scheduler with the TC39 Low-Level API.
 
 ### [Signalium](https://signalium.dev/)
 

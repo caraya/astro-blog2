@@ -63,7 +63,7 @@ const { newerPost, olderPost } = await getBlogPostNavigation(post);
           <TableOfContent headings={renderedPost?.headings ?? []} />
           {Content && <Content components={post.data.sandpack ? { Sandpack } : {}} />}
 
-          <EditOnGithub postId={post.id} />
+          <EditOnGithub postId={(post as any).filePath ? (post as any).filePath.split('/').pop() : `${post.id}.md`} />
         <nav class="post-navigation" aria-label="Post navigation">
           {newerPost ? (
             <div class="nav-previous">

@@ -1,10 +1,16 @@
 ---
-title: "Reading on the Web"
-date: 2025-04-02
+title: Reading on the Web
+date: '2025-04-02'
+author: Carlos Araya
 tags:
   - CSS
   - Typography
-draft: true
+draft: false
+baseline: false
+colorjs: false
+youtube: false
+mermaid: false
+sandpack: false
 ---
 
 This post will look at two areas related to reading online:
