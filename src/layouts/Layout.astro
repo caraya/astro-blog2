@@ -19,6 +19,8 @@ const pageBodyClass = [bodyClass, 'prism-page'].filter(Boolean).join(' ');
 <html lang={siteData.language}>
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={metaDescription} />
   <title>{ pageTitle }</title>
 
   <!-- Open Graph Meta Tags -->
@@ -87,6 +89,8 @@ const pageBodyClass = [bodyClass, 'prism-page'].filter(Boolean).join(' ');
     {frontmatter?.baseline && (
       <script is:inline src="https://cdn.jsdelivr.net/npm/baseline-status@1/baseline-status.min.js" type="module"></script>
     )}
+    <!-- Katex -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css" crossorigin="anonymous" />
   </head>
   <body class={pageBodyClass}>
     <div class="wrapper">
@@ -101,6 +105,39 @@ const pageBodyClass = [bodyClass, 'prism-page'].filter(Boolean).join(' ');
     <script defer>
       if (window.Prism?.highlightAll) {
         window.Prism.highlightAll();
+      }
+    </script>
+    <script type="module" is:inline>
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+      // Find all markdown code blocks explicitly marked with mermaid
+      const mermaidBlocks = document.querySelectorAll('pre > code.language-mermaid');
+      
+      if (mermaidBlocks.length > 0) {
+        mermaid.initialize({ startOnLoad: false, theme: 'default' });
+        
+        // Loop through each block and explicitly render to avoid node-parsing bugs
+        for (const [index, block] of mermaidBlocks.entries()) {
+          try {
+            // textContent safely decodes HTML entities like &gt; back to >
+            const graphDefinition = block.textContent;
+            const id = `mermaid-svg-${index}-${Math.random().toString(36).substr(2, 9)}`;
+            
+            const { svg } = await mermaid.render(id, graphDefinition);
+            block.innerHTML = svg;
+            
+            // Override Prism's CSS to remove the background, padding, and borders
+            // from the <pre> and <code> elements so the diagram looks clean
+            block.style.background = 'transparent';
+            block.parentElement.style.background = 'transparent';
+            block.parentElement.style.border = 'none';
+            block.parentElement.style.padding = '0';
+            block.parentElement.style.margin = '2rem auto';
+          } catch (error) {
+            console.error('Mermaid failed to render:', error);
+            // Leave the raw text so the user can still read it!
+          }
+        }
       }
     </script>
   </body>

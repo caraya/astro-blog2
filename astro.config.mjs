@@ -5,7 +5,6 @@ import mdx from '@astrojs/mdx';
 import icon from 'astro-icon';
 import pagefind from 'astro-pagefind';
 import sitemap from '@astrojs/sitemap';
-import mermaid from 'astro-mermaid';
 
 import { unified } from '@astrojs/markdown-remark';
 
@@ -15,6 +14,8 @@ import { remarkReadingTime } from './src/remark/remark-reading-time.mjs';
 import remarkGfm from 'remark-gfm';
 import { remarkExtendedTable, extendedTableHandlers } from 'remark-extended-table';
 import { devSavePostPlugin } from './src/plugins/devSavePost.mjs';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 
 // https://astro.build/config
@@ -22,18 +23,24 @@ export default defineConfig({
   site: 'https://publishing-project.rivendellweb.net',
   markdown: {
     syntaxHighlight: false,
-    remarkPlugins: [
-      remarkDefinitionList,
-      remarkReadingTime,
-      remarkGfm,
-      remarkExtendedTable,
-    ],
-    remarkRehype: {
-      handlers: {
-        ...defListHastHandlers,
-        ...extendedTableHandlers,
+    processor: unified({
+      remarkPlugins: [
+        remarkMath,
+        remarkDefinitionList,
+        remarkReadingTime,
+        remarkGfm,
+        remarkExtendedTable,
+      ],
+      rehypePlugins: [
+        rehypeKatex,
+      ],
+      remarkRehype: {
+        handlers: {
+          ...defListHastHandlers,
+          ...extendedTableHandlers,
+        },
       },
-    },
+    }),
   },
   integrations: [
     react(),
@@ -41,11 +48,35 @@ export default defineConfig({
     icon(),
     pagefind(),
     sitemap(),
-    mermaid(),
   ],
   vite: {
     plugins: [
       devSavePostPlugin()
-    ]
+    ],
+    build: {
+      rolldownOptions: {
+        output: {
+          codeSplitting: {
+            groups: [
+              {
+                name: 'react-vendor',
+                test: /node_modules\/(react|react-dom)/,
+                priority: 10
+              },
+              {
+                name: 'sandpack',
+                test: /node_modules\/@codesandbox\/sandpack-react/,
+                priority: 10
+              },
+              {
+                name: 'temporal-polyfill',
+                test: /node_modules\/@js-temporal\/polyfill/,
+                priority: 10
+              }
+            ]
+          }
+        }
+      }
+    }
   }
 });
