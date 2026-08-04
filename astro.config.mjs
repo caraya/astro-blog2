@@ -25,7 +25,7 @@ export default defineConfig({
     syntaxHighlight: false,
     processor: unified({
       remarkPlugins: [
-        remarkMath,
+        [remarkMath, { singleDollarTextMath: true }],
         remarkDefinitionList,
         remarkReadingTime,
         remarkGfm,

@@ -1,9 +1,16 @@
 ---
-title: "The Case for Minimalist Engineering"
-date: 2026-08-02
+title: The Case for Minimalist Engineering
+date: '2026-08-12'
+author: Carlos Araya
 tags:
   - software engineering
   - web development
+draft: false
+baseline: false
+colorjs: false
+youtube: false
+mermaid: false
+sandpack: false
 ---
 
 The software engineering industry is constantly tempted by the new. Whenever a new framework, database, or library appears, it quickly becomes the default recommendation for projects of all sizes. That temptation leads to premature optimization and over-engineering from day one.

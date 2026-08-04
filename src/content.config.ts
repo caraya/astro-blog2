@@ -22,6 +22,7 @@ const blogSchema = z.object({
   vimeo: z.boolean().optional().default(false),
   mavo: z.boolean().optional().default(false),
   mermaid: z.boolean().optional().default(false),
+  math: z.boolean().optional().default(false),
   sandpack: z.boolean().optional().default(false),
   codeSnippets: z.record(z.string(), z.record(z.string(), z.string())).optional(),
 });

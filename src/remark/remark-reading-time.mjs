@@ -7,6 +7,5 @@ export function remarkReadingTime() {
     const readingTime = getReadingTime(textOnPage);
     // console.log('reading-time plugin:', { textOnPage, readingTime });
     data.astro.frontmatter.minutesRead = readingTime.text;
-console.log('remark plugin assigned minutesRead:', data.astro.frontmatter.minutesRead);
   };
 }

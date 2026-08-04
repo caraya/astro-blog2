@@ -381,7 +381,7 @@
 
     & > img {
       width: 600px;
-      max-width: 600px;
+      max-width: 100%;
       height: auto;
     }
   }
@@ -395,7 +395,7 @@
 
     & > img {
       width: 600px;
-      max-width: 600px;
+      max-width: 100%;
       height: auto;
     }
   }
@@ -711,7 +711,7 @@
 
   lite-vimeo {
     width: 720px;
-    max-width: 720px;
+    max-width: 100%;
     height: auto;
   }
 

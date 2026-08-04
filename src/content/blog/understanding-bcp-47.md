@@ -2,6 +2,8 @@
 title: "Understanding BCP 47: A Guide to Language Tags"
 date: 2026-08-24
 draft: true
+mermaid: true
+math: true
 ---
 
 Language negotiation and locale handling form the foundation of global web development. BCP 47 language tags coordinate how content is matched across HTTP headers, rendered in HTML documents, normalized at edge CDN layers, styled in CSS, pronounced by screen readers, and serialized in date/time formats defined in [RFC 5646](https://www.rfc-editor.org/rfc/rfc5646.txt), [RFC 4647](https://www.rfc-editor.org/rfc/rfc4647.txt), [RFC 6067](https://www.rfc-editor.org/rfc/rfc6067.txt), and [RFC 9557](https://www.rfc-editor.org/rfc/rfc9557.txt).
@@ -21,9 +23,9 @@ A fundamental distinction in internationalization standards is the separation be
 
 ### Key Subtag Categories in the Registry
 
-| Registry Subtag Type | Underlying ISO/UN Standard | Example Values | Purpose |
-| --- | --- | --- | --- | --- |
-| `language`| ISO 639-1 (2-letter),<br>ISO 639-2/3 (3-letter) | en, fr, cmn, yue | Identifies primary language |
+| Registry Subtag Type | Underlying<br/>ISO/UN Standard | Example Values | Purpose |
+| :---: | --- | --- | --- |
+| `language` | ISO 639-1 (2-letter),<br>ISO 639-2/3 (3-letter) | en, fr, cmn, yue | Identifies primary language |
 | `extlang` | ISO 639-3, ISO 639-5 | kok, zh | Reserved for extended language dialects |
 | `script` | ISO 15924 (4-letter Titlecase) | Latn, Hans, Cyrl, Arab | Identifies writing script |
 | `region` | ISO 3166-1 alpha-2, UN M.49 (3-digit) | US, GB, BR, 419 | Identifies geographical region or territory |
@@ -151,7 +153,7 @@ Languages in the CJK (Chinese, Japanese, Korean) unification block share thousan
 #### Automated Hyphenation and Spell-Checking
 
 * **Hyphenation (`hyphens: auto;`)**: Browsers require an accurate BCP 47 tag on the element to load the corresponding language dictionary for word-breaking and soft hyphen placement.
-* `Forms and ContentEditable`: Native browser spell-checkers use lang attributes on `<textarea>`, `<input>`, or contenteditable elements to activate the appropriate spell-check dictionary.
+* **Forms and ContentEditable**: Native browser spell-checkers use lang attributes on `<textarea>`, `<input>`, or contenteditable elements to activate the appropriate spell-check dictionary.
 
 ## The Accept-Language Header
 
@@ -165,17 +167,17 @@ Accept-Language: fr-CH, fr;q=0.9, en-US;q=0.8, en;q=0.7, *;q=0.5
 
 Each item in the header is evaluated in order of preference using $q$-factors (quality values ranging from 0.0 to 1.0):
 
-* `fr-CH (Implicit $q = 1.0$)`: Top Choice. Swiss French. When $q$ is omitted, it defaults to the highest priority ($1.0$).
-* `fr;q=0.9`: Second Choice. Any French dialect (weight 0.9). If fr-CH isn't available, standard French is preferred.
-* `en-US;q=0.8`: Third Choice. American English (weight 0.8).
-* `en;q=0.7`: Fourth Choice. Generic English (weight 0.7).
-* `*;q=0.5`: Wildcard Fallback. Matches any other language supported by the server at a lower priority (0.5).
+* **fr-CH (Implicit $q = 1.0$)**: Top Choice. Swiss French. When $q$ is omitted, it defaults to the highest priority ($1.0$).
+* **fr;q=0.9**: Second Choice. Any French dialect (weight 0.9). If fr-CH isn't available, standard French is preferred.
+* **en-US;q=0.8**: Third Choice. American English (weight 0.8).
+* **en;q=0.7**: Fourth Choice. Generic English (weight 0.7).
+* ***;q=0.5**: Wildcard Fallback. Matches any other language supported by the server at a lower priority (0.5).
 
     **Is fr-CH the default fallback?**
 
-    No. `fr-CH` is the client's most preferred language (rank #1). If the server supports Swiss French, it serves `fr-CH`.
+    No. **fr-CH** is the client's most preferred language (rank #1). If the server supports Swiss French, it serves **fr-CH**.
 
-    If the server supports none of the specified languages (`fr-CH`, `fr`, `en-US`, `en`), the wildcard `*;q=0.5` allows the server to send any available language. If no wildcard were present and none of the requested languages matched, the server would fall back to its internal default origin locale or return a 406 Not Acceptable HTTP status.
+    If the server supports none of the specified languages (**fr-CH**, **fr**, **en-US**, **en**), the wildcard ***;q=0.5** allows the server to send any available language. If no wildcard were present and none of the requested languages matched, the server would fall back to its internal default origin locale or return a 406 Not Acceptable HTTP status.
 
 ### Case Insensitivity in Content Negotiation
 
