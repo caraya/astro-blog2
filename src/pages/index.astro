@@ -8,6 +8,7 @@ const { currentPage, totalPages, posts } = paginateBlogPosts(allPosts, 1, POSTS_
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SaveOfflineButton from '../components/SaveOfflineButton.astro';
 
 import Excerpt from '../components/Excerpt.astro';
 ---
@@ -39,8 +40,9 @@ import Excerpt from '../components/Excerpt.astro';
 
 								<Excerpt content={post.body} />
 
-								<div class="continue-reading">
-									<a href={`/${post.id}`}>Continue reading &rarr;</a>
+								<div class="post-actions">
+									<SaveOfflineButton url={`/${post.id}`} />
+									<a href={`/${post.id}`} class="action-button continue-link">Continue reading &rarr;</a>
 								</div>
 							</article>
 						);

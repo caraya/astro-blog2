@@ -4,7 +4,7 @@ import { getBlogPosts, paginateBlogPosts, POSTS_PER_PAGE, toBlogDate } from '../
 
 // import astro components
 import Header from '../../components/Header.astro';
-// import Footer from '../../components/Footer.astro';
+import SaveOfflineButton from '../../components/SaveOfflineButton.astro';
 import Excerpt from '../../components/Excerpt.astro';
 import Footer from '../../components/Footer.astro';
 
@@ -61,10 +61,11 @@ const { currentPage, totalPages, posts, latestPosts } = Astro.props;
                   </div>
                 </div>
 
-                <Excerpt content={post.body} />
+								<Excerpt content={post.body} />
 
-                <div class="continue-reading">
-								  <a href={`/${post.id}`}>Continue reading &rarr;</a>
+								<div class="post-actions">
+									<SaveOfflineButton url={`/${post.id}`} />
+									<a href={`/${post.id}`} class="action-button continue-link">Continue reading &rarr;</a>
 								</div>
               </article>
             );

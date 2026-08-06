@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found" desc="We couldn't find the page you were looking for.">
+  <main class="not-found-container">
+    <div class="not-found-content" style="text-align: center; padding: 4rem 1rem; max-width: 600px; margin: 0 auto;">
+      <h1 style="font-size: 6rem; margin: 0; color: #0070f3; line-height: 1;">404</h1>
+      <h2 style="font-size: 2rem; margin-top: 1rem; color: var(--text-color);">Page Not Found</h2>
+      <p style="font-size: 1.2rem; color: var(--text-color); margin-top: 1rem;">
+        Sorry! We couldn't find the page you were looking for.
+      </p>
+      <p style="margin-top: 1.5rem;">
+        The link you followed may be broken, or the page may have been removed.
+      </p>
+      <div style="margin-top: 2rem;">
+        <a href="/" style="padding: 0.75rem 1.5rem; font-size: 1rem; background-color: #0070f3; color: white; border: none; border-radius: 4px; text-decoration: none; display: inline-block;">
+          Return Home
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>

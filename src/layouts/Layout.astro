@@ -6,6 +6,7 @@ import siteData from '../data/site.json';
 // import Header from '../components/Header.astro';
 import Nav from '../components/Navigation.astro';
 // import Footer from '../components/Footer.astro';
+import ReloadPrompt from '../components/ReloadPrompt.jsx';
 
 const { frontmatter, bodyClass } = Astro.props;
 
@@ -146,5 +147,6 @@ const pageBodyClass = [bodyClass, 'prism-page'].filter(Boolean).join(' ');
         }
       </script>
     )}
+    <ReloadPrompt client:load />
   </body>
 </html>

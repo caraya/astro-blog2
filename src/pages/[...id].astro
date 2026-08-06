@@ -8,6 +8,7 @@ import TableOfContent from '../components/TableOfContents.astro';
 import CategoryList from '../components/CategoryList.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SaveOfflineButton from '../components/SaveOfflineButton.astro';
 import Sandpack from '../components/Sandpack.astro';
 import EditOnGithub from '../components/EditOnGithub.astro';
 
@@ -57,6 +58,9 @@ const { newerPost, olderPost } = await getBlogPostNavigation(post);
               { (post.data.categories?.length ? post.data.categories : post.data.tags)?.length > 0 && (
                 <CategoryList rawCategories={post.data.categories?.length ? post.data.categories : post.data.tags} />
               )}
+            </div>
+            <div class="post-actions-detail" style="margin-top: 1rem;">
+              <SaveOfflineButton url={`/${post.id}`} />
             </div>
         </header>
 

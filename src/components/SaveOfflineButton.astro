@@ -1,0 +1,139 @@
+---
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+---
+
+<button type="button" class="action-button save-offline-btn" data-url={url} aria-label="Save this post for offline reading">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="offline-icon">
+    <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+    <path d="M12 12v9"/>
+    <path d="m8 17 4 4 4-4"/>
+  </svg>
+  <span class="offline-text">Save for offline</span>
+</button>
+
+<style>
+  .save-offline-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .save-offline-btn.is-saving {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  
+  .save-offline-btn.is-saving .offline-icon {
+    animation: bounce 1s infinite alternate;
+  }
+
+  .save-offline-btn.is-saved {
+    /* Override action-button hover when saved */
+    color: #059669 !important;
+    background-color: rgba(5, 150, 105, 0.1) !important;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  @keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-3px); }
+  }
+</style>
+
+<script>
+  function initOfflineButtons() {
+    const buttons = document.querySelectorAll('.save-offline-btn');
+    if (!buttons.length || !('caches' in window)) return;
+
+    // Check initial status
+    buttons.forEach(async (btn) => {
+      const url = (btn as HTMLElement).dataset.url;
+      if (!url) return;
+      
+      try {
+        // Only check our dedicated explicit save cache, not Workbox's automated runtime caches
+        const cache = await caches.open('offline-saved-posts');
+        const response = await cache.match(url);
+        if (response) {
+          markAsSaved(btn as HTMLElement);
+        }
+      } catch (e) {
+        // Ignore errors checking cache
+      }
+    });
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const button = e.currentTarget as HTMLElement;
+        const url = button.dataset.url;
+        
+        if (!url || button.classList.contains('is-saved')) return;
+
+        button.classList.add('is-saving');
+        const textSpan = button.querySelector('.offline-text');
+        if (textSpan) textSpan.textContent = 'Saving...';
+
+        try {
+          // Open a dedicated cache for manually saved offline posts
+          const cache = await caches.open('offline-saved-posts');
+          
+          // Fetch and cache the HTML page
+          const response = await fetch(url);
+          if (response.ok) {
+            await cache.put(url, response.clone());
+            
+            // Optionally, parse HTML and fetch its images to ensure complete offline availability
+            const html = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const images = doc.querySelectorAll('img');
+            
+            const imagePromises = Array.from(images).map(img => {
+              const src = img.getAttribute('src');
+              // Only cache local assets
+              if (src && src.startsWith('/')) {
+                return cache.add(src).catch(() => {});
+              }
+            });
+            
+            await Promise.all(imagePromises);
+            markAsSaved(button);
+          } else {
+            throw new Error("Failed to fetch");
+          }
+        } catch (error) {
+          console.error('Failed to save offline:', error);
+          button.classList.remove('is-saving');
+          if (textSpan) textSpan.textContent = 'Failed to save';
+          setTimeout(() => {
+            if (textSpan) textSpan.textContent = 'Save for offline';
+          }, 3000);
+        }
+      });
+    });
+  }
+
+  function markAsSaved(button: HTMLElement) {
+    button.classList.remove('is-saving');
+    button.classList.add('is-saved');
+    
+    // Change icon to a checkmark
+    const svg = button.querySelector('.offline-icon');
+    if (svg) {
+      svg.innerHTML = '<path d="M20 6 9 17l-5-5"/>';
+    }
+    
+    const textSpan = button.querySelector('.offline-text');
+    if (textSpan) textSpan.textContent = 'Saved for offline';
+  }
+
+  // Initialize on load and after Astro page transitions
+  document.addEventListener('DOMContentLoaded', initOfflineButtons);
+  document.addEventListener('astro:page-load', initOfflineButtons);
+</script>

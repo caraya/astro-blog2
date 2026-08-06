@@ -549,19 +549,31 @@
 }
 
 @layer elements {
-  .continue-reading {
+  .post-actions {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     height: auto;
+    margin-top: 1rem;
   }
 
-  .continue-reading a {
+  .post-actions .action-button {
     text-decoration: none;
     color: var(--color-black);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: inherit;
   }
 
-  .continue-reading a:focus,
-  .continue-reading a:hover {
+  .post-actions .action-button:focus,
+  .post-actions .action-button:hover {
     color: var(--color-white) !important;
     background-color: var(--accent-color) !important;
   }
@@ -883,8 +895,8 @@
 
 
 
-  /* @media (34rem < width <= 50rem) {
-    /* Set the grid container dimensions
+  @media (34rem < width <= 50rem) {
+    /* Set the grid container dimensions */
     .wrapper {
       display: grid;
       grid-template-columns: 1fr 2fr 2fr 1fr;
@@ -899,30 +911,42 @@
       height: auto;
     }
 
-    /* Grid placement
+    /* Grid placement */
     header {
-      grid-column: 2/5;
+      grid-column: 2/4;
       grid-row: 1;
     }
 
     .nav-container {
-      grid-column: 1/2;
+      grid-column: 2/4;
       grid-row: 2;
-      margin-inline-start: 1rem;
+      margin-inline-start: 0;
+      position: relative; /* override desktop sticky */
+      align-items: center; /* center the menu horizontally */
+      margin-bottom: 2rem;
+    }
+
+    .nav-container .nav-links {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 0;
     }
 
     main {
-      grid-column: 3/-2;
-      grid-row: 2;
+      grid-column: 2/4;
+      grid-row: 3;
     }
 
     footer {
       grid-column: 1/-1;
-      grid-row: 3;
+      grid-row: 4;
     }
   }
 
-  /* smaller mobile devices   @media screen and (width <= 30rem) {
+  /* smaller mobile devices */
+  @media screen and (width <= 30rem) {
     :root {
       --base-font-size: 1.5;
       --h1-size: 1.526;
@@ -933,26 +957,53 @@
     }
 
     img.full-bleed-header {
-      width: 100% !important;
+      width: 100vw !important;
+      max-width: 100vw;
+      margin-inline-start: calc(50% - 50vw);
+      margin-inline-end: calc(50% - 50vw);
+      height: auto;
+      order: 1;
     }
 
     .wrapper {
-      display: block;
-      width: 80vw;
+      display: flex;
+      flex-direction: column;
+      width: 90vw;
       margin: 0 auto;
     }
 
-    .nav-top-menu {
-      display: flex;
-      flex-flow: row wrap;
-      margin-block-start: 0;
-      margin-block-end: 1rem;
+    .nav-container {
+      order: 2;
+      position: relative;
+      margin-block-start: 1rem;
+      margin-block-end: 2rem;
     }
 
-    .continue-reading {
+    .nav-item {
+      font-size: 1rem;
+    }
+
+    .nav-container .nav-links {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0;
+    }
+
+    header {
+      order: 3;
+    }
+
+    main {
+      order: 4;
+    }
+
+    .post-actions {
       align-self: center;
     }
-  }*/
+  }
 }
 
 @layer footer {
@@ -997,22 +1048,24 @@
 
 
   /* smaller mobile devices */
-  /* @media screen and (width <= 30rem) {
+  @media screen and (width <= 30rem) {
     footer {
+      order: 5;
       display: flex;
       flex-flow: column;
-
-      .social-posts {
-        display: flex;
-        flex-flow: column;
-        justify-content: flex-start;
-      }
-
-      .nav-footer-menu {
-        display: flex;
-        flex-flow: column wrap;
-        align-items: flex-start;
-      }
+      margin-block-end: 2rem;
     }
-  }*/
+    
+    footer .social-posts {
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-start;
+    }
+
+    footer .nav-footer-menu {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: flex-start;
+    }
+  }
 }
