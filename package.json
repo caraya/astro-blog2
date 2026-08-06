@@ -51,5 +51,10 @@
     "esbuild@0.28.1": true,
     "fsevents@2.3.3": true,
     "es5-ext@0.10.64": true
+  },
+  "overrides": {
+    "@vite-pwa/astro": {
+      "astro": "$astro"
+    }
   }
 }
