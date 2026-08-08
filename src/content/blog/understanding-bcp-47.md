@@ -1,9 +1,8 @@
 ---
-title: "Understanding BCP 47: A Guide to Language Tags"
-date: 2026-08-24
-draft: true
+title: 'Understanding BCP 47: A Guide to Language Tags'
+date: '2026-08-24'
+author: Carlos Araya
 mermaid: true
-math: true
 ---
 
 Language negotiation and locale handling form the foundation of global web development. BCP 47 language tags coordinate how content is matched across HTTP headers, rendered in HTML documents, normalized at edge CDN layers, styled in CSS, pronounced by screen readers, and serialized in date/time formats defined in [RFC 5646](https://www.rfc-editor.org/rfc/rfc5646.txt), [RFC 4647](https://www.rfc-editor.org/rfc/rfc4647.txt), [RFC 6067](https://www.rfc-editor.org/rfc/rfc6067.txt), and [RFC 9557](https://www.rfc-editor.org/rfc/rfc9557.txt).

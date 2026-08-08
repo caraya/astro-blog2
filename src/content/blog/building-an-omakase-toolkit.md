@@ -1,10 +1,17 @@
 ---
 title: Building An Omakase Toolkit
-date: 2099-12-03
+date: '2099-12-03'
+author: Carlos Araya
 tags:
   - Research
+status: first-draft
+draft: true
+baseline: false
+colorjs: false
+youtube: false
+mermaid: false
+sandpack: false
 ---
-
 
 ## **What Is Omakase?**
 

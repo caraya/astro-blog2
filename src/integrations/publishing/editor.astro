@@ -1,9 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
 import { getCollection } from 'astro:content';
 import { Temporal } from '@js-temporal/polyfill';
-import { toBlogDate } from '../utils/blogPosts';
+import { toBlogDate } from '../../utils/blogPosts';
 
 const isDev = import.meta.env.DEV;
 
@@ -35,53 +33,44 @@ const clientPostsData = sortedPosts.map(post => {
 });
 ---
 
-<Layout frontmatter={{ title: "Content Editor (Dev Only)", description: "Create and edit markdown posts" }}>
-  <style is:global>
-    /* Hide the global side navigation on the editor page, but preserve the footer nav */
-    .wrapper > .nav-container {
-      display: none !important;
-    }
-
-    /* Make the main container span the full width of the wrapper */
-    main {
-      grid-column: 1 / -1 !important;
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-    }
-  </style>
-
-  <Header />
-
-  <main class="editor-main">
-    {!isDev ? (
-      <div class="warning">
-        <p>This editor is only accessible in development mode.</p>
-      </div>
-    ) : (
-      <div class="editor-container">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Post Editor</title>
+    <!-- Toast UI Editor (Loaded via Vite below) -->
+    <style>
+      body { margin: 0; padding: 0; font-family: system-ui, sans-serif; background: #f5f5f5; color: #333; }
+      .editor-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+      /* Additional styles handled in the scoped style block below */
+    </style>
+  </head>
+  <body>
+    <div class="editor-container">
+      {isDev ? (
+        <div class="editor-ui">
         
-        {/* SIDEBAR: Post List */}
-        <aside class="editor-sidebar">
-          <div class="sidebar-header">
-            <h2>Posts</h2>
+        <div class="editor-header-bar">
+          <div class="header-left">
+            <h2>Select Post</h2>
+            <select id="post-selector" class="post-list-select">
+              <option value="">-- Create New Post --</option>
+              {sortedPosts.map(post => (
+                <option value={post.id}>{post.data.title}</option>
+              ))}
+            </select>
             <button id="btn-new-post" class="btn primary small">New</button>
           </div>
-          <select id="post-selector" class="post-list-select" size="20">
-            {sortedPosts.map(post => (
-              <option value={post.id}>{post.data.title}</option>
-            ))}
-          </select>
-        </aside>
+          <div class="header-actions">
+            <span id="save-status" class="status-msg"></span>
+            <button id="btn-save" class="btn success">Save Post</button>
+          </div>
+        </div>
 
         {/* EDITOR PANELS */}
         <div class="editor-content">
           <div class="editor-toolbar">
             <h2 id="editor-title">Create New Post</h2>
-            <div class="actions">
-              <span id="save-status" class="status-msg"></span>
-              <button id="btn-save" class="btn success">Save Post</button>
-            </div>
           </div>
 
           <form id="editor-form" class="editor-form">
@@ -130,12 +119,17 @@ const clientPostsData = sortedPosts.map(post => {
                 <input type="text" id="f-tags" name="tags" />
               </div>
 
+              <div class="form-group span-2">
+                <label for="f-status">Publishing Status</label>
+                <select id="f-status" name="status" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+                  <option value="first-draft">First Draft</option>
+                  <option value="needs-review">Needs Review</option>
+                  <option value="ready-to-publish">Ready to Publish</option>
+                </select>
+              </div>
+
               {/* FLAGS / BOOLEANS */}
               <div class="form-group span-2 flags-group">
-                <label class="checkbox-label">
-                  <input type="checkbox" id="f-draft" name="draft" />
-                  Is Draft
-                </label>
                 <label class="checkbox-label">
                   <input type="checkbox" id="f-baseline" name="baseline" />
                   Baseline
@@ -161,28 +155,58 @@ const clientPostsData = sortedPosts.map(post => {
 
             {/* MARKDOWN EDITOR */}
             <div class="markdown-editor-group">
-              <label for="f-body">Markdown Content</label>
-              <textarea id="f-body" name="body" rows="20" class="markdown-textarea"></textarea>
+              <label>Markdown Content</label>
+              <div id="f-body-editor"></div>
             </div>
           </form>
         </div>
+        </div>
+      ) : (
+        <div style="text-align: center; margin-top: 20vh;">
+          <h1>Development Mode Required</h1>
+          <p>The post editor is only available during local development.</p>
+          <a href="/" style="padding: 0.5rem 1rem; background: #3498db; color: white; text-decoration: none; border-radius: 4px;">Return to Site</a>
+        </div>
+      )}
+    </div>
+  </body>
+</html>
 
-      </div>
-    )}
-  </main>
-</Layout>
+<!-- Toast UI Editor JS (Bundled by Vite) -->
+<script>
+  import Editor from '@toast-ui/editor';
+  import '@toast-ui/editor/dist/toastui-editor.css';
+  
+  window.ToastEditor = Editor;
+  window.dispatchEvent(new Event('ToastEditorReady'));
+</script>
 
 <script is:inline define:vars={{ clientPostsData }}>
   // Ensure we are only running this in the browser
   if (typeof window !== 'undefined') {
-    const form = document.getElementById('editor-form');
-    const btnNew = document.getElementById('btn-new-post');
-    const btnSave = document.getElementById('btn-save');
-    const statusMsg = document.getElementById('save-status');
-    const editorTitle = document.getElementById('editor-title');
-    const postSelector = document.getElementById('post-selector');
+    function initEditorApp() {
+      if (!window.ToastEditor) {
+        window.addEventListener('ToastEditorReady', initEditorApp, { once: true });
+        return;
+      }
 
-    let currentPostId = null;
+      const form = document.getElementById('editor-form');
+      const btnNew = document.getElementById('btn-new-post');
+      const btnSave = document.getElementById('btn-save');
+      const statusMsg = document.getElementById('save-status');
+      const editorTitle = document.getElementById('editor-title');
+      const postSelector = document.getElementById('post-selector');
+
+      let currentPostId = null;
+
+      // Initialize Toast UI Editor
+      const editor = new window.ToastEditor({
+        el: document.getElementById('f-body-editor'),
+        initialEditType: 'markdown',
+        previewStyle: 'tab',
+        height: '600px',
+        initialValue: ''
+      });
 
     // Helper to format date for input type="text" (MM/DD/YYYY)
     function formatDateForInput(dateStr) {
@@ -232,8 +256,10 @@ const clientPostsData = sortedPosts.map(post => {
       document.getElementById('f-categories').value = (post.data.categories || []).join(', ');
       document.getElementById('f-tags').value = (post.data.tags || []).join(', ');
 
+      // Status
+      document.getElementById('f-status').value = post.data.status || (post.data.draft ? 'first-draft' : 'ready-to-publish');
+
       // Booleans
-      document.getElementById('f-draft').checked = !!post.data.draft;
       document.getElementById('f-baseline').checked = !!post.data.baseline;
       document.getElementById('f-colorjs').checked = !!post.data.colorjs;
       document.getElementById('f-youtube').checked = !!post.data.youtube;
@@ -241,7 +267,7 @@ const clientPostsData = sortedPosts.map(post => {
       document.getElementById('f-sandpack').checked = !!post.data.sandpack;
 
       // Markdown body
-      document.getElementById('f-body').value = post.body || '';
+      editor.setMarkdown(post.body || '');
       statusMsg.textContent = '';
     }
 
@@ -257,6 +283,8 @@ const clientPostsData = sortedPosts.map(post => {
       document.getElementById('f-ext').value = '.md';
       document.getElementById('f-date').value = formatDateForInput(new Date().toISOString());
       document.getElementById('f-author').value = 'Carlos Araya';
+      document.getElementById('f-status').value = 'first-draft';
+      editor.setMarkdown('');
       statusMsg.textContent = '';
     }
 
@@ -287,7 +315,8 @@ const clientPostsData = sortedPosts.map(post => {
         desc: document.getElementById('f-desc').value,
         categories: document.getElementById('f-categories').value.split(',').map(s => s.trim()).filter(Boolean),
         tags: document.getElementById('f-tags').value.split(',').map(s => s.trim()).filter(Boolean),
-        draft: document.getElementById('f-draft').checked,
+        status: document.getElementById('f-status').value,
+        draft: document.getElementById('f-status').value !== 'ready-to-publish',
         baseline: document.getElementById('f-baseline').checked,
         colorjs: document.getElementById('f-colorjs').checked,
         youtube: document.getElementById('f-youtube').checked,
@@ -301,7 +330,7 @@ const clientPostsData = sortedPosts.map(post => {
         originalSlug: document.getElementById('f-originalSlug').value,
         originalExt: document.getElementById('f-originalExt').value,
         frontmatter: frontmatter,
-        body: document.getElementById('f-body').value
+        body: editor.getMarkdown()
       };
 
       try {
@@ -313,7 +342,7 @@ const clientPostsData = sortedPosts.map(post => {
 
         const result = await response.json();
 
-        if (response.ok) {
+        if (result.success || response.ok) {
           statusMsg.textContent = 'Saved successfully!';
           statusMsg.classList.add('success-text');
 
@@ -323,23 +352,11 @@ const clientPostsData = sortedPosts.map(post => {
           currentPostId = slug;
           editorTitle.textContent = `Edit Post`;
 
-          // If this is a new post, dynamically add it to the sidebar list so we don't need to reload the page
-          if (postSelector && !Array.from(postSelector.options).some(opt => opt.value === slug)) {
-            const newOpt = document.createElement('option');
-            newOpt.value = slug;
-            newOpt.textContent = document.getElementById('f-title').value;
-            // Insert at the top of the list (or below an empty placeholder if one exists)
-            postSelector.insertBefore(newOpt, postSelector.options[0]);
-          }
-          
-          // Ensure it is selected in the sidebar
-          if (postSelector) postSelector.value = slug;
-
-          // Clear the success message after a few seconds instead of reloading
+          // Refresh the page after saving to ensure clientPostsData is updated 
+          // and Astro's content layer is forced to re-read the file.
           setTimeout(() => {
-            statusMsg.textContent = '';
-            statusMsg.classList.remove('success-text');
-          }, 3000);
+            window.location.reload();
+          }, 800);
         } else {
           statusMsg.textContent = `Error: ${result.error}`;
           statusMsg.classList.add('error-text');
@@ -381,6 +398,14 @@ const clientPostsData = sortedPosts.map(post => {
     if (postToLoad) {
       loadPost(postToLoad);
     }
+    } // End initEditorApp
+    
+    // Start the app when DOM is ready
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', initEditorApp);
+    } else {
+      initEditorApp();
+    }
   }
 </script>
 
@@ -391,38 +416,41 @@ const clientPostsData = sortedPosts.map(post => {
     height: calc(100vh - 100px); /* rough estimate to keep it full screen */
   }
 
-  .editor-container {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 2rem;
-    align-items: start;
-    margin-top: 2rem;
-  }
-
-  /* SIDEBAR */
-  .editor-sidebar {
+  .editor-ui {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    position: sticky;
-    top: 2rem;
+    gap: 1.5rem;
+    margin-top: 1rem;
   }
 
-  .sidebar-header {
+  .editor-header-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-gray-20, #e5e5e5);
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
-  .sidebar-header h2 {
-    font-size: 1.25rem;
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-grow: 1;
+  }
+
+  .header-left h2 {
     margin: 0;
+    font-size: 1.1rem;
+    white-space: nowrap;
   }
 
   .post-list-select {
-    width: 100%;
-    min-height: 500px;
-    height: calc(100vh - 200px);
+    flex-grow: 1;
+    max-width: 500px;
     padding: 0.5rem;
     border: 1px solid var(--color-gray-40, #ccc);
     border-radius: 0.3rem;
@@ -453,14 +481,9 @@ const clientPostsData = sortedPosts.map(post => {
   }
 
   .editor-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--color-gray-20, #e5e5e5);
-    flex-wrap: wrap;
-    gap: 1rem;
   }
 
   .editor-toolbar h2 {
@@ -468,7 +491,7 @@ const clientPostsData = sortedPosts.map(post => {
     margin: 0;
   }
 
-  .actions {
+  .header-actions {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -631,5 +654,28 @@ const clientPostsData = sortedPosts.map(post => {
     font-weight: bold;
     margin: 2rem auto;
     max-width: 600px;
+  }
+
+  @media (max-width: 1024px) {
+    .editor-header-bar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .header-left {
+      flex-wrap: wrap;
+    }
+    
+    .post-list-select {
+      max-width: 100%;
+    }
+    
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .span-2 {
+      grid-column: span 1;
+    }
   }
 </style>

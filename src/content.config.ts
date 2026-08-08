@@ -2,6 +2,7 @@ import { defineCollection } from 'astro:content';
 
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { publishingSchema } from './integrations/publishing/schema';
 
 const blogSchema = z.object({
   title: z.string(),
@@ -15,7 +16,6 @@ const blogSchema = z.object({
   tags: z.array(z.string()).optional().default([]),
   language: z.string().optional(),
   desc: z.string().optional(),
-  draft: z.boolean().default(false),
   baseline: z.boolean().optional().default(false),
   colorjs: z.boolean().optional().default(false),
   youtube: z.boolean().optional().default(false),
@@ -25,7 +25,7 @@ const blogSchema = z.object({
   math: z.boolean().optional().default(false),
   sandpack: z.boolean().optional().default(false),
   codeSnippets: z.record(z.string(), z.record(z.string(), z.string())).optional(),
-});
+}).merge(publishingSchema);
 
 const blog = defineCollection({
   loader: glob({ pattern: '[^_]*.{md,mdx}', base: 'src/content/blog' }),

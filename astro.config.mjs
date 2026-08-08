@@ -14,7 +14,7 @@ import { remarkDefinitionList, defListHastHandlers } from 'remark-definition-lis
 import { remarkReadingTime } from './src/remark/remark-reading-time.mjs';
 import remarkGfm from 'remark-gfm';
 import { remarkExtendedTable, extendedTableHandlers } from 'remark-extended-table';
-import { devSavePostPlugin } from './src/plugins/devSavePost.mjs';
+import publishingWorkflowIntegration from './src/integrations/publishing/index.mjs';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
@@ -56,6 +56,10 @@ export default defineConfig({
       strategies: 'injectManifest',
       srcDir: 'src',
       filename: 'sw.js',
+      devOptions: {
+        enabled: true,
+        type: 'module',
+      },
       injectManifest: {
         // Precache only the absolute bare minimum shell assets
         globPatterns: [
@@ -85,11 +89,9 @@ export default defineConfig({
         ],
       },
     }),
+    publishingWorkflowIntegration(),
   ],
   vite: {
-    plugins: [
-      devSavePostPlugin()
-    ],
     build: {
       rolldownOptions: {
         output: {

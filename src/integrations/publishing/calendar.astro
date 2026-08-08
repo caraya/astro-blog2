@@ -1,0 +1,531 @@
+---
+import { getCollection } from 'astro:content';
+import { toBlogDate, getBlogPosts } from '../../utils/blogPosts';
+import { Temporal } from '@js-temporal/polyfill';
+
+const isDev = import.meta.env.DEV;
+
+const allPosts = await getCollection('blog');
+const now = Temporal.Now.plainDateISO();
+
+// Sort posts chronologically
+const sortedPosts = allPosts.sort((a, b) => 
+  Temporal.PlainDate.compare(toBlogDate(b.data.date), toBlogDate(a.data.date))
+);
+
+// Group by Year-Month string (e.g. "2026-07") so we can generate full month grids
+const groupedPosts = sortedPosts.reduce((acc, post) => {
+  const date = toBlogDate(post.data.date);
+  const monthKey = `${date.year}-${String(date.month).padStart(2, '0')}`;
+  
+  if (!acc[monthKey]) {
+    acc[monthKey] = {
+      year: date.year,
+      month: date.month,
+      monthName: date.toLocaleString('en-US', { month: 'long', year: 'numeric' }),
+      postsByDay: {},
+      allPostsInMonth: []
+    };
+  }
+  
+  if (!acc[monthKey].postsByDay[date.day]) {
+    acc[monthKey].postsByDay[date.day] = [];
+  }
+  
+  acc[monthKey].postsByDay[date.day].push(post);
+  acc[monthKey].allPostsInMonth.push(post);
+  return acc;
+}, {} as Record<string, { year: number, month: number, monthName: string, postsByDay: Record<number, typeof allPosts>, allPostsInMonth: typeof allPosts }>);
+
+// Sort the month groups from newest to oldest
+const sortedMonths = Object.values(groupedPosts).sort((a, b) => {
+  if (a.year !== b.year) return b.year - a.year;
+  return b.month - a.month;
+});
+
+const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+// Helper for status classes
+function getPostStatusInfo(post) {
+  // If status is omitted, gracefully fall back to inferring from draft flag (true = first-draft, falsy = ready-to-publish)
+  const statusValue = post.data.status || (post.data.draft ? 'first-draft' : 'ready-to-publish');
+  const isFuture = Temporal.PlainDate.compare(toBlogDate(post.data.date), now) > 0;
+  
+  let label = 'First Draft';
+  let badgeClass = 'draft';
+
+  if (statusValue === 'ready-to-publish' && !isFuture) {
+    label = 'Published';
+    badgeClass = 'published';
+  } else if (statusValue === 'ready-to-publish' && isFuture) {
+    label = 'Scheduled';
+    badgeClass = 'scheduled';
+  } else if (statusValue === 'needs-review') {
+    label = 'Needs Review';
+    badgeClass = 'review';
+  }
+
+  return { label, badgeClass };
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Content Calendar</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 1200px; margin: 0 auto; padding: 2rem; background: #f9f9f9; }
+      
+      .calendar-main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+      
+      .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .calendar-header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+      }
+
+      .header-actions {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      .btn {
+        background: #3498db;
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: #2980b9;
+      }
+
+      .view-controls {
+        display: flex;
+        gap: 0.5rem;
+        background: var(--color-gray-10, #e5e5e5);
+        padding: 0.25rem;
+        border-radius: 0.5rem;
+      }
+
+      .view-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        background: transparent;
+        border-radius: 0.35rem;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--color-gray-60, #666);
+        transition: all 0.2s ease;
+      }
+
+      .view-btn:hover {
+        background: var(--color-gray-20, #d4d4d4);
+        color: #111;
+      }
+
+      .view-btn.active {
+        background: white;
+        color: #3b82f6;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+
+      .month-section {
+        margin-bottom: 4rem;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      }
+
+      .month-section h2 {
+        font-size: 1.75rem;
+        color: #111;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.5rem;
+      }
+
+      /* View Toggling */
+      .grid-layout, .list-layout { display: none; }
+      .view-grid .grid-layout { display: block; }
+      .view-list .list-layout { display: block; }
+
+      /* GRID VIEW STYLES */
+      .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1px;
+        background: #e5e5e5;
+        border: 1px solid #e5e5e5;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+
+      .weekday-header {
+        background: #f9f9f9;
+        padding: 0.75rem;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #444;
+      }
+
+      .calendar-cell {
+        background: white;
+        min-height: 120px;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .calendar-cell.empty { background: #f9f9f9; }
+      .calendar-cell.today { background: #eff6ff; }
+      .calendar-cell.today .day-number {
+        background: #3b82f6;
+        color: white;
+        width: 1.5rem;
+        height: 1.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+
+      .day-number {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #666;
+        margin-bottom: 0.25rem;
+      }
+
+      .cell-posts {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .pill-wrapper {
+        display: flex;
+        gap: 2px;
+        align-items: stretch;
+      }
+
+      .post-pill {
+        display: flex;
+        align-items: center;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        text-decoration: none;
+        line-height: 1.2;
+        transition: filter 0.2s;
+        flex-grow: 1;
+        overflow: hidden;
+      }
+      
+      .truncate {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .edit-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e5e5e5;
+        color: #444;
+        text-decoration: none;
+        padding: 0 0.4rem;
+        border-radius: 0.25rem;
+        font-size: 0.75rem;
+        transition: background 0.2s;
+      }
+
+      .edit-btn:hover { background: #ccc; }
+      .post-pill:hover { filter: brightness(0.95); }
+
+      .post-pill.published {
+        background: #dcfce7;
+        color: #166534;
+        border: 1px solid #bbf7d0;
+      }
+
+      .post-pill.draft {
+        background: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #fecaca;
+      }
+      
+      .post-pill.review {
+        background: #fef3c7;
+        color: #b45309;
+        border: 1px solid #fde68a;
+      }
+      
+      .post-pill.scheduled {
+        background: #e0e7ff;
+        color: #3730a3;
+        border: 1px solid #c7d2fe;
+      }
+
+      /* LIST VIEW STYLES */
+      .post-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .post-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.75rem 1rem;
+        background: #f9f9f9;
+        border-radius: 0.5rem;
+        border-left: 4px solid transparent;
+      }
+
+      .post-item.published { border-left-color: #22c55e; }
+      .post-item.draft { border-left-color: #ef4444; background: #fef2f2; }
+      .post-item.review { border-left-color: #f59e0b; background: #fffbeb; }
+      .post-item.scheduled { border-left-color: #6366f1; background: #eef2ff; }
+
+      .post-item.draft .post-link { color: #ef4444; }
+      .post-item.review .post-link { color: #d97706; }
+      .post-item.scheduled .post-link { color: #4f46e5; }
+
+      .post-date {
+        font-variant-numeric: tabular-nums;
+        color: #666;
+        min-width: 4rem;
+        font-size: 0.9rem;
+      }
+
+      .post-link {
+        font-weight: 500;
+        text-decoration: none;
+        color: #111;
+        flex-grow: 1;
+      }
+
+      .post-link:hover { text-decoration: underline; }
+
+      .edit-link {
+        font-size: 0.85rem;
+        color: #3b82f6;
+        text-decoration: none;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        transition: background 0.2s;
+      }
+
+      .edit-link:hover { background: #eff6ff; }
+
+      .badge {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .badge.draft { background: #fee2e2; color: #991b1b; }
+      .badge.review { background: #fef3c7; color: #b45309; }
+      .badge.scheduled { background: #e0e7ff; color: #3730a3; }
+      .badge.published { background: #dcfce7; color: #166534; }
+
+      .warning {
+        padding: 2rem;
+        background: #fee2e2;
+        color: #991b1b;
+        border-radius: 0.5rem;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      @media (max-width: 768px) {
+        .calendar-cell { min-height: 80px; padding: 0.25rem; }
+        .post-pill { font-size: 0.65rem; padding: 0.15rem 0.25rem; }
+        .weekday-header { padding: 0.5rem 0.25rem; font-size: 0.75rem; }
+        .calendar-header { flex-direction: column; align-items: stretch; text-align: center; }
+        .view-controls { justify-content: center; }
+        .header-actions { flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="calendar-main">
+      <div class="calendar-header">
+        <h1>Content Calendar</h1>
+        
+        {isDev && (
+          <div class="header-actions">
+            <div class="view-controls">
+              <button id="btn-grid" class="view-btn active" aria-label="Grid View">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                Grid
+              </button>
+              <button id="btn-list" class="view-btn" aria-label="List View">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                List
+              </button>
+            </div>
+            <a href="/editor" class="btn">New Post</a>
+            <a href="/" class="btn" style="background: #95a5a6;">Back to Site</a>
+          </div>
+        )}
+      </div>
+      
+      {!isDev ? (
+        <div class="warning">
+          <p>This page is only visible in development mode.</p>
+          <a href="/" class="btn">Return to Site</a>
+        </div>
+      ) : (
+        <div id="calendar-container" class="view-grid">
+          {/* GRID VIEW */}
+          <div class="calendar-wrapper grid-layout">
+            {sortedMonths.map((monthData) => {
+              const firstDayOfMonth = Temporal.PlainDate.from({ year: monthData.year, month: monthData.month, day: 1 });
+              const daysInMonth = firstDayOfMonth.daysInMonth;
+              const colStart = (firstDayOfMonth.dayOfWeek % 7) + 1;
+              const daysArray = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+
+              return (
+                <section class="month-section">
+                  <h2>{monthData.monthName}</h2>
+                  <div class="calendar-grid">
+                    {weekDays.map(day => (
+                      <div class="weekday-header">{day}</div>
+                    ))}
+                    
+                    {Array.from({ length: colStart - 1 }).map(() => (
+                      <div class="calendar-cell empty"></div>
+                    ))}
+                    
+                    {daysArray.map(day => {
+                      const dailyPosts = monthData.postsByDay[day] || [];
+                      const isToday = monthData.year === now.year && monthData.month === now.month && day === now.day;
+                      
+                      return (
+                        <div class={`calendar-cell ${isToday ? 'today' : ''}`}>
+                          <span class="day-number">{day}</span>
+                          <div class="cell-posts">
+                            {dailyPosts.map(post => {
+                              const { label, badgeClass } = getPostStatusInfo(post);
+                              
+                              return (
+                                <div class="pill-wrapper">
+                                  <a 
+                                    href={`/${post.id}`} 
+                                    class={`post-pill ${badgeClass}`}
+                                    title={post.data.title}
+                                  >
+                                    <span class="truncate">{post.data.title || 'Untitled'}</span>
+                                  </a>
+                                  <a href={`/editor?post=${encodeURIComponent(post.id)}`} class="edit-btn" title="Edit Post">✎</a>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })}
+                    
+                    {(() => {
+                      const totalCells = (colStart - 1) + daysInMonth;
+                      const trailingCells = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
+                      return Array.from({ length: trailingCells }).map(() => (
+                        <div class="calendar-cell empty"></div>
+                      ));
+                    })()}
+                  </div>
+                </section>
+              );
+            })}
+          </div>
+
+          {/* LIST VIEW */}
+          <div class="calendar-wrapper list-layout">
+            {sortedMonths.map((monthData) => (
+              <section class="month-section">
+                <h2>{monthData.monthName}</h2>
+                <ul class="post-list">
+                  {monthData.allPostsInMonth.map(post => {
+                    const { label, badgeClass } = getPostStatusInfo(post);
+                    const dateStr = toBlogDate(post.data.date).toLocaleString('en-US', { month: 'short', day: 'numeric' });
+                    
+                    return (
+                      <li class={`post-item ${badgeClass}`}>
+                        <span class="post-date">{dateStr}</span>
+                        <a href={`/${post.id}`} class="post-link">
+                          {post.data.title || 'Untitled'}
+                        </a>
+                        <a href={`/editor?post=${encodeURIComponent(post.id)}`} class="edit-link" title="Edit">✏️ Edit</a>
+                        <span class={`badge ${badgeClass}`}>{label}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+            ))}
+          </div>
+        </div>
+      )}
+    </main>
+    
+    <script>
+      // Simple client-side script to handle view toggling
+      const container = document.getElementById('calendar-container');
+      const btnGrid = document.getElementById('btn-grid');
+      const btnList = document.getElementById('btn-list');
+
+      if (container && btnGrid && btnList) {
+        btnGrid.addEventListener('click', () => {
+          container.classList.remove('view-list');
+          container.classList.add('view-grid');
+          btnGrid.classList.add('active');
+          btnList.classList.remove('active');
+        });
+
+        btnList.addEventListener('click', () => {
+          container.classList.remove('view-grid');
+          container.classList.add('view-list');
+          btnList.classList.add('active');
+          btnGrid.classList.remove('active');
+        });
+      }
+    </script>
+  </body>
+</html>
