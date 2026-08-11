@@ -97,6 +97,34 @@ function getPostStatusInfo(post) {
         font-size: 2.5rem;
       }
 
+      .calendar-legend {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        background: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        flex-wrap: wrap;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #444;
+      }
+      .legend-swatch {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+      }
+      .legend-swatch.published { background: #e6f4ea; border: 1px solid #ceead6; }
+      .legend-swatch.scheduled { background: #e8f0fe; border: 1px solid #d2e3fc; }
+      .legend-swatch.draft { background: #fce8e6; border: 1px solid #fad2cf; }
+      .legend-swatch.review { background: #fef7e0; border: 1px solid #fbe9a2; }
+
       .header-actions {
         display: flex;
         gap: 0.5rem;
@@ -406,14 +434,21 @@ function getPostStatusInfo(post) {
           </div>
         )}
       </div>
-      
       {!isDev ? (
         <div class="warning">
           <p>This page is only visible in development mode.</p>
           <a href="/" class="btn">Return to Site</a>
         </div>
       ) : (
-        <div id="calendar-container" class="view-grid">
+        <>
+          <div class="calendar-legend">
+            <div class="legend-item"><span class="legend-swatch published"></span> Published</div>
+            <div class="legend-item"><span class="legend-swatch scheduled"></span> Scheduled</div>
+            <div class="legend-item"><span class="legend-swatch draft"></span> Draft</div>
+            <div class="legend-item"><span class="legend-swatch review"></span> Needs Review</div>
+          </div>
+          
+          <div id="calendar-container" class="view-grid">
           {/* GRID VIEW */}
           <div class="calendar-wrapper grid-layout">
             {sortedMonths.map((monthData) => {
@@ -502,6 +537,7 @@ function getPostStatusInfo(post) {
             ))}
           </div>
         </div>
+        </>
       )}
     </main>
     

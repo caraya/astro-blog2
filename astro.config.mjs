@@ -50,7 +50,7 @@ export default defineConfig({
     pagefind(),
     sitemap(),
     AstroPWA({
-      registerType: 'prompt',
+      registerType: 'autoUpdate',
       injectRegister: false,
       manifest: false,
       strategies: 'injectManifest',
