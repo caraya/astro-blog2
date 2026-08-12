@@ -7,6 +7,7 @@ mermaid: false
 mavo: false
 colorjs: true
 baseline: true
+draft: true
 ---
 
 One of the reasons to move my blog from WordPress to Eleventy was the flexibility of convert the Markdown I write into proper HTML without using raw HTML in the Markdown files.
@@ -17,11 +18,11 @@ This document is my attempt at remembering all the things I've added so I can co
 
 This post is my attempt at a cheat sheet for the extra Markdown Elements that I use in this blog.
 
-!!! tip **This post is specific to this site**
-The commands, as explained in this post, are designed for this blog and will only work as explained here.
+<custom-admonition type="tip" title="This post is specific to this site">
+  <p>The commands, as explained in this post, are designed for this blog and will only work as explained here.</p>
 
-If you want to get them to work in your own site contact me and I'll try to help.
-!!!
+  <p>If you want to get them to work in your own site contact me and I'll try to help.</p>
+</custom-admonition>
 
 ## Front matter attributes
 
@@ -206,70 +207,6 @@ The text that needs a footnote goes here. Look for the footnote at the bottom of
 [^1]: This is the text of the footnote.
 
 ## Admonitions
-
-Admonitions are asides with relevant information that are not essential to the body of the text.
-
-The following types of admonitions are supported:
-
-* info
-* note
-* tip
-* warning
-* bug
-* danger
-* failure
-* success
-
-The structure is the same:
-
-1. Three exclamation marks, `!!!` followed by the `type` of admonition and an optional title
-   1. If you don't provide a title, then the type of admonition will be used
-2. The body of the admonition
-3. Three exclamation marks, `!!!` on a line of their own
-
-A `warning` admonition would look like this
-
-```markdown
-!!! warning
-You never know who'll get to read it :)
-!!!
-```
-
-```html
-<div class="admonition warning">
-  <p class="admonition-title">warning</p>
-  <p>It works so much better when you do your research before engaging in arguments</p>
-</div>
-```
-
-!!! warning
-You never know who'll get to read it :)
-!!!
-
-You can also add a title to the admonition by adding the title after the type of admonition.
-
-To add a title to the warning example, the modified code will look like this:
-
-```markdown
-!!! warning Do your research
-You never know who'll get to read it :)
-!!!
-```
-
-And the resulting HTML will look like this:
-
-```html
-<div class="admonition warning">
-  <p class="admonition-title">Do your research</p>
-  <p>You never know who'll get to read it :)</p>
-</div>
-```
-
-!!! warning Do your research
-You never know who'll get to read it :)
-!!!
-
-## New style of admonitions
 
 There are times when I want a different type of admonitions.  Instead of modifying the Markdown plugin, I decided to create a web component based on  Lea Verou's admonition design on her website (<https://lea.verou.me/>).
 
