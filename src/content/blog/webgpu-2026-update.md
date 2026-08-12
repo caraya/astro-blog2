@@ -1,6 +1,10 @@
 ---
 title: "WebGPU: 2026 Update"
 date: 2026-08-31
+tags:
+  - graphics
+  - webgpu
+  - web
 mermaid: true
 admonition: true
 ---
