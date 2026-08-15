@@ -31,7 +31,7 @@
     "@types/react-dom": "^19.2.3",
     "@vite-pwa/astro": "^1.2.0",
     "astro": "^7.1.1",
-    "astro-icon": "^0.8.2",
+    "astro-icon": "^1.1.5",
     "astro-pagefind": "^2.0.1",
     "astrojs-atom": "^4.0.29",
     "cloudinary": "^2.10.0",
