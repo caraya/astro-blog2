@@ -52,9 +52,9 @@
     "workbox-window": "^7.4.1"
   },
   "allowScripts": {
-    "fsevents@2.3.3": true,
     "es5-ext@0.10.64": true,
-    "esbuild@0.28.2": true
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.2": true
   },
   "overrides": {
     "@vite-pwa/astro": {
