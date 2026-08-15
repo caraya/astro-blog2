@@ -14,10 +14,11 @@ import { remarkDefinitionList, defListHastHandlers } from 'remark-definition-lis
 import { remarkReadingTime } from './src/remark/remark-reading-time.mjs';
 import remarkGfm from 'remark-gfm';
 import { remarkExtendedTable, extendedTableHandlers } from 'remark-extended-table';
-import publishingWorkflowIntegration from './src/integrations/publishing/index.mjs';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
+// Custom publishing workflow integration
+import publishingWorkflowIntegration from './src/integrations/publishing/index.mjs';
 
 // https://astro.build/config
 export default defineConfig({
