@@ -6,6 +6,7 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "photo-upload": "node ./scripts/photos.js",
     "test": "playwright test",
     "dev": "astro dev",
     "build": "astro build",
@@ -30,9 +31,10 @@
     "@types/react-dom": "^19.2.3",
     "@vite-pwa/astro": "^1.2.0",
     "astro": "^7.1.1",
-    "astro-icon": "^1.1.5",
+    "astro-icon": "^0.8.2",
     "astro-pagefind": "^2.0.1",
     "astrojs-atom": "^4.0.29",
+    "cloudinary": "^2.10.0",
     "js-yaml": "^5.2.2",
     "mdast-util-to-string": "^4.0.0",
     "mermaid": "^11.16.0",
