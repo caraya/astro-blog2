@@ -8,9 +8,9 @@
   "scripts": {
     "photo-upload": "node ./scripts/photos.js",
     "test": "playwright test",
-    "dev": "astro dev",
-    "build": "astro build",
-    "build:drafts": "BUILD_DRAFTS=true astro build",
+    "dev": "npm run build && astro dev",
+    "build": "npm run photo-upload && astro build",
+    "build:drafts": "npm run photo-upload && BUILD_DRAFTS=true astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

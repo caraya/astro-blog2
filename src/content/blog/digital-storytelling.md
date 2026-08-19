@@ -21,9 +21,9 @@ In these essays we'll explore Beacons as storytelling devices, Augmented Reality
 
 The progress to a fully 3D immersive holodeck is not a new endeavor or something that has appeared in a single discipline. In order to better understand what we want to do in the VR world it pays to get an idea of where we've already been. I'll break the old virtual worlds into three categories:
 
-- Text-based virtual environments
-- SIMNET and military simulations
-- Early attempts at virtual reality: Lucasfilms Habitat
+* Text-based virtual environments
+* SIMNET and military simulations
+* Early attempts at virtual reality: Lucasfilms Habitat
 
 ### Text-based virtual environments
 
@@ -51,15 +51,13 @@ Wherever you see an MMORPG you're seeing the children of MUD and when looking at
 
 ### Distributed Training Simulations: SIMNET
 
-![](//publishing-project.rivendellweb.net/wp-content/uploads/2017/08/T72.gif)
-
-Simnet Simulators
+<img src="https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/T72?_a=BAMAPqeE0" alt="Simulated military training environment" width="500" height="281">
 
 > SIMNET was the first successful implementation of large-scale, real-time, man-in-the-loop simulator networking for team training and mission rehearsal in military operations. — SIMNET: The Advent of Simulator Networking SIMNET stands for SIMulator NETworking. Initiated in 1983, it was the first “shared virtual reality” distributed simulation system, which continues to have significant influences. It was sponsored by DARPA, the Defense Advanced Research Projects Agency, the Department of Defense’s principal high-risk, high-payoff research and development organization, established in 1958. \[...\] — SIMNET and Beyond: A History of the Development of Distributed Simulation
 
 SIMNET was created in the early 1990s to provide training simulations for large scale forces without the cost associated with moving such large forces to training sites like [The National Training Center](http://www.irwin.army.mil/) in Fort Irwin California.
 
-![](//publishing-project.rivendellweb.net/wp-content/uploads/2017/08/simnet-simulators.jpg)
+![SIMNET Simulators](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/simnet-simulators?_a=BAMAPqeE0)
 
 SIMNET Simulators
 
@@ -97,24 +95,21 @@ The events are reproducible. The [Battle of 73 Easting](http://www.defensemedian
 
 Several members of the original teams that worked in SIMNET moved on to gaming and distributed networking endeavors after SIMNET was over. Some of these startups include:
 
-- RTIME, Inc. (Rolland Waters) game network engines
-- MetaVR, Inc (W. Garth Smith), simulation and training, GIS systems
-- MaK Technologies (Warren Katz and John Morrison), simulation software
-- Reality by Design, Inc (Joanne West Metzger and Paul Metzger), simulation and training systems
-- Zipper Interactive (Brian Soderberg), game developer (SOCOM game series)
-- Wiz!Bang (Drew Johnston), game developer
+* RTIME, Inc. (Rolland Waters) game network engines
+* MetaVR, Inc (W. Garth Smith), simulation and training, GIS systems
+* MaK Technologies (Warren Katz and John Morrison), simulation software
+* Reality by Design, Inc (Joanne West Metzger and Paul Metzger), simulation and training systems
+* Zipper Interactive (Brian Soderberg), game developer (SOCOM game series)
+* Wiz!Bang (Drew Johnston), game developer
 
 ### Early attempts at graphic VR: Habitat
 
-![](//publishing-project.rivendellweb.net/wp-content/uploads/2017/08/habitat-logo.jpg)
+![Lucasfilm's Habitat](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/habitat-logo?_a=BAMAPqeE0)
 
-Lucasfilm's Habitat
 
 One of the first attempts at creating a graphical online virtual world was Habitat. Created by F. Randall Farmer and Chip Morningstar for [Quantum Link](https://www.wikiwand.com/en/Quantum_Link) an early Internet Service Provider targeted to [Commodore 64](https://www.wikiwand.com/en/Commodore_64) and [Commodore 128](https://www.wikiwand.com/en/Commodore_128) systems using dial up connections.
 
-![](//publishing-project.rivendellweb.net/wp-content/uploads/2017/08/habitat7.jpg)
-
-An Habitat scene.
+![Habitat Scene](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/habitat7?_a=BAMAPqeE0)
 
 The lead creators of Habitat, Chip Morningstar and F. Randall Farmer have written extensively about what Habitat is and what lessons they have learned in the process.
 

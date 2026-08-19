@@ -27,7 +27,8 @@
 	"no-emphasis-as-heading": false,
 	"fenced-code-language": true,
 	"first-line-h1": false,
-	"line_length": false,
+	"first-line-heading": false,
+	"line-length": false,
 	"code-block-style": {
 			"style": "fenced"
 	},
@@ -41,6 +42,8 @@
 			"style": "asterisk"
 	},
 	"whitespace": false,
+	"MD033": false,
+	"MD034": false,
 	"no-inline-html": false,
 	"table-pipe-style": {
 			"style": "leading_and_trailing"

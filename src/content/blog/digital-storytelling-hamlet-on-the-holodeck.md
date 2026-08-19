@@ -3,7 +3,7 @@ title: "Digital Storytelling: Hamlet on the Holodeck"
 date: "2017-09-04"
 ---
 
-![](//publishing-project.rivendellweb.net/wp-content/uploads/2017/08/holodeck_empty.jpg)
+![Empty Star Trek holodeck](https://res.cloudinary.com/dfh6ihzvj/image/upload/c_scale,w_500/f_auto,q_auto/holodeck_empty?_a=BAMAPqeE0)
 
 A holodeck from Star Trek: The Next Generation
 
