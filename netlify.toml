@@ -19,4 +19,4 @@
 	Access-Control-Allow-Origin = "*"
 	# Client Hints
 	Accept-CH = "Sec-CH-Width"
-	Permissions-Policy = 'ch-width=(self "https://images.cloudfour.com")'
+	Permissions-Policy = 'ch-width=(self "https://cloudinary.com")'
