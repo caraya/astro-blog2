@@ -71,7 +71,7 @@ $$
 
 #### Essential Unicode Extension Keys
 
-| Key | Description | Common Subtag Values | Example Tag | Output / Behavior
+| Key | Description | Common Subtag Values | Example Tag | Output / Behavior |
 | :---: | --- | --- | --- | --- |
 | `nu` | Numbering System | latn, arab, thai, deva, native | ar-EG-u-nu-latn | Uses Western Arabic digits (123) instead of Eastern (١٢٣) |
 | `ca` | Calendar System | gregory, buddhist, japanese, islamic, hebrew | ja-JP-u-ca-japanese | Displays Japanese Imperial era years (e.g., Reiwa era) |

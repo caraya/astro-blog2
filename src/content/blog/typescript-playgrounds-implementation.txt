@@ -9,14 +9,16 @@ tags:
 
 As the capstone of this series, this post demonstrates how to build a complex TypeScript playground component. This component allows one or more instances to render interactive TypeScript code examples directly on the page. This is a common use case for documentation sites, and it perfectly demonstrates how to handle complex client-side logic while maintaining a fast, static HTML preview.
 
-!!!note  Note:
-This is the capstone post for the Islands Architecture series.
+<custom-admonition type="note" title="Note">
+<p>This is the capstone post for the Islands Architecture series.</p>
 
-1. [Theory](/what-is-the-islands-architecture/)
-2. [Implementation Guide](/implementation-guide/)
-3. [Advanced Patterns](/advanced-patterns/)
-4. Capstone (**this post**)
-!!!
+<ol>
+  <li><a href="/what-is-the-islands-architecture/">Theory</a></li>
+  <li><a href="/implementation-guide/">Implementation Guide</a></li>
+  <li><a href="/advanced-patterns/">Advanced Patterns</a></li>
+  <li>Capstone (**this post**)</li>
+</ol>
+</custom-admonition>
 
 ## Prerequisites
 
@@ -653,4 +655,3 @@ Cross-Origin-Opener-Policy-Report-Only: same-origin; report-to="default"
 * **Add the `crossorigin` attribute**: For tags loading external assets (`<script>`, `<img>`, etc.), add the `crossorigin` attribute.
 * **Update external servers**: If you control the external resource, configure the server to return the `Cross-Origin-Resource-Policy: cross-origin` header.
 * **Use a credentialless iframe**: For broken external iframes, add the `credentialless` attribute (`<iframe src="..." credentialless></iframe>`).
-

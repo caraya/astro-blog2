@@ -108,9 +108,25 @@ const pageBodyClass = [bodyClass, 'prism-page'].filter(Boolean).join(' ');
     <script defer is:inline src="/js/prism/plugins/copy-to-clipboard/prism-copy-to-clipboard.js"></script>
     <script defer is:inline src="/js/prism/plugins/show-language/prism-show-language.js"></script>
     <script defer>
-      if (window.Prism?.highlightAll) {
-        window.Prism.highlightAll();
+      if (window.Prism) {
+        // Force Prism to register 'astro' as an alias of 'jsx' internally
+        Prism.languages.astro = Prism.languages.jsx;
+
+        // Configure the autoloader alias as backup
+        if (Prism.plugins?.autoloader) {
+          Prism.plugins.autoloader.language_aliases = { 'astro': 'jsx' };
+        }
+
+        if (Prism.highlightAll) {
+          Prism.highlightAll();
+        }
       }
+      // Prism.plugins.autoloader.language_aliases = {
+      //   'astro': 'jsx'
+      // };
+      // if (window.Prism?.highlightAll) {
+      //   window.Prism.highlightAll();
+      // }
     </script>
     {hasMermaid && (
       <script type="module" is:inline>
