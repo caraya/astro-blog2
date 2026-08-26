@@ -7,6 +7,9 @@ import siteData from '../data/site.json';
 ---
 
 <div class="social-contacts">
+  <a href="https://github.com/caraya" target="_blank" rel="noopener noreferrer me" aria-label="Link to GitHub profile">
+       <Icon name={`tabler:brand-github`} />
+  </a>
   { Object.entries(siteData.social_links).map(([platform, url]) => (
     <a href={url} target="_blank" rel="noopener noreferrer" id={platform} aria-label={`Link to ${platform} profile`}>
       <Icon name={`tabler:brand-${platform}`} />

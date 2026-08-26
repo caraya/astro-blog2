@@ -1,13 +1,14 @@
 ---
 title: Multi-language Monorepo with Bazel
-date: 2024-07-18
-tag:
-  - Bazel
-  - Go
-  - Javascript
-  - Typescript
-  - PostCSS
-draft: true
+date: '2024-07-19'
+author: Carlos Araya
+status: ready-to-publish
+draft: false
+baseline: false
+colorjs: false
+youtube: false
+mermaid: false
+sandpack: false
 ---
 
 This post will discuss how to keep a mono repo with projects written in multiple languages using Bazel as the common build tool for all four. The languages are:
