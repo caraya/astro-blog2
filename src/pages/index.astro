@@ -11,6 +11,7 @@ import Footer from '../components/Footer.astro';
 import SaveOfflineButton from '../components/SaveOfflineButton.astro';
 
 import Excerpt from '../components/Excerpt.astro';
+import CategoryList from '../components/CategoryList.astro';
 ---
 <Layout frontmatter={{ title: 'The Publishing Project' }}>
 	<Header />
@@ -37,6 +38,7 @@ import Excerpt from '../components/Excerpt.astro';
 										{toBlogDate(post.data.date).toLocaleString('en-US', { dateStyle: 'long' })}
 									</time>
 								</div>
+								<CategoryList rawCategories={post.data.categories.length ? post.data.categories : post.data.tags} />
 
 								<Excerpt content={post.body} />
 

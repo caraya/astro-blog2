@@ -7,6 +7,7 @@ import Header from '../../components/Header.astro';
 import SaveOfflineButton from '../../components/SaveOfflineButton.astro';
 import Excerpt from '../../components/Excerpt.astro';
 import Footer from '../../components/Footer.astro';
+import CategoryList from '../../components/CategoryList.astro';
 
 export async function getStaticPaths() {
   const allPosts = await getBlogPosts();
@@ -60,6 +61,7 @@ const { currentPage, totalPages, posts, latestPosts } = Astro.props;
                     </time>
                   </div>
                 </div>
+				<CategoryList rawCategories={post.data.categories.length ? post.data.categories : post.data.tags} />
 
 								<Excerpt content={post.body} />
 
