@@ -33,8 +33,8 @@ const categories = [
 
 {categories.length > 0 && (
   <ul class="post-tags iconfont">
-    {categories.map((category) => (
-      <li>{category}</li>
+    {categories.map((category, index) => (
+      <li>{category}{index < categories.length - 1 && ","}</li>
     ))}
   </ul>
 )}
