@@ -1,7 +1,14 @@
 ---
 title: Contact by Carl Sagan
-date: 2040-12-31
+date: '2026-10-17'
+author: Carlos Araya
+status: first-draft
 draft: true
+baseline: false
+colorjs: false
+youtube: false
+mermaid: false
+sandpack: false
 ---
 
 **Chapter 24.**

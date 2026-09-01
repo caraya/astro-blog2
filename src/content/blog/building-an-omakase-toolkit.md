@@ -1,6 +1,6 @@
 ---
 title: Building An Omakase Toolkit
-date: '2099-12-03'
+date: '2026-10-24'
 author: Carlos Araya
 tags:
   - Research
