@@ -7,7 +7,6 @@ tags:
   - research
 math: true
 youtube: true
-draft: true
 ---
 
 It is tempting to look at AI and its related technologies and disciplines as purely technical endeavors, focusing solely on algorithms, data and computational power. However, this perspective overlooks the broader implications and the interdisciplinary nature of AI research, which encompasses ethical, social, and philosophical considerations as well.
