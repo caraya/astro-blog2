@@ -44,7 +44,7 @@ The expert systems boom and backpropagation (1980–1987)
 The second AI winter: causes and contraction (1987–1993)
 : Commercial enthusiasm collapses once again, triggering heavy cuts across enterprise and government AI programs. Primary catalysts include:
 : * Brittleness and maintenance bottlenecks: Expert systems scaled poorly; managing thousands of interdependent rules led to fragile systems unable to handle edge cases, uncertainty, or automatic updates.
-: * Collapse of the LISP machine market (1987): High-cost, specialized LISP hardware vendors (e.g., Symbolics, LMI) were rapidly undercut and displaced by commodity general-purpose workstations (Sun Microsystems, Apple, IBM PC) running standard C and UNIX.
+: * Collapse of the LISP machine market (1987): High-cost, specialized LISP hardware vendors (e.g., Symbolics, LMI) were rapidly undercut by lower-cost, general-purpose workstations and personal computers, which eroded the economic case for dedicated LISP hardware.
 : * Missed strategic targets: Ambitious initiatives like Japan's Fifth Generation Computer Systems (FGCS) and DARPA's Strategic Computing Initiative failed to meet commercial usability expectations, leading to corporate disinvestment.
 
 The statistical learning transition (1980s–1990s)

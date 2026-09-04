@@ -17,7 +17,7 @@ He quotes this [tweet from Dax](https://x.com/thdxr/status/2069933148767400094),
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">it&#39;s worth deeply studying why no framework dethroned react<br><br>it&#39;s completely misunderstood and it&#39;s why every prediction you see by programmers tends to be wrong<br><br>and once you get it, you can apply this understanding to nearly everything you do</p>&mdash; dax (@thdxr) <a href="https://x.com/thdxr/status/2069933148767400094?ref_src=twsrc%5Etfw">June 24, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
 
-This post aims to summarize the key points from Kent's video, provide additional context, and offer my own perspective on the matter. It is not a verbatim transcript of the video but rather a synthesis of the ideas presented, along with my own insights and analysis.
+This post uses Kent’s video as a starting point for examining why React has remained dominant. I provide historical context, consider several of Kent’s claims, and explain where my own perspective differs from his. This is not a transcript or comprehensive summary, but an independent analysis of the questions raised by the video.
 
 ## A Little Bit of History
 
