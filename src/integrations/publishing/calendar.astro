@@ -9,7 +9,7 @@ const allPosts = await getCollection('blog');
 const now = Temporal.Now.plainDateISO();
 
 // Sort posts chronologically
-const sortedPosts = allPosts.sort((a, b) => 
+const sortedPosts = allPosts.sort((a, b) =>
   Temporal.PlainDate.compare(toBlogDate(b.data.date), toBlogDate(a.data.date))
 );
 
@@ -17,7 +17,7 @@ const sortedPosts = allPosts.sort((a, b) =>
 const groupedPosts = sortedPosts.reduce((acc, post) => {
   const date = toBlogDate(post.data.date);
   const monthKey = `${date.year}-${String(date.month).padStart(2, '0')}`;
-  
+
   if (!acc[monthKey]) {
     acc[monthKey] = {
       year: date.year,
@@ -27,11 +27,11 @@ const groupedPosts = sortedPosts.reduce((acc, post) => {
       allPostsInMonth: []
     };
   }
-  
+
   if (!acc[monthKey].postsByDay[date.day]) {
     acc[monthKey].postsByDay[date.day] = [];
   }
-  
+
   acc[monthKey].postsByDay[date.day].push(post);
   acc[monthKey].allPostsInMonth.push(post);
   return acc;
@@ -50,7 +50,7 @@ function getPostStatusInfo(post) {
   // If status is omitted, gracefully fall back to inferring from draft flag (true = first-draft, falsy = ready-to-publish)
   const statusValue = post.data.status || (post.data.draft ? 'first-draft' : 'ready-to-publish');
   const isFuture = Temporal.PlainDate.compare(toBlogDate(post.data.date), now) > 0;
-  
+
   let label = 'First Draft';
   let badgeClass = 'draft';
 
@@ -76,13 +76,13 @@ function getPostStatusInfo(post) {
     <title>Content Calendar</title>
     <style>
       body { font-family: system-ui, sans-serif; max-width: 1200px; margin: 0 auto; padding: 2rem; background: #f9f9f9; }
-      
+
       .calendar-main {
         max-width: 1200px;
         margin: 0 auto;
         padding: 2rem 1rem;
       }
-      
+
       .calendar-header {
         display: flex;
         justify-content: space-between;
@@ -275,7 +275,7 @@ function getPostStatusInfo(post) {
         flex-grow: 1;
         overflow: hidden;
       }
-      
+
       .truncate {
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -310,13 +310,13 @@ function getPostStatusInfo(post) {
         color: #991b1b;
         border: 1px solid #fecaca;
       }
-      
+
       .post-pill.review {
         background: #fef3c7;
         color: #b45309;
         border: 1px solid #fde68a;
       }
-      
+
       .post-pill.scheduled {
         background: #e0e7ff;
         color: #3730a3;
@@ -416,7 +416,7 @@ function getPostStatusInfo(post) {
     <main class="calendar-main">
       <div class="calendar-header">
         <h1>Content Calendar</h1>
-        
+
         {isDev && (
           <div class="header-actions">
             <div class="view-controls">
@@ -447,7 +447,7 @@ function getPostStatusInfo(post) {
             <div class="legend-item"><span class="legend-swatch draft"></span> Draft</div>
             <div class="legend-item"><span class="legend-swatch review"></span> Needs Review</div>
           </div>
-          
+
           <div id="calendar-container" class="view-grid">
           {/* GRID VIEW */}
           <div class="calendar-wrapper grid-layout">
@@ -464,26 +464,26 @@ function getPostStatusInfo(post) {
                     {weekDays.map(day => (
                       <div class="weekday-header">{day}</div>
                     ))}
-                    
+
                     {Array.from({ length: colStart - 1 }).map(() => (
                       <div class="calendar-cell empty"></div>
                     ))}
-                    
+
                     {daysArray.map(day => {
                       const dailyPosts = monthData.postsByDay[day] || [];
                       const isToday = monthData.year === now.year && monthData.month === now.month && day === now.day;
-                      
+
                       return (
                         <div class={`calendar-cell ${isToday ? 'today' : ''}`}>
                           <span class="day-number">{day}</span>
                           <div class="cell-posts">
                             {dailyPosts.map(post => {
                               const { label, badgeClass } = getPostStatusInfo(post);
-                              
+
                               return (
                                 <div class="pill-wrapper">
-                                  <a 
-                                    href={`/${post.id}`} 
+                                  <a
+                                    href={`/${post.id}`}
                                     class={`post-pill ${badgeClass}`}
                                     title={post.data.title}
                                   >
@@ -497,7 +497,7 @@ function getPostStatusInfo(post) {
                         </div>
                       );
                     })}
-                    
+
                     {(() => {
                       const totalCells = (colStart - 1) + daysInMonth;
                       const trailingCells = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
@@ -520,7 +520,7 @@ function getPostStatusInfo(post) {
                   {monthData.allPostsInMonth.map(post => {
                     const { label, badgeClass } = getPostStatusInfo(post);
                     const dateStr = toBlogDate(post.data.date).toLocaleString('en-US', { month: 'short', day: 'numeric' });
-                    
+
                     return (
                       <li class={`post-item ${badgeClass}`}>
                         <span class="post-date">{dateStr}</span>
@@ -540,7 +540,7 @@ function getPostStatusInfo(post) {
         </>
       )}
     </main>
-    
+
     <script>
       // Simple client-side script to handle view toggling
       const container = document.getElementById('calendar-container');

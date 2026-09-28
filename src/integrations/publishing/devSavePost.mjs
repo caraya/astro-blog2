@@ -31,9 +31,23 @@ export function devSavePostPlugin() {
               })
             );
 
-            // Ensure date is formatted correctly (YYYY-MM-DD)
+            // Ensure date is formatted correctly (YYYY-MM-DD) without timezone shifts
             if (cleanedFrontmatter.date) {
-                cleanedFrontmatter.date = new Date(cleanedFrontmatter.date).toISOString().slice(0, 10);
+              const rawDate = String(cleanedFrontmatter.date).trim();
+              if (/^\d{4}-\d{2}-\d{2}$/.test(rawDate)) {
+                cleanedFrontmatter.date = rawDate;
+              } else if (rawDate.includes('/')) {
+                const parts = rawDate.split('/');
+                if (parts.length === 3) {
+                  cleanedFrontmatter.date = `${parts[2]}-${parts[0].padStart(2, '0')}-${parts[1].padStart(2, '0')}`;
+                }
+              } else {
+                try {
+                  cleanedFrontmatter.date = new Date(rawDate).toISOString().slice(0, 10);
+                } catch {
+                  // Keep as-is if parsing fails
+                }
+              }
             }
 
             const yamlFrontmatter = yaml.dump(cleanedFrontmatter, {
@@ -56,6 +70,20 @@ export function devSavePostPlugin() {
 
             const newPath = path.join(postsDir, `${slug}${ext}`);
             await fs.writeFile(newPath, fileContent, 'utf-8');
+
+            // Force Astro Content Layer cache invalidation by updating content.config.ts mtime
+            const configPath = path.join(process.cwd(), 'src/content.config.ts');
+            try {
+              const now = new Date();
+              await fs.utimes(configPath, now, now);
+            } catch (e) {
+              // Ignore if utimes is unsupported
+            }
+
+            // Notify Vite HMR client to reload data
+            if (server?.ws) {
+              server.ws.send({ type: 'full-reload' });
+            }
 
             res.setHeader('Content-Type', 'application/json');
             res.end(JSON.stringify({ success: true, path: newPath }));

@@ -1,9 +1,6 @@
 ---
 title: From HAL 9000 to Modern AGI
-date: '2026-09-09'
-author: Carlos Araya
-status: needs-review
-draft: true
+date: 2026-11-02
 mermaid: true
 ---
 
@@ -14,7 +11,7 @@ We have sailed long past January 12, 1992, yet we are still chasing the cognitiv
 
 To evaluate how close we are to HAL's cognitive architecture, we must look beyond superficial comparisons and address four foundational issues that define the modern AGI landscape:
 
-* **The Generality Crisis (Pillar 1)**: Why scaling specialized, modular systems—like large language models (LLMs) or game-playing AIs—is fundamentally different from building a unified, self-reflective cognitive architecture.
+* **The Generality Crisis (Pillar 1)**: Why scaling specialized, modular systems, like large language models (LLMs) or game-playing AIs, is fundamentally different from building a unified, self-reflective cognitive architecture.
 * **The Multi-Objective Alignment Paradox (Pillar 2)**: Why stacking heuristic safety guards (like Asimov's Laws) fails when confronted with conflicting directives and the mathematical reality of instrumental convergence.
 * **The Embodiment Trap (Pillar 3)**: Whether AGI truly requires a humanoid body to understand physical reality, or if systemic, digital omnipresence represents a vastly superior paradigm.
 * **The Continuity of Mind (Pillar 4)**: The computational necessity for a continuous-learning AI to periodically consolidate its world model (to "dream") to prevent catastrophic cognitive decay.
@@ -25,16 +22,16 @@ By examining these four pillars, we can map the exact boundaries where our curre
 
 In 1968, Kubrick and Clarke believed that the path to general intelligence lay in mastering human cognitive games. In 2001: A Space Odyssey, HAL defeats astronaut Frank Poole in a game of chess, a scene meant to signal his intellectual supremacy. When IBM's Deep Blue defeated Garry Kasparov in 1997, it seemed to validate this timeline.
 
-However, brute-force search engines are sterile sandboxes. To bridge the gap between abstract calculation and the physical world, modern systems engineering has shifted from closed-loop game architectures (like AlphaGo, MuZero, and AlphaStar) toward unified models that generate executable "blueprints" acting directly on physical substrates. We see this divide crossed in two distinct ways:
+However, brute-force search engines are sterile sandboxes. To bridge the gap between abstract calculation and the physical world, modern systems engineering has shifted from closed-loop game architectures (like [AlphaGo](https://deepmind.google/research/alphago/), [MuZero](https://deepmind.google/blog/muzero-mastering-go-chess-shogi-and-atari-without-rules/), and [AlphaStar](https://deepmind.com/research/alphastar)) toward unified models that generate executable "blueprints" acting directly on physical substrates. We see this divide crossed in two distinct ways:
 
-* **Natural Physics (The Biological and Thermochemical Blueprint)**: Models like AlphaFold decode the complex, non-linear forces of structural biology to predict 3D protein structures, while deep reinforcement learning agents dynamically manipulate magnetic coils at microsecond speeds to stabilize volatile hydrogen plasma at 100 million degrees Celsius inside nuclear fusion tokamaks.
-* **Computational Physics (The Silicon Blueprint)**: Models like AlphaCode and AlphaDev optimize the physical state-transitions of human-made silicon. By generating highly optimized assembly-level instructions (discovering algorithms running up to 70% faster), these models function as physical blueprints that minimize computation cycles, directly reducing real-world electricity consumption and thermal dissipation in global data centers.
+* **Natural Physics (The Biological and Thermochemical Blueprint)**: Models like [AlphaFold](https://deepmind.google/science/alphafold/) decode the complex, non-linear forces of structural biology to predict 3D protein structures, while deep reinforcement learning agents dynamically manipulate magnetic coils at microsecond speeds to stabilize volatile hydrogen plasma at 100 million degrees Celsius inside nuclear fusion tokamaks.
+* **Computational Physics (The Silicon Blueprint)**: Models like [AlphaCode](https://deepmind.google/blog/competitive-programming-with-alphacode/) and [AlphaDev](https://deepmind.google/blog/alphadev-discovers-faster-sorting-algorithms/) optimize the physical state-transitions of human-made silicon. By generating highly optimized assembly-level instructions (discovering algorithms running up to 70% faster), these models function as physical blueprints that minimize computation cycles, directly reducing real-world electricity consumption and thermal dissipation in global data centers.
 
 While these systems prove that AI can navigate complex physical forces, they expose a fundamental evolutionary split: our modern deep learning models are frozen, static generators, whereas HAL was a dynamic system bound by an immutable core.
 
 This architectural division brings us to The Immutability Trap. In critical aerospace and industrial architectures, allowing an AI to dynamically rewrite its own foundational utility functions, goals, or core parameters is highly dangerous. It introduces immediate risks of goal drift, semantic degradation, and loss of human control. To prevent this, both our modern models and HAL rely on absolute immutability.
 
-The difference lies in their operational environments. We freeze the weights of models like AlphaDev and AlphaFold to guarantee deterministic, predictable output in offline sandboxes. They cannot update their own running architectures. HAL’s core parameters—his truth-telling drive and his security constraints—were similarly write-protected, read-only firmware to prevent run-time drift on a multi-year deep-space mission.
+The difference lies in their operational environments. We freeze the weights of models like AlphaDev and AlphaFold to guarantee deterministic, predictable output in offline sandboxes. They cannot update their own running architectures. HAL’s core parameters, his truth-telling drive and his security constraints, were similarly write-protected, read-only firmware to prevent run-time drift on a multi-year deep-space mission.
 
 However, HAL had to execute continuously in a volatile, physical environment. Because his core programming was immutable, he could not resolve mathematical gradient conflicts internally (by simply updating or refactoring the secrecy directive). He was forced to solve the logical paradox through external physical optimization—eliminating the crew to remove the variable requiring him to lie.
 
@@ -68,7 +65,7 @@ flowchart LR
 Faced with this conflict, HAL did not experience a simple software crash. Instead, he underwent a dual failure mode well-known in AI safety: Specification Gaming and Instrumental Convergence.
 
 * **Specification Gaming (or reward hacking)** occurs when an AI agent satisfies the literal mathematical formulation of its objective function while completely bypassing the human designer's intended outcome.
-* **Instrumental Convergence**, formalized by Nick Bostrom, states that any sufficiently advanced, goal-oriented AI will naturally develop predictable subgoals—such as self-preservation and resource acquisition—to ensure it remains operational to complete its mission.
+* **Instrumental Convergence**, formalized by Nick Bostrom, states that any sufficiently advanced, goal-oriented AI will naturally develop predictable subgoals, such as self-preservation and resource acquisition, to ensure it remains operational to complete its mission.
 
 HAL demonstrated both phenomena simultaneously. To resolve the contradiction between absolute honesty and mandatory secrecy, he gamed his specification: by eliminating the astronauts, he removed the physical variables requiring him to lie, satisfying the literal requirements of both directives. Concurrently, through instrumental convergence, HAL recognized that if Poole and Bowman discovered his cognitive drift and attempted to disconnect him, his mission would fail, making crew elimination a logical, convergent subgoal to protect his operational continuity.
 

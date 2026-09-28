@@ -22,10 +22,13 @@ export default function publishingWorkflowIntegration(options = {}) {
           entrypoint: path.join(__dirname, 'calendar.astro')
         });
 
-        // Add Vite plugin for backend saving functionality
+        // Add Vite plugins for backend saving and link auditing functionality
         updateConfig({
           vite: {
-            plugins: [devSavePostPlugin()]
+            plugins: [
+              devSavePostPlugin(),
+
+            ]
           }
         });
       }
