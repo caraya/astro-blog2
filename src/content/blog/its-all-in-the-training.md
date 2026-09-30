@@ -82,49 +82,6 @@ The second skill is React-specific and provides guidelines for accessibility in 
 
 The full skill is available on [GitHub](https://github.com/caraya/agent-skills/blob/main/skills/accessibility-react/SKILL.md).
 
-```markdown
-## Guidelines
-
-### Keyboard Navigation
-- [ ] All interactive elements (`button`, `input`, custom components) are focusable via Tab
-- [ ] Use `tabIndex={0}` for custom focusable elements
-- [ ] Focus order matches DOM/visual order
-- [ ] Focus ring is visible (use :focus-visible or custom styles)
-- [ ] Custom widgets support keyboard events (Enter, Space, Escape)
-- [ ] No keyboard traps (user can always Tab away)
-- [ ] Modals/dialogs trap focus while open, return focus on close (see `focus-trap-react`)
-
-### Screen Readers
-- [ ] All images use `alt` prop (`<img alt="..." />`)
-- [ ] All form fields have `<label htmlFor=...>` or `aria-label`
-- [ ] Buttons/links have descriptive text (not "Click here")
-- [ ] Icon-only buttons use `aria-label`
-- [ ] One `<h1>` per page, headings in order
-- [ ] Dynamic content changes use `aria-live` regions
-- [ ] Tables use `<th scope=...>`
-
-### Visual
-- [ ] Text contrast ≥ 4.5:1 (normal) or ≥ 3:1 (large)
-- [ ] UI elements contrast ≥ 3:1
-- [ ] Color is not the only indicator
-- [ ] Text resizable to 200% without breaking layout
-- [ ] No flashing content >3 times/sec
-
-### Forms
-- [ ] Every input has a visible label
-- [ ] Required fields indicated (not by color alone)
-- [ ] Error messages specific and associated with the field
-- [ ] Error state visible by more than color (icon, text, border)
-- [ ] Form errors summarized and focusable
-
-### Content
-- [ ] `lang` attribute set on `<html>`
-- [ ] Page has descriptive `<title>`
-- [ ] Links distinguishable (not by color alone)
-- [ ] Touch targets ≥ 44x44px
-- [ ] Empty states are meaningful
-```
-
 ## Types of testing
 
 Using AI skills to generate accessible content is a good start, but it is not enough. Because AI does not guarantee correct results, you still need to test the content to make sure the skills worked and the final result is accessible. There are two main ways to test accessibility: manual testing and automated testing.
@@ -452,5 +409,3 @@ Requirements:
 ```
 
 This updated template ensures that the AI generates a complete quality gate: AxeBuilder catches the objective DOM violations (like missing alt text or color contrast issues), while the explicit Tab assertions prove that a keyboard-only user can successfully operate the interface.
-
-<!-- <lite-youtube videoid="ld9gB348SEM"></lite-youtube> -->
