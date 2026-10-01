@@ -65,7 +65,11 @@ These reusable apps can leverage your existing agents and skills to create easie
 
 The catch is that you must be very specific in your prompt. Unless you specifically tell it that it's a reusable prompt or that it should generate a reusable app, it may not create one that can be reused in the future.
 
-### Copilot CLI
+### Copilot CLI and the Copilot app
+
+Copilot now provides a CLI and a dedicated desktop application, enhancing the ways developers can interact with AI-assisted coding tools. The question developers need to answer is what tool will best meet their workflow needs and how to balance the use of both for maximum productivity.
+
+I've chosen to stay with VS Code as my primary development environment, leveraging the Copilot extension for AI-assisted coding while occasionally using the Copilot CLI for specific tasks that benefit from a command-line interface.
 
 ## Testing with AI
 
