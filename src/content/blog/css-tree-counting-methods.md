@@ -4,8 +4,6 @@ date: 2026-11-13
 tags:
   - CSS
   - Layout
-draft: true
-status: needs-review
 ---
 
 The [CSS Values and Units Module Level 5](https://www.w3.org/TR/css-values-5/) defines native CSS tree-counting functions: [sibling-index()](https://www.w3.org/TR/css-values-5/#sibling-index) and [sibling-count()](https://www.w3.org/TR/css-values-5/#sibling-count). In supported browsers, these functions can replace inline custom properties whose only purpose is to pass an element's sibling index or sibling count into CSS. They do not replace custom properties used for other values, such as data supplied by application logic. Check browser compatibility before relying on these functions in production.
