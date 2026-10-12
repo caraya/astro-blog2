@@ -407,7 +407,7 @@ func main() {
 }
 ```
 
-From the Go module root, create an output directory for each target and build the current package with `.`. This compiles all Go files in the server package, not only `main.go`:
+From the Go module root, create an output directory and build the current package with `.`. This compiles all Go files in the server package, not only `main.go`:
 
 ```bash
 mkdir -p build
