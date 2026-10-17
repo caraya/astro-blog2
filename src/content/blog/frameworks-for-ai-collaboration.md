@@ -172,7 +172,7 @@ The instructional team reserves the right to conduct an in-person or synchronous
 
 ## Acceptable Use Policy (AUP): programming and engineering teams
 
-<custom-admonition type="info" title="Scope advisory: Why technical and engineering teams are included" no-icon>
+<custom-admonition type="info" title="Scope advisory: Why technical and engineering teams?" no-icon>
   <p>While the primary focus of this framework is educational governance and pedagogical policy, academic institutions do not operate solely through narrative composition and traditional coursework. University IT departments, campus research labs, computer science capstones, student developer organizations, and educational technology teams manage shared codebase infrastructure. Including a dedicated Acceptable Use Policy for technical teams ensures that institutional AI governance seamlessly bridges classroom pedagogy with technical development, shared repositories, and software infrastructure.</p>
 </custom-admonition>
 
