@@ -1,11 +1,11 @@
 ---
-title: "Building color harmonies with modern CSS: A technical breakdown"
+title: "Building color harmonies with modern CSS"
 date: 2026-11-27
 tags:
   - css
   - color
   - oklch
-  - relative-color-syntax
+  - relative color syntax
 draft: true
 status: needs-review
 ---
