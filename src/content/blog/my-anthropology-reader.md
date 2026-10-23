@@ -72,6 +72,9 @@ Heim, M. (1993). *The metaphysics of virtual reality*. Oxford University Press.
 Morningstar, C., and Randall Farmer, F. (1991) The Lessons of Lucasfilm’s Habitat, in *Cyberspace: First Steps*, Michael Benedikt (ed), MIT Press. [https://web.stanford.edu/class/history34q/readings/Virtual_Worlds/LucasfilmHabitat.html](https://web.stanford.edu/class/history34q/readings/Virtual_Worlds/LucasfilmHabitat.html)
 :
 
+Stone, A.R. (1991). Will the real body please stand up: Boundary stories about virtual cultures. In Benedikt, M. *Cyberspace: First steps*. MIT Press. [https://sodacity.net/system/files/Sandy_Stone_Will_the_Real_Body_Please_Stand_Up.pdf](https://sodacity.net/system/files/Sandy_Stone_Will_the_Real_Body_Please_Stand_Up.pdf)
+:
+
 Turkle, S. (2005). *The second self: Computers and the human spirit* (20th anniversary ed.). MIT Press. (Original work published 1984).
 : In her earliest landmark study, Turkle establishes a foundational theme: the computer as a psychological machine. She explores how people, especially children, relate to the first personal computers, approaching the machine not just as a tool but as a "mirror" or a "Rorschach inkblot" that reflects the human mind. The text is marked by curiosity and cautious optimism about how machines can facilitate self-discovery, setting a baseline of technological wonder that she would later question more sharply.
 
