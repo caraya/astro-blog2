@@ -16,7 +16,7 @@ This post will explain what SRI is, how it works, and why it's crucial for secur
 
 Subresource Integrity (SRI) is a security feature that enables browsers to verify that resources they fetch—such as JavaScript or CSS files—are delivered without unexpected manipulation. It ensures the file the browser executes is exactly the file you intended to load.
 
-You implement SRI using the integrity attribute on &lt;script&gt; or &lt;link&gt; tags. This attribute contains a cryptographic hash of the resource.
+You implement SRI using the integrity attribute on `<script>` or `<link>` tags. This attribute contains a cryptographic hash of the resource.
 
 ```html
 <script src="https://example.com/app.js"
@@ -26,7 +26,7 @@ You implement SRI using the integrity attribute on &lt;script&gt; or &lt;link&gt
 
 ## **How SRI Works**
 
-When a browser encounters a &lt;script&gt; or &lt;link&gt; tag with an integrity attribute, it follows a specific validation process:
+When a browser encounters a `<script>` or `<link>` tag with an integrity attribute, it follows a specific validation process:
 
 1. **Fetch**: The browser downloads the file from the specified src or href.
 2. **Compute**: Before executing or applying the file, the browser calculates the cryptographic hash of the downloaded content using the algorithm specified in the integrity attribute (usually SHA-256, SHA-384, or SHA-512).
@@ -49,7 +49,7 @@ SRI protects your application by neutralizing this threat. Even if an attacker s
 
 You might wonder if calculating a cryptographic hash for every script delays execution and degrades the user experience. While the browser must indeed pause execution to compute the hash, the performance impact is generally negligible.
 
-Modern browsers use highly optimized native implementations &mdash; which are often hardware-accelerated &mdash; to perform cryptographic hashing. Calculating a SHA-384 hash for a typical JavaScript payload takes only a few milliseconds. This computation time is microscopic compared to the network latency required to download the file and the CPU time required for the JavaScript engine to parse, compile, and execute the code.
+Modern browsers use highly optimized native implementations, which are often hardware-accelerated, to perform cryptographic hashing. Calculating a SHA-384 hash for a typical JavaScript payload takes only a few milliseconds. This computation time is microscopic compared to the network latency required to download the file and the CPU time required for the JavaScript engine to parse, compile, and execute the code.
 
 Therefore, even on low-end devices or with multiple SRI-protected scripts, the security benefits of SRI far outweigh the imperceptible cost of hash computation.
 
@@ -91,7 +91,7 @@ Configuration Overhead
 : Implementing SRI correctly requires you to integrate hash generation into your build pipeline. Every time you compile or modify your application assets, you must generate new hashes and inject them into your HTML files.
 
 Network and CORS Dependencies
-: If you still rely on third-party CDNs, SRI relies on CORS for cross-origin requests. A misconfiguration on the CDN's side (for example, dropping the Access-Control-Allow-Origin header) causes your site to break. Your application's uptime becomes highly dependent on the CDN correctly managing HTTP headers. To mitigate this risk, consider the self-hosting approach discussed in [Self-Hosting vs. Using a CDN in the Modern Web](\#self-hosting-vs-using-a-cdn-in-the-modern-web).
+: If you still rely on third-party CDNs, SRI relies on CORS for cross-origin requests. A misconfiguration on the CDN's side (for example, dropping the Access-Control-Allow-Origin header) causes your site to break. Your application's uptime becomes highly dependent on the CDN correctly managing HTTP headers. To mitigate this risk, consider the self-hosting approach discussed in [Self-Hosting vs. Using a CDN in the Modern Web](#self-hosting-vs-using-a-cdn-in-the-modern-web).
 
 Lack of Support for Dynamic Content
 : You cannot use SRI for scripts or stylesheets that are dynamically generated per user or per session. The file must remain static so its cryptographic hash remains consistent.
@@ -211,4 +211,3 @@ async function main() {
 
 main();
 ```
-
