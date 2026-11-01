@@ -31,6 +31,12 @@ Moeran, B. (2005). *The business of ethnography: Strategic exchanges and the pro
 
 ## Fictional references
 
+Clarke, A. C. (1968). *2001: A Space Odyssey*. New American Library.
+Clarke, A. C. (1982). *2010: Odyssey Two*. New American Library.
+Clarke, A. C. (1987). *2061: Odyssey Three*. New American Library.
+Clarke, A. C. (1997). *3001: The Final Odyssey*. New American Library.
+:
+
 Forster, E. M. (1973). The Machine Stops. In *The Science Fiction Hall of Fame, Vol. IIB*, Avon, 1973. Originally in E.M. Forster, *The Eternal Moment and Other Stories*, Harcourt Brace Jovanovich, 1928.
 : Forster's story presents a vision of a technologically mediated society in which humans become increasingly dependent on machines for their survival and social interaction. It explores themes of isolation, the consequences of over-reliance on technology, and the tension between human agency and automated systems, offering a cautionary tale that resonates with contemporary discussions on digital culture and virtual environments.
 
