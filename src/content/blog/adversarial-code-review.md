@@ -6,8 +6,6 @@ tags:
   - Software Engineering
   - Code Review
 mermaid: true
-status: needs-review
-draft: true
 ---
 
 One of the biggest problems developers face when letting AI write code is testing its correctness and validating its adherence to specifications. If we rely solely on the AI that generated the code to review it, we risk missing subtle bugs, logical errors, and security vulnerabilities due to inherent biases and limitations in the model's reasoning. Adversarial code review addresses this challenge by introducing an independent critic agent to rigorously evaluate the code before human review.
