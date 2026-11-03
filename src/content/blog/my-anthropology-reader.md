@@ -44,6 +44,9 @@ Gibson, W. (1984). *Neuromancer*. Ace.
 : Gibson explores the intersection of technology, identity, and society in a dystopian future. It introduces the concept of "cyberspace" as a virtual reality data space, profoundly influencing subsequent discussions on digital culture, virtual communities, and the embodiment of self in online environments.
 : The novel's depiction of a highly networked world foreshadows the ethical, social, and psychological implications of living in digitally mediated spaces.
 
+Scheerer, R. (Director), & Snodgrass, M. M. (Writer). (1989, February 13). The measure of a man (Season 2, Episode 9) [Television series episode]. In G. Roddenberry (Executive Producer), Star Trek: The Next Generation. Paramount Domestic Television.
+:
+
 ## Learning and educational contexts
 
 Falbel, A. (1989). *Friskolen 70: An ethnographically informed inquiry into the social context of learning* [Doctoral dissertation, Massachusetts Institute of Technology]. [http://hdl.handle.net/1721.1/14174](http://hdl.handle.net/1721.1/14174)
