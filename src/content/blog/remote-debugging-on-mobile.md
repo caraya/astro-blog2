@@ -43,7 +43,9 @@ Working with iOS and Chrome used to be possible using the [ios-webkit-debug-prox
 
 I could not get ios-webkit-debug-proxy to work on the current version of macOS with the current version of Chrome. Unfortunately, the tool is no longer actively matained and the author (or one of the authors) has moved to a paid solution ([https://inspect.dev/](https://inspect.dev/)) with a 30-day trial.
 
-So there's no free way to debug from an iOS device to a Desktop DevTools setup.
+**October 2026 update:** The 30-day trial described above is historical. Inspect's [current free tier](https://inspect.dev/pricing) includes two 15-minute debugging sessions a day, including desktop DevTools. Paid plans remove the session time limit.
+
+For agent-assisted debugging, the [Claude Code mobile web debugging guide](https://inspect.dev/guides/claude-mobile-web-debugging) explains how to inspect iOS Safari and Android Chrome for DOM, console, network and screenshot evidence. This uses a computer connected to the mobile browser, not desktop DevTools running on the phone.
 
 ## Debugging Chrome for Android in Chome for desktop
 
